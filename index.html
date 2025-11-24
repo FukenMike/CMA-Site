@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos Management Agency — Real Support for Real Creators</title>
+    <style>
+        /* CSS Reset and Core Variables */
+        :root {
+            --color-bg: #0A0A0A;
+            --color-accent: #00E8FF; /* Neon Cyan */
+            --color-text: #FFFFFF;
+            --color-subtext: #BBBBBB;
+            --font-primary: 'Arial', sans-serif; /* Using common font for clean, sharp look */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Utility Class for Neon Divider */
+        .divider {
+            height: 3px;
+            width: 100%;
+            background-color: var(--color-accent);
+            margin: 40px 0;
+            box-shadow: 0 0 15px var(--color-accent);
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--color-accent);
+        }
+
+        header h1 {
+            font-size: 4em;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--color-text);
+            text-transform: uppercase;
+        }
+
+        header h2 {
+            font-size: 1.8em;
+            color: var(--color-accent);
+            margin-top: 10px;
+            text-shadow: 0 0 8px var(--color-accent);
+        }
+
+        header p.tagline {
+            font-size: 1.2em;
+            margin-top: 25px;
+            color: var(--color-subtext);
+            font-style: italic;
+        }
+
+        /* --- SECTION STYLES --- */
+        section {
+            padding: 80px 0;
+        }
+
+        h3 {
+            font-size: 2.5em;
+            color: var(--color-accent);
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px var(--color-accent);
+        }
+
+        /* --- SECTION 1 - About CMA --- */
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.25em;
+            text-align: center;
+            line-height: 1.8;
+            border: 1px solid var(--color-subtext);
+            padding: 40px;
+        }
+        
+        /* Highlight key phrase in About */
+        #about p strong {
+            color: var(--color-accent);
+        }
+
+
+        /* --- SECTION 2 - What CMA Does (Services) --- */
+        #services .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .service-item {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border: 2px solid var(--color-accent);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-item:hover {
+            box-shadow: 0 0 25px var(--color-accent);
+            transform: translateY(-5px);
+        }
+        
+        .service-item h4 {
+            color: var(--color-accent);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .service-item p {
+            color: var(--color-subtext);
+            font-size: 0.95em;
+        }
+        
+        /* Icon placeholder - simple and cybernetic */
+        .service-item::before {
+            content: '>';
+            display: block;
+            font-size: 2.5em;
+            color: var(--color-accent);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+
+        /* --- SECTION 3 - Who CMA Helps --- */
+        #who-helps ul {
+            max-width: 600px;
+            margin: 0 auto;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #who-helps ul li {
+            font-size: 1.15em;
+            padding: 10px 0;
+            border-bottom: 1px dashed #222;
+            position: relative;
+            padding-left: 30px;
+            color: var(--color-subtext);
+        }
+        
+        /* Custom bullet point */
+        #who-helps ul li::before {
+            content: "//"; 
+            color: var(--color-accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- SECTION 4 - Contact / Apply --- */
+        #contact {
+            background-color: #111111;
+        }
+        
+        .contact-box {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 3px solid var(--color-accent);
+            box-shadow: 0 0 20px var(--color-accent);
+            text-align: center;
+        }
+
+        .contact-box p {
+            margin-bottom: 30px;
+            color: var(--color-subtext);
+            font-size: 1.1em;
+        }
+
+        .contact-form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: var(--color-accent);
+            font-size: 0.9em;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #000000;
+            border: 1px solid var(--color-accent);
+            color: var(--color-text);
+            font-size: 1em;
+            outline: none;
+        }
+        
+        .contact-form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background-color: var(--color-accent);
+            color: var(--color-bg);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+        }
+
+        .contact-form button:hover {
+            background-color: #FFFFFF;
+            box-shadow: 0 0 15px var(--color-accent);
+        }
+
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #222;
+            font-size: 0.9em;
+            color: var(--color-subtext);
+        }
+        
+        footer strong {
+            color: var(--color-accent);
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3em;
+            }
+
+            header h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 2em;
+            }
+            
+            #services .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Chaos Management Agency</h1>
+            <h2>Real Support for Real Creators.</h2>
+            <p class="tagline">Where strategy meets chaos — and creators get results.</p>
+        </div>
+    </header>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <section id="about">
+        <div class="container">
+            <h3>// ACCESS GRANTED: WHO WE ARE</h3>
+            <p>
+                CMA is a digital media management agency built for creators who need **real guidance, not vague advice**. We help creators grow, monetize, and optimize their content using hands-on strategy, data-driven insights, and authentic support. No bots. No generic coaching. Real partnership.
+            </p>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <section id="services">
+        <div class="container">
+            <h3>// CORE FUNCTIONS</h3>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h4>Creator Growth Strategy</h4>
+                    <p>Audience building, algorithm-aligned content planning, and vertical-specific scaling strategies designed for maximum reach.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Livestream Optimization</h4>
+                    <p>Engagement systems, tips/gift strategies, caption guidance, and technical setup for high-performing, consistent live streams.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Content Development Support</h4>
+                    <p>Authentic branding, unique storytelling structures, and structured posting frameworks to maintain high-quality consistency.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Monetization + Shop Setup</h4>
+                    <p>TikTok Shop onboarding, catalog setup, affiliate link optimization, and monetization consulting (ad revenue, sponsorships, etc.).</p>
+                </div>
+                <div class="service-item">
+                    <h4>Performance Analysis</h4>
+                    <p>Deep-dive analytics on current content performance, audience behavior mapping, and actionable, data-driven improvement strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <section id="who-helps">
+        <div class="container">
+            <h3>// TARGET ACQUISITION: YOUR PROFILE</h3>
+            <ul>
+                <li>CMA is ideal for: **Small and mid-size creators** ready to scale their presence.</li>
+                <li>CMA is ideal for: **New creators** who need a clear, structured direction from day one.</li>
+                <li>CMA is ideal for: **Live creators** who want more engagement, tips, and predictable revenue streams.</li>
+                <li>CMA is ideal for: Creators **struggling with consistency** and translating passion into performance.</li>
+                <li>CMA is ideal for: Anyone who wants a **real partner**, not “guru talk” or automated systems.</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h3>Work With CMA</h3>
+                <p>If you’re a creator interested in guidance, growth, or partnership, drop your info below. Let's manage the chaos and get results.</p>
+                <form class="contact-form" action="#" method="POST">
+                    
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="tiktok">TikTok @username</label>
+                    <input type="text" id="tiktok" name="tiktok" placeholder="@yourhandle" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="profile_link">Link to Profile (TikTok, YouTube, etc.)</label>
+                    <input type="url" id="profile_link" name="profile_link" required>
+
+                    <label for="help_needed">What you need help with</label>
+                    <textarea id="help_needed" name="help_needed" required></textarea>
+
+                    <button type="submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            CMA — **Chaos Management Agency**. Built for creators.
+        </div>
+    </footer>
+
+</body>
+</html>
