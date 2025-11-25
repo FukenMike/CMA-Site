@@ -11,7 +11,7 @@
             --color-accent: #00E8FF; /* Neon Cyan */
             --color-text: #FFFFFF;
             --color-subtext: #BBBBBB;
-            --font-primary: 'Arial', sans-serif; /* Using common font for clean, sharp look */
+            --font-primary: 'Arial', sans-serif;
         }
 
         * {
@@ -19,14 +19,37 @@
             margin: 0;
             padding: 0;
         }
-
+        
+        /* --- NEW GLOBAL BACKGROUND AND OVERLAY --- */
         body {
             font-family: var(--font-primary);
             background-color: var(--color-bg);
             color: var(--color-text);
             line-height: 1.6;
             scroll-behavior: smooth;
+            
+            /* Background Image Settings */
+            background-image: url('YOUR_IMAGE_LINK_HERE.jpg'); /* REPLACE THIS WITH THE UPLOADED IMAGE LINK */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed; /* Keeps the image still as you scroll */
+            background-position: right top; /* Positions Kai on the right */
+            position: relative; /* Needed for the overlay */
         }
+
+        /* Overlay to darken the background image and improve text legibility */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75); /* Darkens the image */
+            z-index: -1; /* Puts the overlay behind the content */
+        }
+        /* --- END NEW BACKGROUND/OVERLAY --- */
+
 
         .container {
             max-width: 1200px;
@@ -48,6 +71,9 @@
             padding: 100px 0;
             text-align: center;
             border-bottom: 1px solid var(--color-accent);
+            /* Ensure header text is on top of any background elements */
+            position: relative;
+            z-index: 10;
         }
 
         header h1 {
@@ -75,6 +101,10 @@
         /* --- SECTION STYLES --- */
         section {
             padding: 80px 0;
+            /* Make sections slightly transparent to reveal background, but keep text sharp */
+            background-color: rgba(10, 10, 10, 0.85); 
+            margin-top: 20px;
+            border-radius: 5px;
         }
 
         h3 {
@@ -96,8 +126,9 @@
             line-height: 1.8;
             border: 1px solid var(--color-subtext);
             padding: 40px;
+            background-color: #1a1a1a; /* Made background more solid for better readability */
         }
-        
+
         /* Highlight key phrase in About */
         #about p strong {
             color: var(--color-accent);
@@ -120,12 +151,12 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .service-item:hover {
             box-shadow: 0 0 25px var(--color-accent);
             transform: translateY(-5px);
         }
-        
+
         .service-item h4 {
             color: var(--color-accent);
             font-size: 1.2em;
@@ -137,7 +168,7 @@
             color: var(--color-subtext);
             font-size: 0.95em;
         }
-        
+
         /* Icon placeholder - simple and cybernetic */
         .service-item::before {
             content: '>';
@@ -165,7 +196,7 @@
             padding-left: 30px;
             color: var(--color-subtext);
         }
-        
+
         /* Custom bullet point */
         #who-helps ul li::before {
             content: "//"; 
@@ -179,7 +210,7 @@
         #contact {
             background-color: #111111;
         }
-        
+
         .contact-box {
             max-width: 600px;
             margin: 0 auto;
@@ -214,7 +245,7 @@
             font-size: 1em;
             outline: none;
         }
-        
+
         .contact-form textarea {
             height: 100px;
             resize: vertical;
@@ -245,8 +276,10 @@
             border-top: 1px solid #222;
             font-size: 0.9em;
             color: var(--color-subtext);
+            /* Added background for clarity */
+            background-color: #000000;
         }
-        
+
         footer strong {
             color: var(--color-accent);
         }
@@ -264,9 +297,15 @@
             h3 {
                 font-size: 2em;
             }
-            
+
             #services .service-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            /* On small screens, center the image and remove the fixed background */
+            body {
+                background-attachment: scroll;
+                background-position: center top;
             }
         }
     </style>
@@ -344,8 +383,8 @@
             <div class="contact-box">
                 <h3>Work With CMA</h3>
                 <p>If you’re a creator interested in guidance, growth, or partnership, drop your info below. Let's manage the chaos and get results.</p>
-                <form class="contact-form" action="#" method="POST">
-                    
+                <form class="contact-form" action="REPLACE_WITH_FORM_SERVICE_URL" method="POST">
+
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
 
