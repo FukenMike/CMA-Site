@@ -19,7 +19,7 @@
             margin: 0;
             padding: 0;
         }
-        
+
         /* --- NEW GLOBAL BACKGROUND AND OVERLAY --- */
         body {
             font-family: var(--font-primary);
@@ -27,14 +27,19 @@
             color: var(--color-text);
             line-height: 1.6;
             scroll-behavior: smooth;
-            
+
             /* Background Image Settings */
-            background-image: url('https://i.imgur.com/zvuf1vD.png'); /* REPLACE THIS WITH THE UPLOADED IMAGE LINK */
+            background-image: url('https://i.imgur.com/zvuf1vD.png'); 
             background-repeat: no-repeat;
-            background-size: cover;
             background-attachment: fixed; /* Keeps the image still as you scroll */
-            background-position: right top; /* Positions Kai on the right */
             position: relative; /* Needed for the overlay */
+
+            /* 🚨 OPTIMIZED POSITIONING 🚨 */
+            /* Using 100vw auto ensures the whole image is visible without cropping
+               by adjusting its size based on the viewport width */
+            background-size: 100vw auto; 
+            /* Anchors the image to the top, and pushes the focal point (Kai) to the right */
+            background-position: 80% top; 
         }
 
         /* Overlay to darken the background image and improve text legibility */
@@ -301,11 +306,13 @@
             #services .service-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             /* On small screens, center the image and remove the fixed background */
             body {
                 background-attachment: scroll;
                 background-position: center top;
+                /* Use 'contain' on mobile to ensure the entire image fits within the smaller screen width */
+                background-size: contain; 
             }
         }
     </style>
@@ -414,3 +421,4 @@
 
 </body>
 </html>
+
