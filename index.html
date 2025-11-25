@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Support for Real Creators</title>
+    <title>CMA | Chaos Management Agency</title>
     <style>
         /* CSS Reset and Core Variables */
         :root {
@@ -20,29 +20,28 @@
             padding: 0;
         }
 
-        /* --- NEW GLOBAL BACKGROUND AND OVERLAY --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- GLOBAL BACKGROUND AND OVERLAY --- */
         body {
             font-family: var(--font-primary);
             background-color: var(--color-bg);
             color: var(--color-text);
             line-height: 1.6;
-            scroll-behavior: smooth;
-
+            
             /* Background Image Settings */
             background-image: url('https://i.imgur.com/zvuf1vD.png'); 
             background-repeat: no-repeat;
-            background-attachment: fixed; /* Keeps the image still as you scroll */
-            position: relative; /* Needed for the overlay */
-
-            /* 🚨 OPTIMIZED POSITIONING 🚨 */
-            /* Using 100vw auto ensures the whole image is visible without cropping
-               by adjusting its size based on the viewport width */
+            background-attachment: fixed;
+            position: relative;
             background-size: 100vw auto; 
-            /* Anchors the image to the top, and pushes the focal point (Kai) to the right */
             background-position: 80% top; 
+            padding-top: 60px; /* Spacing for the fixed nav bar */
         }
 
-        /* Overlay to darken the background image and improve text legibility */
+        /* Overlay */
         body::before {
             content: '';
             position: fixed;
@@ -50,11 +49,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.75); /* Darkens the image */
-            z-index: -1; /* Puts the overlay behind the content */
+            background-color: rgba(0, 0, 0, 0.75);
+            z-index: -1;
         }
-        /* --- END NEW BACKGROUND/OVERLAY --- */
-
 
         .container {
             max-width: 1200px;
@@ -62,7 +59,60 @@
             padding: 0 20px;
         }
 
-        /* Utility Class for Neon Divider */
+        /* --- NAVIGATION MENU (NEW) --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid var(--color-accent);
+            z-index: 1000;
+            box-shadow: 0 0 15px rgba(0, 232, 255, 0.2);
+        }
+
+        nav .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .nav-logo {
+            font-weight: 900;
+            font-size: 1.2em;
+            color: var(--color-text);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .nav-logo span {
+            color: var(--color-accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: var(--color-subtext);
+            text-decoration: none;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-accent);
+            text-shadow: 0 0 5px var(--color-accent);
+        }
+
+        /* Utility Class for Divider */
         .divider {
             height: 3px;
             width: 100%;
@@ -73,10 +123,8 @@
 
         /* --- HEADER --- */
         header {
-            padding: 100px 0;
+            padding: 80px 0;
             text-align: center;
-            border-bottom: 1px solid var(--color-accent);
-            /* Ensure header text is on top of any background elements */
             position: relative;
             z-index: 10;
         }
@@ -106,7 +154,6 @@
         /* --- SECTION STYLES --- */
         section {
             padding: 80px 0;
-            /* Make sections slightly transparent to reveal background, but keep text sharp */
             background-color: rgba(10, 10, 10, 0.85); 
             margin-top: 20px;
             border-radius: 5px;
@@ -122,7 +169,7 @@
             text-shadow: 0 0 5px var(--color-accent);
         }
 
-        /* --- SECTION 1 - About CMA --- */
+        /* --- ABOUT & GENERAL TEXT --- */
         #about p {
             max-width: 800px;
             margin: 0 auto;
@@ -131,16 +178,14 @@
             line-height: 1.8;
             border: 1px solid var(--color-subtext);
             padding: 40px;
-            background-color: #1a1a1a; /* Made background more solid for better readability */
+            background-color: #1a1a1a;
         }
 
-        /* Highlight key phrase in About */
         #about p strong {
             color: var(--color-accent);
         }
 
-
-        /* --- SECTION 2 - What CMA Does (Services) --- */
+        /* --- SERVICES GRID --- */
         #services .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -174,7 +219,6 @@
             font-size: 0.95em;
         }
 
-        /* Icon placeholder - simple and cybernetic */
         .service-item::before {
             content: '>';
             display: block;
@@ -184,8 +228,76 @@
             font-weight: bold;
         }
 
+        /* --- NEW SECTION: FATHER'S ALLIANCE --- */
+        #alliance {
+            border-left: 5px solid var(--color-accent);
+        }
+        
+        .alliance-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
 
-        /* --- SECTION 3 - Who CMA Helps --- */
+        .alliance-logo-placeholder {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 20px;
+            display: inline-block;
+        }
+
+        .alliance-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: transparent;
+            border: 2px solid var(--color-accent);
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .alliance-btn:hover {
+            background: var(--color-accent);
+            color: #000;
+        }
+
+        /* --- NEW SECTION: SHOP PLACEHOLDER --- */
+        #shop {
+            background-color: rgba(20, 20, 20, 0.9);
+        }
+
+        .shop-intro {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--color-subtext);
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .product-placeholder {
+            background: #000;
+            height: 200px;
+            border: 1px dashed var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-subtext);
+            font-size: 0.8em;
+        }
+
+        /* --- LIST STYLES --- */
         #who-helps ul {
             max-width: 600px;
             margin: 0 auto;
@@ -202,7 +314,6 @@
             color: var(--color-subtext);
         }
 
-        /* Custom bullet point */
         #who-helps ul li::before {
             content: "//"; 
             color: var(--color-accent);
@@ -211,7 +322,7 @@
             left: 0;
         }
 
-        /* --- SECTION 4 - Contact / Apply --- */
+        /* --- CONTACT FORM --- */
         #contact {
             background-color: #111111;
         }
@@ -223,12 +334,6 @@
             border: 3px solid var(--color-accent);
             box-shadow: 0 0 20px var(--color-accent);
             text-align: center;
-        }
-
-        .contact-box p {
-            margin-bottom: 30px;
-            color: var(--color-subtext);
-            font-size: 1.1em;
         }
 
         .contact-form label {
@@ -273,7 +378,6 @@
             box-shadow: 0 0 15px var(--color-accent);
         }
 
-
         /* --- FOOTER --- */
         footer {
             text-align: center;
@@ -281,43 +385,52 @@
             border-top: 1px solid #222;
             font-size: 0.9em;
             color: var(--color-subtext);
-            /* Added background for clarity */
             background-color: #000000;
-        }
-
-        footer strong {
-            color: var(--color-accent);
         }
 
         /* --- RESPONSIVENESS --- */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 3em;
+            header h1 { font-size: 3em; }
+            header h2 { font-size: 1.5em; }
+            h3 { font-size: 2em; }
+            
+            #services .service-grid { grid-template-columns: 1fr; }
+            .shop-grid { grid-template-columns: 1fr; }
+
+            /* Nav adjustments for mobile */
+            nav .nav-container {
+                flex-direction: column;
+                padding: 10px;
+            }
+            nav ul {
+                margin-top: 10px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            header h2 {
-                font-size: 1.5em;
-            }
-
-            h3 {
-                font-size: 2em;
-            }
-
-            #services .service-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* On small screens, center the image and remove the fixed background */
             body {
                 background-attachment: scroll;
                 background-position: center top;
-                /* Use 'contain' on mobile to ensure the entire image fits within the smaller screen width */
                 background-size: contain; 
             }
         }
     </style>
 </head>
 <body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">CMA <span>//</span> AGENCY</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#alliance">The Alliance</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <header>
         <div class="container">
@@ -364,6 +477,40 @@
                     <h4>Performance Analysis</h4>
                     <p>Deep-dive analytics on current content performance, audience behavior mapping, and actionable, data-driven improvement strategies.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <section id="alliance">
+        <div class="container">
+            <h3>// THE FATHER'S ALLIANCE</h3>
+            <div class="alliance-box">
+                <div class="alliance-logo-placeholder">TFA LOGO HERE</div>
+                <p style="text-align: center; max-width: 700px; color: var(--color-subtext);">
+                    A dedicated initiative supporting fathers, rebuilding family structures, and navigating the legal system. The Father's Alliance isn't just a non-profit; it's a movement for those who have been chewed up by the system and are ready to stand tall.
+                </p>
+                <a href="https://TheFathersAlliance.org" target="_blank" class="alliance-btn">VISIT THE ALLIANCE ></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><div class="divider"></div></div>
+
+    <section id="shop">
+        <div class="container">
+            <h3>// THE SHOP</h3>
+            <p class="shop-intro">Apparel for the chaos. Name TBD (Fuken Shop / Rivenwear).</p>
+            
+            <div class="shop-grid">
+                <div class="product-placeholder">PRODUCT 01 [COMING SOON]</div>
+                <div class="product-placeholder">PRODUCT 02 [COMING SOON]</div>
+                <div class="product-placeholder">PRODUCT 03 [COMING SOON]</div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#" class="alliance-btn">VIEW FULL CATALOG (SOON)</a>
             </div>
         </div>
     </section>
@@ -421,4 +568,3 @@
 
 </body>
 </html>
-
