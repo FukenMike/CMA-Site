@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Support for Real Creators</title>
+    <title>Chaos Management Agency - Real Support for Real Creators</title>
     <style>
         /* CSS Reset and Core Variables */
         :root {
@@ -12,6 +12,7 @@
             --color-text: #FFFFFF;
             --color-subtext: #BBBBBB;
             --font-primary: 'Arial', sans-serif;
+            --nav-height: 60px;
         }
 
         * {
@@ -27,34 +28,34 @@
             color: var(--color-text);
             line-height: 1.6;
             scroll-behavior: smooth;
-
-            /* Background Image Settings */
-            background-image: url('https://i.imgur.com/zvuf1vD.png'); 
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* Keeps the image still as you scroll */
-            position: relative; /* Needed for the overlay */
-
-            /* 🚨 OPTIMIZED POSITIONING 🚨 */
-            /* Using 100vw auto ensures the whole image is visible without cropping
-               by adjusting its size based on the viewport width */
-            background-size: 100vw auto; 
-            /* Anchors the image to the top, and pushes the focal point (Kai) to the right */
-            background-position: 80% top; 
+            position: relative; 
         }
 
-        /* Overlay to darken the background image and improve text legibility */
-        body::before {
-            content: '';
+        /* The background image is now a separate element for the Parallax Effect */
+        #background-parallax {
+            background-image: url('https://i.imgur.com/zvuf1vD.png');
+            background-repeat: no-repeat;
+            background-size: 100vw auto;
+            background-position: 80% top;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.75); /* Darkens the image */
-            z-index: -1; /* Puts the overlay behind the content */
+            z-index: -2; /* Lowest z-index */
         }
-        /* --- END NEW BACKGROUND/OVERLAY --- */
-
+        
+        /* Fixed overlay for darkening, now applied to the separate background element */
+        #background-parallax::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); /* Slightly darker for better contrast */
+            backdrop-filter: blur(2px); /* Subtle blur for depth */
+        }
 
         .container {
             max-width: 1200px;
@@ -62,54 +63,121 @@
             padding: 0 20px;
         }
 
-        /* Utility Class for Neon Divider */
-        .divider {
-            height: 3px;
+        /* --- NAVIGATION BAR (NEW) --- */
+        nav {
+            position: sticky;
+            top: 0;
+            height: var(--nav-height);
+            background-color: rgba(0, 0, 0, 0.9); /* Opaque background for clarity */
+            border-bottom: 1px solid var(--color-accent);
+            z-index: 100; /* Always on top */
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
-            background-color: var(--color-accent);
-            margin: 40px 0;
-            box-shadow: 0 0 15px var(--color-accent);
         }
 
-        /* --- HEADER --- */
+        nav .logo {
+            color: var(--color-accent);
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 0 0 5px var(--color-accent);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li a {
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 1em;
+            text-transform: uppercase;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-accent);
+            text-shadow: 0 0 8px var(--color-accent);
+        }
+
+        /* --- HERO SECTION (HEADER) --- */
         header {
-            padding: 100px 0;
+            min-height: calc(100vh - var(--nav-height)); /* Full viewport height minus nav */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             text-align: center;
-            border-bottom: 1px solid var(--color-accent);
-            /* Ensure header text is on top of any background elements */
+            padding-top: var(--nav-height); /* Offset for fixed nav */
             position: relative;
             z-index: 10;
         }
 
         header h1 {
-            font-size: 4em;
+            font-size: 5.5em;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 5px;
             color: var(--color-text);
             text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.1em;
         }
 
         header h2 {
-            font-size: 1.8em;
+            font-size: 2.2em;
             color: var(--color-accent);
-            margin-top: 10px;
-            text-shadow: 0 0 8px var(--color-accent);
+            text-shadow: 0 0 10px var(--color-accent);
+            margin-bottom: 30px;
         }
-
+        
+        /* Tagline for the Typing Effect (JS) */
         header p.tagline {
-            font-size: 1.2em;
-            margin-top: 25px;
+            font-size: 1.4em;
+            margin-top: 15px;
             color: var(--color-subtext);
             font-style: italic;
+            min-height: 25px; /* Ensures element doesn't collapse before text appears */
+        }
+        
+        /* The main CTA button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: var(--color-bg);
+            border: 2px solid var(--color-accent);
+            padding: 15px 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 40px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px var(--color-accent);
         }
 
-        /* --- SECTION STYLES --- */
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--color-accent);
+            box-shadow: 0 0 30px var(--color-accent);
+        }
+
+        /* --- SECTION STYLES (Adjusted) --- */
         section {
             padding: 80px 0;
-            /* Make sections slightly transparent to reveal background, but keep text sharp */
-            background-color: rgba(10, 10, 10, 0.85); 
-            margin-top: 20px;
-            border-radius: 5px;
+            /* Make sections nearly opaque for content readability, removing the heavy dividers */
+            background-color: rgba(10, 10, 10, 0.95);
+            margin: 40px 0;
+            border-top: 2px solid #1a1a1a;
+            border-bottom: 2px solid #1a1a1a;
         }
 
         h3 {
@@ -122,227 +190,186 @@
             text-shadow: 0 0 5px var(--color-accent);
         }
 
-        /* --- SECTION 1 - About CMA --- */
+        /* --- SECTION 1 - About CMA (Adjusted) --- */
         #about p {
             max-width: 800px;
             margin: 0 auto;
             font-size: 1.25em;
-            text-align: center;
+            text-align: left; /* Switched to left align for a more formal/readable block */
             line-height: 1.8;
-            border: 1px solid var(--color-subtext);
-            padding: 40px;
-            background-color: #1a1a1a; /* Made background more solid for better readability */
+            padding: 30px;
+            background-color: #1a1a1a;
+            border-left: 5px solid var(--color-accent); /* Focus Line */
         }
-
-        /* Highlight key phrase in About */
-        #about p strong {
-            color: var(--color-accent);
-        }
-
 
         /* --- SECTION 2 - What CMA Does (Services) --- */
         #services .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider cards */
+            gap: 30px;
+            text-align: left; /* Switched to left align */
         }
 
         .service-item {
             background-color: #1a1a1a;
             padding: 30px;
-            border: 2px solid var(--color-accent);
-            transition: all 0.3s ease;
+            border: 1px solid #222;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
             overflow: hidden;
+            /* Added a subtle glow on its own */
+            box-shadow: 0 0 5px rgba(0, 232, 255, 0.3); 
         }
 
         .service-item:hover {
-            box-shadow: 0 0 25px var(--color-accent);
-            transform: translateY(-5px);
+            border-color: var(--color-accent);
+            box-shadow: 0 0 30px var(--color-accent); /* Stronger glow on hover */
+            transform: scale(1.02);
+            z-index: 10;
         }
 
         .service-item h4 {
             color: var(--color-accent);
-            font-size: 1.2em;
-            margin-bottom: 15px;
+            font-size: 1.4em;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
 
         .service-item p {
             color: var(--color-subtext);
-            font-size: 0.95em;
+            font-size: 1em;
         }
-
+        
         /* Icon placeholder - simple and cybernetic */
-        .service-item::before {
-            content: '>';
-            display: block;
-            font-size: 2.5em;
+        .service-item h4::before {
+            content: '>> ';
             color: var(--color-accent);
-            margin-bottom: 10px;
             font-weight: bold;
+            font-size: 0.8em;
         }
 
 
         /* --- SECTION 3 - Who CMA Helps --- */
         #who-helps ul {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             list-style: none;
             padding-left: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
         }
 
         #who-helps ul li {
             font-size: 1.15em;
-            padding: 10px 0;
-            border-bottom: 1px dashed #222;
-            position: relative;
-            padding-left: 30px;
-            color: var(--color-subtext);
+            padding: 15px;
+            border-left: 3px solid var(--color-accent);
+            background-color: #1a1a1a;
+            color: var(--color-text);
+            transition: background-color 0.3s;
+        }
+        
+        #who-helps ul li:hover {
+            background-color: #222;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
         }
 
-        /* Custom bullet point */
-        #who-helps ul li::before {
-            content: "//"; 
-            color: var(--color-accent);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* --- SECTION 4 - Contact / Apply --- */
+        /* --- SECTION 4 - Contact / Apply (Simplified) --- */
         #contact {
             background-color: #111111;
+            padding: 100px 0;
+            margin: 0;
+            border-top: 5px solid var(--color-accent);
         }
 
         .contact-box {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 40px;
-            border: 3px solid var(--color-accent);
-            box-shadow: 0 0 20px var(--color-accent);
-            text-align: center;
-        }
-
-        .contact-box p {
-            margin-bottom: 30px;
-            color: var(--color-subtext);
-            font-size: 1.1em;
-        }
-
-        .contact-form label {
-            display: block;
-            text-align: left;
-            margin-bottom: 5px;
-            color: var(--color-accent);
-            font-size: 0.9em;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            background-color: #000000;
-            border: 1px solid var(--color-accent);
-            color: var(--color-text);
-            font-size: 1em;
-            outline: none;
-        }
-
-        .contact-form textarea {
-            height: 100px;
-            resize: vertical;
-        }
-
-        .contact-form button {
-            background-color: var(--color-accent);
-            color: var(--color-bg);
             border: none;
-            padding: 15px 40px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-            text-transform: uppercase;
+            box-shadow: none;
         }
-
-        .contact-form button:hover {
-            background-color: #FFFFFF;
-            box-shadow: 0 0 15px var(--color-accent);
-        }
-
 
         /* --- FOOTER --- */
         footer {
             text-align: center;
             padding: 30px 0;
-            border-top: 1px solid #222;
+            border-top: 1px solid var(--color-accent);
             font-size: 0.9em;
             color: var(--color-subtext);
-            /* Added background for clarity */
             background-color: #000000;
         }
 
-        footer strong {
-            color: var(--color-accent);
-        }
-
         /* --- RESPONSIVENESS --- */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             header h1 {
-                font-size: 3em;
+                font-size: 3.5em;
+                letter-spacing: 3px;
             }
 
             header h2 {
-                font-size: 1.5em;
+                font-size: 1.8em;
+            }
+            
+            nav .nav-content {
+                flex-direction: column;
+                padding-top: 10px;
             }
 
-            h3 {
-                font-size: 2em;
+            nav ul {
+                padding-top: 10px;
             }
 
-            #services .service-grid {
-                grid-template-columns: 1fr;
+            nav ul li a {
+                padding: 5px 8px;
+                font-size: 0.9em;
             }
 
-            /* On small screens, center the image and remove the fixed background */
-            body {
-                background-attachment: scroll;
-                background-position: center top;
-                /* Use 'contain' on mobile to ensure the entire image fits within the smaller screen width */
-                background-size: contain; 
+            nav {
+                height: auto;
+            }
+            
+            header {
+                min-height: 80vh;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <div id="background-parallax"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="#hero" class="logo">CMA</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#who-helps">Ideal Profile</a></li>
+                <li><a href="#contact" class="cta-nav-link">Apply</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero">
         <div class="container">
             <h1>Chaos Management Agency</h1>
-            <h2>Real Support for Real Creators.</h2>
-            <p class="tagline">Where strategy meets chaos — and creators get results.</p>
+            <h2>// ACCESS GRANTED: REAL SUPPORT FOR REAL CREATORS.</h2>
+            <p class="tagline" id="tagline-text"></p>
+            
+            <a href="#contact" class="cta-button">Engage Partnership Protocol</a>
         </div>
     </header>
 
-    <div class="container"><div class="divider"></div></div>
-
     <section id="about">
         <div class="container">
-            <h3>// ACCESS GRANTED: WHO WE ARE</h3>
+            <h3>WHO WE ARE</h3>
             <p>
                 CMA is a digital media management agency built for creators who need **real guidance, not vague advice**. We help creators grow, monetize, and optimize their content using hands-on strategy, data-driven insights, and authentic support. No bots. No generic coaching. Real partnership.
             </p>
         </div>
     </section>
 
-    <div class="container"><div class="divider"></div></div>
-
     <section id="services">
         <div class="container">
-            <h3>// CORE FUNCTIONS</h3>
+            <h3>CORE FUNCTIONS</h3>
             <div class="service-grid">
                 <div class="service-item">
                     <h4>Creator Growth Strategy</h4>
@@ -368,11 +395,9 @@
         </div>
     </section>
 
-    <div class="container"><div class="divider"></div></div>
-
     <section id="who-helps">
         <div class="container">
-            <h3>// TARGET ACQUISITION: YOUR PROFILE</h3>
+            <h3>TARGET ACQUISITION: YOUR PROFILE</h3>
             <ul>
                 <li>CMA is ideal for: **Small and mid-size creators** ready to scale their presence.</li>
                 <li>CMA is ideal for: New creators who need a clear, structured direction from day one.</li>
@@ -382,8 +407,6 @@
             </ul>
         </div>
     </section>
-
-    <div class="container"><div class="divider"></div></div>
 
     <section id="contact">
         <div class="container">
@@ -418,6 +441,40 @@
             CMA — Chaos Management Agency. Built for creators.
         </div>
     </footer>
+
+    <script>
+        // --- 1. Parallax Scroll Effect for Background ---
+        const bgParallax = document.getElementById('background-parallax');
+        const parallaxSpeed = 0.5; // Adjust this value to change the effect intensity
+
+        window.addEventListener('scroll', () => {
+            // Calculate the amount to move the background element based on scroll position
+            const scrolledY = window.scrollY;
+            bgParallax.style.transform = `translateY(${scrolledY * parallaxSpeed}px)`;
+        });
+
+
+        // --- 2. Typing Effect for Tagline ---
+        const taglineElement = document.getElementById('tagline-text');
+        const taglineText = 'Where strategy meets chaos — and creators get results.';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < taglineText.length) {
+                taglineElement.innerHTML += taglineText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50); // Typing speed in milliseconds
+            } else {
+                // Add a final glow effect after typing is complete
+                taglineElement.style.color = 'var(--color-accent)';
+                taglineElement.style.textShadow = '0 0 10px var(--color-accent)';
+            }
+        }
+
+        // Delay the start of the typing effect slightly
+        setTimeout(typeWriter, 1000); 
+
+    </script>
 
 </body>
 </html>
