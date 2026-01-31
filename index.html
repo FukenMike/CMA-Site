@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chaos Management Agency - Real Support for Real Creators</title>
+    <title>Chaos Management Agency - Digital Operations Support</title>
     <style>
         /* CSS Reset and Core Variables */
         :root {
@@ -283,78 +283,6 @@
             box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
         }
         
-        /* --- NEW SECTION: NOVA PROTOCOL (PHASE 1) --- */
-        #nova-protocol {
-            padding: 100px 0;
-            margin: 60px 0;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.98); 
-            border-top: 3px double var(--color-accent);
-            border-bottom: 3px double var(--color-accent);
-        }
-
-        .nova-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .nova-avatar {
-            width: 250px;
-            height: 250px;
-            border: 3px solid var(--color-accent);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 10px var(--color-accent), 0 0 30px var(--color-accent), inset 0 0 15px var(--color-accent);
-            animation: pulseGlow 3s infinite alternate ease-in-out;
-            background-color: #050505;
-        }
-        
-        .nova-avatar .nova-icon {
-            font-family: monospace;
-            font-size: 6em; 
-            color: var(--color-accent);
-            margin-bottom: 10px;
-            text-shadow: 0 0 8px var(--color-accent);
-            line-height: 1;
-        }
-
-        .nova-status {
-            color: var(--color-subtext);
-            font-size: 0.9em;
-            letter-spacing: 2px;
-            font-family: monospace;
-        }
-
-        .nova-description {
-            text-align: left;
-            max-width: 500px;
-        }
-
-        .nova-description p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            line-height: 1.7;
-            color: var(--color-subtext);
-        }
-
-        .nova-description .nova-promise {
-            color: var(--color-accent);
-            font-style: italic;
-            font-weight: bold;
-            text-shadow: 0 0 5px rgba(0, 232, 255, 0.5);
-            border-left: 3px solid var(--color-accent);
-            padding-left: 15px;
-            margin-top: 30px;
-        }
-
         /* --- SECTION 2 - Services Grid --- */
         #services .service-grid {
             display: grid;
@@ -551,8 +479,6 @@
         @media (max-width: 1024px) {
              header h1 { font-size: 5em; }
              header h2 { font-size: 2em; }
-             .nova-container { flex-direction: column; text-align: center; }
-             .nova-description { max-width: 90%; }
         }
 
         @media (max-width: 600px) {
@@ -565,8 +491,6 @@
             section { padding: 60px 0; margin: 30px 0; }
             h3 { font-size: 2em; margin-bottom: 40px; }
             #floating-cta { bottom: 15px; right: 15px; padding: 10px 15px; font-size: 0.9em; }
-            .nova-avatar { width: 150px; height: 150px; }
-            .nova-avatar .nova-icon { font-size: 4em; }
         }
     </style>
 </head>
@@ -580,9 +504,8 @@
             <ul>
                 <li><a href="#about" class="glitch-link" data-text="About">About</a></li>
                 <li><a href="#services" class="glitch-link" data-text="Services">Services</a></li>
-                <li><a href="#nova-protocol" class="glitch-link" data-text="Nova">Nova</a></li>
-                <li><a href="#who-helps" class="glitch-link" data-text="Ideal Profile">Ideal Profile</a></li>
-                <li><a href="#contact" class="cta-nav-link glitch-link" data-text="Apply">Apply</a></li>
+                <li><a href="#who-helps" class="glitch-link" data-text="Who We Help">Who We Help</a></li>
+                <li><a href="#contact" class="cta-nav-link glitch-link" data-text="Contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -590,10 +513,11 @@
     <header id="hero">
         <div class="container">
             <h1>Chaos Management Agency</h1>
-            <h2>// ACCESS GRANTED: REAL SUPPORT FOR REAL CREATORS.</h2>
+            <h2>Digital operations support for small organizations.</h2>
             <p class="tagline" id="tagline-text"></p>
             
-            <a href="#contact" class="cta-button">Engage Partnership Protocol</a>
+            <a href="#contact" class="cta-button">Request Support</a>
+            <a href="#services" class="cta-button" style="margin-left: 15px;">See Services</a>
         </div>
     </header>
 
@@ -601,59 +525,38 @@
         <div class="container">
             <h3>WHO WE ARE</h3>
             <p>
-                CMA is a digital media management agency built for creators who need <strong>real guidance, not vague advice</strong>. We help creators grow, monetize, and optimize their content using hands-on strategy, data-driven insights, and authentic support. No bots. No generic coaching. Real partnership.
+                CMA helps small organizations and solo operators set up, clean up, and maintain websites, domains, email, forms, documentation, lightweight automation, and internal workflows. We focus on clarity, reliability, and hands-on support.
             </p>
-        </div>
-    </section>
-
-    <!-- NEW: PHASE 1 - NOVA CAMEO SECTION -->
-    <section id="nova-protocol">
-        <div class="container">
-            <h3>// NOVA PROTOCOL INITIATED</h3>
-            <div class="nova-container">
-                <div class="nova-avatar">
-                    <span class="nova-icon">∑</span> <!-- Abstract AI/Math symbol -->
-                    <span class="nova-status">ONLINE // AWAITING COMMAND</span>
-                </div>
-                <div class="nova-description">
-                    <p>
-                        <strong>Nova</strong> is the central AI operating system of CMA. Currently dormant, the Nova Protocol will soon be activated (Phase 3) to provide data-driven insights, personalized strategies, and automated support—making the chaos manageable. We are building the intelligence that will scale your success.
-                    </p>
-                    <p class="nova-promise">
-                        Nova will learn your metrics. Nova will anticipate your needs. Nova will execute the plan.
-                    </p>
-                </div>
-            </div>
         </div>
     </section>
 
     <section id="services">
         <div class="container">
-            <h3>CORE FUNCTIONS</h3>
+            <h3>What We Do</h3>
             <div class="service-grid">
                 <div class="service-item">
-                    <h4>Creator Growth Strategy</h4>
-                    <p>Audience building, algorithm-aligned content planning, and vertical-specific scaling strategies designed for maximum reach.</p>
+                    <h4>Digital Setup and Cleanup</h4>
+                    <p>Untangle domains, email, hosting, access, and tool sprawl.</p>
                 </div>
                 <div class="service-item">
-                    <h4>Livestream Optimization</h4>
-                    <p>Engagement systems, tips/gift strategies, caption guidance, and technical setup for high-performing, consistent live streams.</p>
+                    <h4>Website and Hosting Support</h4>
+                    <p>Updates, fixes, performance basics, and dependable maintenance.</p>
                 </div>
                 <div class="service-item">
-                    <h4>Content Development Support</h4>
-                    <p>Authentic branding, unique storytelling structures, and structured posting frameworks to maintain high-quality consistency.</p>
+                    <h4>Forms, Intake, and Automation</h4>
+                    <p>Build intake flows, routing, and simple automations.</p>
                 </div>
                 <div class="service-item">
-                    <h4>Monetization + Shop Setup</h4>
-                    <p>TikTok Shop onboarding, catalog setup, affiliate link optimization, and monetization consulting (ad revenue, sponsorships, etc.).</p>
+                    <h4>Workflow and Documentation</h4>
+                    <p>Create repeatable processes so work does not live in someone’s head.</p>
                 </div>
                 <div class="service-item">
-                    <h4>Performance Analysis</h4>
-                    <p>Deep-dive analytics on current content performance, audience behavior mapping, and actionable, data-driven improvement strategies.</p>
+                    <h4>Tech Support and Troubleshooting</h4>
+                    <p>Resolve issues fast and reduce recurring breakages.</p>
                 </div>
                 <div class="service-item">
-                    <h4>Automation & Workflow</h4>
-                    <p>Future systems will integrate AI-assisted task sequencing, resource generation, and data synchronization for optimized workflow efficiency.</p>
+                    <h4>AI Assisted Productivity</h4>
+                    <p>Practical training and prompt kits for drafting, ops, and admin tasks (no platform claims).</p>
                 </div>
             </div>
         </div>
@@ -661,13 +564,12 @@
 
     <section id="who-helps">
         <div class="container">
-            <h3>TARGET ACQUISITION: YOUR PROFILE</h3>
+            <h3>Who We Help</h3>
             <ul>
-                <li>CMA is ideal for: <strong>Small and mid-size creators</strong> ready to scale their presence.</li>
-                <li>CMA is ideal for: New creators who need a clear, structured direction from day one.</li>
-                <li>CMA is ideal for: Live creators who want more engagement, tips, and predictable revenue streams.</li>
-                <li>CMA is ideal for: Creators <strong>struggling with consistency</strong> and translating passion into performance.</li>
-                <li>CMA is ideal for: Anyone who wants a real partner, not “guru talk” or automated systems.</li>
+                <li>Small nonprofits and community organizations.</li>
+                <li>Small businesses and solo operators.</li>
+                <li>Teams with scattered tools and no documentation.</li>
+                <li>Organizations needing reliable help without full-time IT.</li>
             </ul>
         </div>
     </section>
@@ -675,26 +577,26 @@
     <section id="contact">
         <div class="container">
             <div class="contact-box">
-                <h3>Work With CMA</h3>
-                <p>If you’re a creator interested in guidance, growth, or partnership, drop your info below. Let's manage the chaos and get results.</p>
+                <h3>Request Support</h3>
+                <p>Send a short request and we will get back to you with next steps.</p>
                 <form class="contact-form" action="REPLACE_WITH_FORM_SERVICE_URL" method="POST">
 
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
 
-                    <label for="tiktok">TikTok @username</label>
-                    <input type="text" id="tiktok" name="tiktok" placeholder="@yourhandle" required>
+                    <label for="organization">Organization</label>
+                    <input type="text" id="organization" name="organization">
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
 
-                    <label for="profile_link">Link to Profile (TikTok, YouTube, etc.)</label>
-                    <input type="url" id="profile_link" name="profile_link" required>
+                    <label for="website">Website (optional)</label>
+                    <input type="url" id="website" name="website">
 
-                    <label for="help_needed">What you need help with</label>
+                    <label for="help_needed">What do you need help with</label>
                     <textarea id="help_needed" name="help_needed" required></textarea>
 
-                    <button type="submit">SUBMIT DATA FEED</button>
+                    <button type="submit">Send Request</button>
                 </form>
             </div>
         </div>
@@ -702,13 +604,13 @@
 
     <footer>
         <div class="container">
-            CMA — Chaos Management Agency. Built for creators. // Protocol v1.5
+            CMA — Chaos Management Agency. Digital operations support. v1
         </div>
     </footer>
     
     <!-- FLOATING CTA BUTTON -->
     <a href="#contact" id="floating-cta">
-        <span class="cta-label">ACCESS PORTAL</span>
+        <span class="cta-label">REQUEST HELP</span>
         <span class="cta-icon">>></span>
     </a>
 
@@ -726,7 +628,7 @@
 
         // --- 2. Typing Effect for Tagline ---
         const taglineElement = document.getElementById('tagline-text');
-        const taglineText = 'Where strategy meets chaos — and creators get results.';
+        const taglineText = 'Stabilize your tools, workflows, and systems so your work stops breaking every week.';
         let i = 0;
 
         function typeWriter() {

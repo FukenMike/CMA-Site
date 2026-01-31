@@ -1,4 +1,34 @@
-Chaos Management Agency (CMA) Digital Ecosystem
+# Chaos Management Agency (CMA)
+
+Digital Operations Support + Workflow Systems service site.
+
+## Overview
+CMA helps small organizations and solo operators set up, clean up, and maintain websites, domains, email, forms, documentation, lightweight automation, and internal workflows. The site is a static, single‑page brochure that explains services and collects support requests.
+
+## Services
+- **Digital Setup and Cleanup** — untangle domains, email, hosting, access, and tool sprawl.
+- **Website and Hosting Support** — updates, fixes, performance basics, and dependable maintenance.
+- **Forms, Intake, and Automation** — build intake flows, routing, and simple automations.
+- **Workflow and Documentation** — create repeatable processes so work does not live in someone’s head.
+- **Tech Support and Troubleshooting** — resolve issues fast and reduce recurring breakages.
+- **AI Assisted Productivity** — practical training and prompt kits for drafting, ops, and admin tasks (no platform claims).
+
+## Tech
+- Static HTML, CSS, and JavaScript
+- No build tools or dependencies
+
+## Local Dev
+Open index.html in a browser. That’s it.
+
+## Deploy Options
+- **GitHub Pages** — serve the repo as a static site.
+- **Cloudflare Pages** — connect the repo and deploy as a static site.
+- **Netlify** — drag‑and‑drop or connect the repo for static hosting.
+
+## Next Improvements
+- Add a real form endpoint and success message.
+- Add basic accessibility checks (contrast, focus states).
+- Add a lightweight content section for FAQs or service boundaries.Chaos Management Agency (CMA) Digital Ecosystem
 
 1. Project Overview: Mission Control
 
