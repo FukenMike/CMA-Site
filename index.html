@@ -137,12 +137,19 @@
         nav ul li a {
             color: var(--color-text);
             text-decoration: none;
-            padding: 0 15px;
+            padding: 0 19px;
             font-size: 1em;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
             text-transform: uppercase;
             transition: color 0.3s, text-shadow 0.3s;
             position: relative;
             display: inline-block;
+        }
+
+        nav ul li a:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 4px;
         }
 
         /* Glitch Effect Setup */
@@ -362,21 +369,17 @@
             border-top: 5px solid var(--color-accent);
         }
 
-        .contact-box {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #1a1a1a;
-            padding: 40px;
-            border: 2px solid #333;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0, 232, 255, 0.2);
+        .contact-email {
+            display: block;
+            font-size: 1.6em;
+            color: var(--color-accent);
+            text-decoration: none;
+            text-shadow: 0 0 10px var(--color-accent);
+            margin-bottom: 20px;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            max-width: 100%;
         }
-
-
-        .contact-cta {
-            margin-top: 20px;
-            padding: 25px;
-            background-color: #0f0f0f;
             border: 2px solid var(--color-accent);
             box-shadow: 0 0 15px rgba(0, 232, 255, 0.2);
             border-radius: 6px;
@@ -396,6 +399,9 @@
             text-decoration: none;
             text-shadow: 0 0 10px var(--color-accent);
             margin-bottom: 20px;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            max-width: 100%;
         }
 
         .contact-email:hover {
@@ -482,11 +488,20 @@
             header h2 { font-size: 1.5em; }
             nav .nav-content { flex-direction: column; padding: 10px 0; }
             nav ul { padding-top: 10px; }
-            nav ul li a { padding: 5px 8px; font-size: 0.9em; }
+            nav ul li a { padding: 5px 8px; font-size: 0.9em; font-weight: 600; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
             nav { height: auto; }
             section { padding: 60px 0; margin: 30px 0; }
             h3 { font-size: 2em; margin-bottom: 40px; }
             #floating-cta { bottom: 15px; right: 15px; padding: 10px 15px; font-size: 0.9em; }
+            .contact-cta { padding: 20px; }
+            .contact-email {
+                font-size: 1.2em;
+                line-height: 1.2;
+                background-color: #050505;
+                padding: 10px 12px;
+                border: 1px solid #222;
+                border-radius: 6px;
+            }
         }
     </style>
 </head>
