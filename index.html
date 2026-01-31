@@ -372,57 +372,53 @@
             box-shadow: 0 0 30px rgba(0, 232, 255, 0.2);
         }
 
-        .contact-form label {
-            display: block;
+
+        .contact-cta {
             margin-top: 20px;
-            margin-bottom: 5px;
+            padding: 25px;
+            background-color: #0f0f0f;
+            border: 2px solid var(--color-accent);
+            box-shadow: 0 0 15px rgba(0, 232, 255, 0.2);
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .contact-cta p {
+            color: var(--color-subtext);
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .contact-email {
+            display: block;
+            font-size: 1.6em;
             color: var(--color-accent);
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9em;
-            letter-spacing: 1px;
+            text-decoration: none;
+            text-shadow: 0 0 10px var(--color-accent);
+            margin-bottom: 20px;
         }
 
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            background-color: #050505;
-            border: 1px solid #333;
-            color: var(--color-text);
-            font-size: 1em;
-            margin-bottom: 15px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            border-radius: 4px;
+        .contact-email:hover {
+            text-shadow: 0 0 20px var(--color-accent);
         }
 
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--color-accent);
-            box-shadow: 0 0 10px var(--color-accent);
-        }
-
-        .contact-form button[type="submit"] {
-            width: 100%;
+        .contact-email-button {
+            display: inline-block;
             background-color: var(--color-secondary-accent);
             color: var(--color-bg);
-            border: none;
-            padding: 18px;
-            margin-top: 30px;
-            font-size: 1.3em;
+            border: 2px solid var(--color-secondary-accent);
+            padding: 12px 30px;
             font-weight: bold;
             text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
+            text-decoration: none;
             border-radius: 4px;
             box-shadow: 0 0 15px var(--color-secondary-accent);
+            transition: all 0.3s;
         }
 
-        .contact-form button[type="submit"]:hover {
+        .contact-email-button:hover {
             background-color: transparent;
             color: var(--color-secondary-accent);
-            border: 2px solid var(--color-secondary-accent);
             box-shadow: 0 0 30px var(--color-secondary-accent);
         }
 
@@ -451,8 +447,8 @@
             text-transform: uppercase;
             transition: all 0.3s ease;
             box-shadow: 0 0 20px var(--color-accent);
-            display: flex;
-            align-items: center;
+                display: flex;
+                align-items: center;
             gap: 10px;
             border: 2px solid var(--color-accent);
             animation: neonBreathe 2s infinite alternate;
@@ -578,26 +574,14 @@
         <div class="container">
             <div class="contact-box">
                 <h3>Request Support</h3>
-                <p>Send a short request and we will get back to you with next steps.</p>
-                <form class="contact-form" action="REPLACE_WITH_FORM_SERVICE_URL" method="POST">
-
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="organization">Organization</label>
-                    <input type="text" id="organization" name="organization">
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="website">Website (optional)</label>
-                    <input type="url" id="website" name="website">
-
-                    <label for="help_needed">What do you need help with</label>
-                    <textarea id="help_needed" name="help_needed" required></textarea>
-
-                    <button type="submit">Send Request</button>
-                </form>
+                <p>Email us and we will reply with next steps.</p>
+                <div class="contact-cta">
+                    <p>To request support or ask a question, email us directly. Include a brief description of what you need help with and any relevant links.</p>
+                    <a class="contact-email" href="mailto:support@chaosmanagement.agency">support@chaosmanagement.agency</a>
+                    <div>
+                        <a class="contact-email-button" href="mailto:support@chaosmanagement.agency">Email CMA</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
