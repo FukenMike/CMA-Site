@@ -1,205 +1,46 @@
-# Chaos Management Agency (CMA)
+# Chaos Management Agency
 
-Digital Operations Support + Workflow Systems service site.
+Digital infrastructure and operations support for nonprofits and small organizations.
 
-## Overview
-CMA helps small organizations and solo operators set up, clean up, and maintain websites, domains, email, forms, documentation, lightweight automation, and internal workflows. The site is a static, single‑page brochure that explains services and collects support requests.
+## About
+
+Chaos Management Agency (CMA) provides digital infrastructure and operations support to help small nonprofits and community programs reduce technology costs, simplify tools, and build stable, low maintenance websites.
 
 ## Services
-- **Digital Setup and Cleanup** — untangle domains, email, hosting, access, and tool sprawl.
-- **Website and Hosting Support** — updates, fixes, performance basics, and dependable maintenance.
-- **Forms, Intake, and Automation** — build intake flows, routing, and simple automations.
-- **Workflow and Documentation** — create repeatable processes so work does not live in someone’s head.
-- **Tech Support and Troubleshooting** — resolve issues fast and reduce recurring breakages.
-- **AI Assisted Productivity** — practical training and prompt kits for drafting, ops, and admin tasks (no platform claims).
 
-## Tech
+- **Website Rebuild and Hosting Migration** — Rebuild simple, fast, secure sites and move off expensive hosts. Deploy on Cloudflare Pages or Netlify with clean domain setup.
+- **Technology Cost Reduction and Cleanup** — Audit your current tools and subscriptions, remove what you do not need, and simplify the stack so fewer things break.
+- **Digital Infrastructure Setup** — Domains, DNS, email basics, forms, intake routing, and handoff documentation so your foundation is stable.
+- **Nonprofit Website Foundations** — Template based nonprofit sites with the pages that build trust: programs, contact, transparency, and policy basics.
+
+## Local Preview
+
+Open `index.html` in a browser, or use a simple local server:
+
+```bash
+# Python 3
+python -m http.server 8000
+
+# Node.js (with http-server)
+npx http-server
+```
+
+Then visit `http://localhost:8000`
+
+## Deploy
+
+This is a static site with no build process.
+
+**Netlify:**
+- Connect your GitHub repo and deploy
+- Or drag and drop the folder into Netlify's dashboard
+
+**Cloudflare Pages:**
+- Connect your GitHub repo
+- Build settings: None required (static site)
+
+## Tech Stack
+
 - Static HTML, CSS, and JavaScript
 - No build tools or dependencies
-
-## Local Dev
-Open index.html in a browser. That’s it.
-
-## Deploy Options
-- **GitHub Pages** — serve the repo as a static site.
-- **Cloudflare Pages** — connect the repo and deploy as a static site.
-- **Netlify** — drag‑and‑drop or connect the repo for static hosting.
-
-## Next Improvements
-- Add a real form endpoint and success message.
-- Add basic accessibility checks (contrast, focus states).
-- Add a lightweight content section for FAQs or service boundaries.Chaos Management Agency (CMA) Digital Ecosystem
-
-1. Project Overview: Mission Control
-
-CMA is a cyberpunk-inspired creator management and digital media optimization agency. This digital ecosystem is designed to evolve from a static marketing presence (v1) into a full, AI-powered platform centered around the Nova Assistant (v4).
-
-The core aesthetic is high-tech, clean but dramatic, with a dark UI and glowing cyan highlights.
-
-Core Pillars
-
-Creator Growth Strategy
-
-Content Optimization
-
-Livestream Consulting
-
-Data-Driven Improvement
-
-Automation & AI-Assisted Support
-
-2. Current Status: Protocol v1.5 (Static Landing Page + Phase 1 UI)
-
-The current iteration is a robust, responsive landing page built purely with vanilla HTML, CSS, and JavaScript. It incorporates the initial visual enhancements required for Phase 1.
-
-v1.5 Key Features
-
-Component
-
-Status
-
-Aesthetic Integration
-
-Aesthetic
-
-Complete
-
-Deep dark background (#030303), Neon Cyan accent (#00E8FF), and static texture overlay.
-
-Parallax
-
-Complete
-
-Background image layered with a heavy dark filter, moving subtly on scroll.
-
-Hero Section
-
-Complete
-
-Typing animation for the tagline (tagline-text).
-
-Navigation
-
-New
-
-Glitch-style hover animations (.glitch-link) applied to navigation items.
-
-Nova Cameo
-
-New
-
-Dedicated #nova-protocol section with a pulsating, glowing AI avatar.
-
-Floating CTA
-
-New
-
-Persistent, breathing access portal to the contact section (#floating-cta).
-
-Scroll Animation
-
-New
-
-Sections fade and slide into view using an Intersection Observer.
-
-3. Future Roadmap: Phased Evolution
-
-The project will proceed through the following stages, building toward the final, autonomous platform:
-
-Phase 1: Visual/UI Upgrades (Current Focus)
-
-Goal: Deepen the high-tech, motion-driven cyberpunk aesthetic.
-
-Nova Cameo/Character Section (Completed in v1.5)
-
-Neon-Glow Animations (Implemented)
-
-Glitch Transitions & Hover Effects (Implemented)
-
-Dynamic Hero Animations (Next focus area for motion)
-
-Floating CTA Button (Implemented)
-
-Phase 2: Feature Upgrades (Interaction & Utility)
-
-Goal: Introduce the first utility features and interactive elements for client capture.
-
-Interactive Client Intake Flow (Replacing static contact form).
-
-Downloadable Resources.
-
-Simple Internal Tools (e.g., Content Audit Generator, Checklist).
-
-Phase 3: Nova Integration (Intelligence Layer)
-
-Goal: Nova becomes an interactive, client-facing AI assistant, connecting aesthetic with core function.
-
-Basic Creator Profile Scanning.
-
-Personalized Growth Suggestions.
-
-Service Recommendations.
-
-Onboarding Q&A.
-
-Task Sequencing for clients.
-
-Phase 4: Full Platform (Ecosystem)
-
-Goal: Establish a complete, scalable SaaS platform for client management.
-
-User Accounts & Authentication.
-
-Client Dashboard & Analytics Page.
-
-AI Content Planner & Growth Tracker.
-
-Automated Report Generator.
-
-Nova as the core operating system.
-
-4. Development Notes
-
-Tech Stack (v1.5)
-
-Frontend: HTML5, CSS3 (Vanilla), JavaScript (Vanilla ES6+)
-
-Deployment: Static Hosting (planned)
-
-Key CSS Variables
-
-Variable
-
-Value
-
-Description
-
---color-bg
-
-#030303
-
-Absolute dark UI background.
-
---color-accent
-
-#00E8FF
-
-Primary Neon Cyan glow.
-
---color-secondary-accent
-
-#FF00FF
-
-Magenta used for glitch/depth effects.
-
---font-primary
-
-'Inter', sans-serif
-
-Main content font.
-
-font-family
-
-monospace
-
-Used for command-line/AI text (e.g., Nova status, tagline).
+- SEO-optimized with JSON-LD schema and social metadata

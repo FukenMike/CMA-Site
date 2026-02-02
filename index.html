@@ -14,9 +14,12 @@
     <meta property="og:description" content="Digital infrastructure and operations support for nonprofits and small organizations.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chaosmgnt.netlify.app/">
-    <!-- TODO: Replace with the final social preview image -->
-    <meta property="og:image" content="/og-image.png">
+    <meta property="og:image" content="https://placehold.co/1200x630/030303/00E8FF.png?text=Chaos+Management+Agency">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chaos Management Agency">
+    <meta name="twitter:description" content="Digital infrastructure and operations support for nonprofits and small organizations.">
+    <meta name="twitter:url" content="https://chaosmgnt.netlify.app/">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/030303/00E8FF.png?text=Chaos+Management+Agency">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -302,7 +305,7 @@
         }
 
         /* --- SECTION 1 - About CMA --- */
-        #about p {
+        #about-cma p {
             max-width: 900px;
             margin: 0 auto;
             font-size: 1.3em;
@@ -316,7 +319,7 @@
         }
         
         /* --- SECTION 2 - Services Grid --- */
-        #services .service-grid {
+        #services-digital-infrastructure .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 40px;
@@ -341,7 +344,7 @@
             z-index: 10;
         }
 
-        .service-item h4 {
+        .service-item h3 {
             color: var(--color-accent);
             font-size: 1.5em;
             margin-bottom: 10px;
@@ -350,7 +353,7 @@
         }
         
         /* Cybernetic bullet point */
-        .service-item h4::before {
+        .service-item h3::before {
             content: '[//] ';
             color: var(--color-secondary-accent);
             font-weight: bold;
@@ -359,7 +362,7 @@
 
 
         /* --- SECTION 3 - Who CMA Helps --- */
-        #who-helps ul {
+        #who-we-help ul {
             max-width: 900px;
             margin: 0 auto;
             list-style: none;
@@ -369,7 +372,7 @@
             gap: 20px;
         }
 
-        #who-helps ul li {
+        #who-we-help ul li {
             font-size: 1.2em;
             padding: 20px 30px;
             border: 1px solid #333;
@@ -380,14 +383,42 @@
             border-radius: 4px;
         }
         
-        #who-helps ul li:hover {
+        #who-we-help ul li:hover {
+            background-color: #222;
+            border-left-color: var(--color-accent);
+            box-shadow: 0 0 10px rgba(0, 232, 255, 0.2);
+        }
+
+        /* --- SECTION 3.5 - What We Do Not Do --- */
+        #what-we-do-not-do ul {
+            max-width: 900px;
+            margin: 0 auto;
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        #what-we-do-not-do ul li {
+            font-size: 1.2em;
+            padding: 20px 30px;
+            border: 1px solid #333;
+            border-left: 5px solid var(--color-secondary-accent);
+            background-color: #1a1a1a;
+            color: var(--color-text);
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+        
+        #what-we-do-not-do ul li:hover {
             background-color: #222;
             border-left-color: var(--color-accent);
             box-shadow: 0 0 10px rgba(0, 232, 255, 0.2);
         }
 
         /* --- SECTION 4 - Contact Form --- */
-        #contact {
+        #contact-cma {
             background-color: #0A0A0A;
             padding: 100px 0;
             margin: 0;
