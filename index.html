@@ -369,21 +369,14 @@
             border-top: 5px solid var(--color-accent);
         }
 
-        .contact-email {
-            display: block;
-            font-size: 1.6em;
-            color: var(--color-accent);
-            text-decoration: none;
-            text-shadow: 0 0 10px var(--color-accent);
-            margin-bottom: 20px;
-            word-break: break-word;
-            overflow-wrap: anywhere;
-            max-width: 100%;
-        }
+        .contact-box {
+            background: #111;
             border: 2px solid var(--color-accent);
-            box-shadow: 0 0 15px rgba(0, 232, 255, 0.2);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
             border-radius: 6px;
-            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 232, 255, 0.2);
         }
 
         .contact-cta p {
@@ -402,6 +395,7 @@
             word-break: break-word;
             overflow-wrap: anywhere;
             max-width: 100%;
+            text-align: center;
         }
 
         .contact-email:hover {
@@ -524,10 +518,10 @@
     <header id="hero">
         <div class="container">
             <h1>Chaos Management Agency</h1>
-            <h2>Digital operations support for small organizations.</h2>
+            <h2>Digital infrastructure and operations support for small organizations and nonprofit programs.</h2>
             <p class="tagline" id="tagline-text"></p>
             
-            <a href="#contact" class="cta-button">Request Support</a>
+            <a href="#contact" class="cta-button">Request a Build or Cleanup</a>
             <a href="#services" class="cta-button" style="margin-left: 15px;">See Services</a>
         </div>
     </header>
@@ -536,8 +530,28 @@
         <div class="container">
             <h3>WHO WE ARE</h3>
             <p>
-                CMA helps small organizations and solo operators set up, clean up, and maintain websites, domains, email, forms, documentation, lightweight automation, and internal workflows. We focus on clarity, reliability, and hands-on support.
+                Chaos Management Agency (CMA) is a solo digital infrastructure and operations support company that helps small organizations simplify their technology, reduce recurring costs, and run on stable, low maintenance systems. CMA focuses on clean setups, clear documentation, and reliable foundations so organizations are not locked into expensive hosting, bloated tool stacks, or ongoing dependency.
             </p>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <h3>How It Works</h3>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h4>Audit</h4>
+                    <p>We review your current hosting, domain, and tool stack and identify cost and risk.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Build</h4>
+                    <p>We rebuild or migrate to a stable foundation with clean setup and documentation.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Handoff</h4>
+                    <p>You get a clear handoff so you are not dependent on ongoing support.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -546,30 +560,35 @@
             <h3>What We Do</h3>
             <div class="service-grid">
                 <div class="service-item">
-                    <h4>Digital Setup and Cleanup</h4>
-                    <p>Untangle domains, email, hosting, access, and tool sprawl.</p>
+                    <h4>Website Rebuild and Hosting Migration</h4>
+                    <p>Rebuild simple, fast, secure sites and move off expensive hosts. Deploy on Cloudflare Pages or Netlify with clean domain setup.</p>
                 </div>
                 <div class="service-item">
-                    <h4>Website and Hosting Support</h4>
-                    <p>Updates, fixes, performance basics, and dependable maintenance.</p>
+                    <h4>Technology Cost Reduction and Cleanup</h4>
+                    <p>Audit your current tools and subscriptions, remove what you do not need, and simplify the stack so fewer things break.</p>
                 </div>
                 <div class="service-item">
-                    <h4>Forms, Intake, and Automation</h4>
-                    <p>Build intake flows, routing, and simple automations.</p>
+                    <h4>Digital Infrastructure Setup</h4>
+                    <p>Domains, DNS, email basics, forms, intake routing, and handoff documentation so your foundation is stable.</p>
                 </div>
                 <div class="service-item">
-                    <h4>Workflow and Documentation</h4>
-                    <p>Create repeatable processes so work does not live in someone’s head.</p>
-                </div>
-                <div class="service-item">
-                    <h4>Tech Support and Troubleshooting</h4>
-                    <p>Resolve issues fast and reduce recurring breakages.</p>
-                </div>
-                <div class="service-item">
-                    <h4>AI Assisted Productivity</h4>
-                    <p>Practical training and prompt kits for drafting, ops, and admin tasks (no platform claims).</p>
+                    <h4>Nonprofit Website Foundations</h4>
+                    <p>Template based nonprofit sites with the pages that build trust: programs, contact, transparency, and policy basics.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="not-for">
+        <div class="container">
+            <h3>What We Do Not Do</h3>
+            <ul>
+                <li>Legal advice or case guidance</li>
+                <li>Mental health services or clinical care</li>
+                <li>Marketing campaigns or social media management</li>
+                <li>Complex database apps or custom platforms</li>
+                <li>24/7 IT management or unlimited support</li>
+            </ul>
         </div>
     </section>
 
@@ -577,10 +596,10 @@
         <div class="container">
             <h3>Who We Help</h3>
             <ul>
-                <li>Small nonprofits and community organizations.</li>
-                <li>Small businesses and solo operators.</li>
-                <li>Teams with scattered tools and no documentation.</li>
-                <li>Organizations needing reliable help without full-time IT.</li>
+                <li>Small nonprofits and community programs</li>
+                <li>Counselors, advocates, and program operators running services</li>
+                <li>Organizations paying too much for hosting, tools, or unused platforms</li>
+                <li>Teams that need a stable web presence without full time IT</li>
             </ul>
         </div>
     </section>
@@ -589,7 +608,8 @@
         <div class="container">
             <div class="contact-box">
                 <h3>Request Support</h3>
-                <p>Email us and we will reply with next steps.</p>
+                <p>Email CMA with a short description of your program, your current hosting setup, and what you want to improve. We will reply with a simple plan and next steps.</p>
+                <p>Most work is fixed scope builds and cleanups, not ongoing retainers.</p>
                 <div class="contact-cta">
                     <p>To request support or ask a question, email us directly. Include a brief description of what you need help with and any relevant links.</p>
                     <a class="contact-email" href="mailto:support@chaosmanagement.agency">support@chaosmanagement.agency</a>
@@ -603,7 +623,7 @@
 
     <footer>
         <div class="container">
-            CMA — Chaos Management Agency. Digital operations support. v1
+            CMA. Chaos Management Agency. Digital infrastructure and operations support. Built for stability.
         </div>
     </footer>
     
@@ -627,7 +647,7 @@
 
         // --- 2. Typing Effect for Tagline ---
         const taglineElement = document.getElementById('tagline-text');
-        const taglineText = 'Stabilize your tools, workflows, and systems so your work stops breaking every week.';
+        const taglineText = 'Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.';
         let i = 0;
 
         function typeWriter() {
