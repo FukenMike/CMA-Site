@@ -364,6 +364,32 @@
             margin-top: 30px;
         }
 
+        header .proof-strip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+            padding: 0 8px;
+        }
+
+        header .proof-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: var(--color-text);
+            background: linear-gradient(135deg, rgba(0, 232, 255, 0.12) 0%, rgba(0, 232, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 232, 255, 0.3);
+            border-radius: 999px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+            white-space: nowrap;
+        }
+
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -658,6 +684,14 @@
             header .cta-group {
                 width: 100%;
             }
+            header .proof-strip {
+                gap: 10px;
+                margin-top: 24px;
+            }
+            header .proof-chip {
+                font-size: 0.8rem;
+                padding: 7px 14px;
+            }
             header .hero-visual {
                 margin-top: 40px;
             }
@@ -728,6 +762,12 @@
                 <div class="cta-group">
                     <a href="#contact-cma" class="cta-button">Request a Build or Cleanup</a>
                     <a href="#services-digital-infrastructure" class="cta-button">See Services</a>
+                </div>
+                <div class="proof-strip" aria-label="Service highlights">
+                    <span class="proof-chip">Low maintenance builds</span>
+                    <span class="proof-chip">Cost reduction focused</span>
+                    <span class="proof-chip">Documentation included</span>
+                    <span class="proof-chip">Nonprofit friendly</span>
                 </div>
             </div>
             <div class="hero-visual">
@@ -839,11 +879,11 @@
             CMA. Chaos Management Agency. Digital infrastructure and operations support. Built for stability.
         </div>
     </footer>
-    
+
     <!-- FLOATING CTA BUTTON -->
     <a href="#contact-cma" id="floating-cta">
         <span class="cta-label">REQUEST HELP</span>
-        <span class="cta-icon">>></span>
+        <span class="cta-icon">&gt;&gt;</span>
     </a>
 
     <script>
