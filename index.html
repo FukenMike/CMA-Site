@@ -390,6 +390,78 @@
             white-space: nowrap;
         }
 
+        header .hero-control-surface {
+            position: relative;
+            width: 100%;
+            max-width: 760px;
+            margin: 36px auto 0;
+            padding: 28px 32px;
+            border-radius: 14px;
+            background: linear-gradient(160deg, rgba(12, 12, 12, 0.96) 0%, rgba(7, 7, 7, 0.82) 100%);
+            border: 1px solid rgba(0, 232, 255, 0.18);
+            box-shadow: 0 28px 90px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            overflow: hidden;
+        }
+
+        header .hero-control-surface::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 32px;
+            right: 32px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(0, 232, 255, 0) 0%, rgba(0, 232, 255, 0.4) 50%, rgba(0, 232, 255, 0) 100%);
+            opacity: 0.7;
+        }
+
+        header .control-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 24px;
+            padding-bottom: 18px;
+        }
+
+        header .control-row:last-child {
+            padding-bottom: 0;
+        }
+
+        header .control-row + .control-row {
+            border-top: 1px solid rgba(0, 232, 255, 0.12);
+            padding-top: 18px;
+        }
+
+        header .control-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: rgba(183, 240, 255, 0.9);
+            white-space: nowrap;
+        }
+
+        header .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(0, 255, 170, 0.9) 0%, rgba(0, 255, 170, 0.4) 60%, rgba(0, 255, 170, 0) 100%);
+            box-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+        }
+
+        header .control-value {
+            font-size: 1.05rem;
+            color: #DCE7EC;
+            letter-spacing: 0.2px;
+            line-height: 1.4;
+            text-align: right;
+            flex: 1;
+        }
+
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -549,6 +621,40 @@
             box-shadow: 0 0 10px rgba(0, 232, 255, 0.2);
         }
 
+        /* --- PROOF SECTION --- */
+        #proof .proof-card {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 12px;
+            background: linear-gradient(155deg, rgba(10, 10, 10, 0.95) 0%, rgba(6, 6, 6, 0.82) 100%);
+            border: 1px solid rgba(0, 232, 255, 0.16);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+        }
+
+        #proof .proof-card h3 {
+            font-size: 1.4em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(0, 232, 255, 0.9);
+            margin-bottom: 18px;
+        }
+
+        #proof .proof-card p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #D7E0E6;
+            margin-bottom: 18px;
+        }
+
+        #proof .proof-card p:last-child {
+            margin-bottom: 0;
+            font-size: 0.95em;
+            color: rgba(183, 240, 255, 0.75);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
         /* --- SECTION 4 - Contact Form --- */
         #contact-cma {
             background-color: #0A0A0A;
@@ -571,6 +677,61 @@
             color: var(--color-subtext);
             font-size: 1.1em;
             margin-bottom: 20px;
+        }
+
+        .contact-next-steps {
+            margin: 35px 0 30px;
+        }
+
+        .contact-next-steps h3 {
+            font-size: 1.6em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            color: rgba(0, 232, 255, 0.9);
+        }
+
+        .contact-step-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: contact-steps;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .contact-step {
+            counter-increment: contact-steps;
+            position: relative;
+            padding: 18px 20px 18px 60px;
+            border-radius: 10px;
+            background: linear-gradient(155deg, rgba(10, 10, 10, 0.95) 0%, rgba(5, 5, 5, 0.8) 100%);
+            border: 1px solid rgba(0, 232, 255, 0.18);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.45);
+            color: #DCE2E6;
+            font-size: 0.98em;
+            line-height: 1.6;
+        }
+
+        .contact-step::before {
+            content: counter(contact-steps, decimal-leading-zero);
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75em;
+            font-weight: 600;
+            background: rgba(0, 232, 255, 0.22);
+            color: var(--color-text);
+            border: 1px solid rgba(0, 232, 255, 0.4);
+            box-shadow: 0 0 12px rgba(0, 232, 255, 0.35);
         }
 
         .contact-email {
@@ -669,6 +830,16 @@
             header .hero-visual {
                 margin-top: 50px;
             }
+            header .hero-control-surface {
+                padding: 24px 26px;
+                margin-top: 32px;
+            }
+            header .control-row {
+                gap: 18px;
+            }
+            #proof .proof-card {
+                padding: 32px;
+            }
         }
 
         @media (max-width: 600px) {
@@ -692,6 +863,29 @@
                 font-size: 0.8rem;
                 padding: 7px 14px;
             }
+            header .hero-control-surface {
+                margin-top: 32px;
+                padding: 22px 18px;
+            }
+            header .control-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding-bottom: 16px;
+            }
+            header .control-row + .control-row {
+                padding-top: 16px;
+            }
+            header .control-label {
+                white-space: normal;
+            }
+            header .control-value {
+                text-align: left;
+            }
+            header .status-dot {
+                width: 10px;
+                height: 10px;
+            }
             header .hero-visual {
                 margin-top: 40px;
             }
@@ -713,6 +907,21 @@
             section { padding: 60px 0; margin: 30px 0; }
             h3 { font-size: 2em; margin-bottom: 40px; }
             #floating-cta { bottom: 15px; right: 15px; padding: 10px 15px; font-size: 0.9em; }
+            #proof .proof-card {
+                padding: 26px 20px;
+            }
+            .contact-next-steps h3 {
+                font-size: 1.3rem;
+            }
+            .contact-step-list {
+                grid-template-columns: 1fr;
+            }
+            .contact-step {
+                padding: 16px 18px 16px 54px;
+            }
+            .contact-step::before {
+                left: 16px;
+            }
             .contact-cta { padding: 20px; }
             .contact-email {
                 font-size: 1.2em;
@@ -763,11 +972,25 @@
                     <a href="#contact-cma" class="cta-button">Request a Build or Cleanup</a>
                     <a href="#services-digital-infrastructure" class="cta-button">See Services</a>
                 </div>
-                <div class="proof-strip" aria-label="Service highlights">
+                <div class="proof-strip">
                     <span class="proof-chip">Low maintenance builds</span>
                     <span class="proof-chip">Cost reduction focused</span>
                     <span class="proof-chip">Documentation included</span>
                     <span class="proof-chip">Nonprofit friendly</span>
+                </div>
+                <div class="hero-control-surface">
+                    <div class="control-row">
+                        <div class="control-label"><span class="status-dot" aria-hidden="true"></span>Primary Outcome</div>
+                        <div class="control-value">Lower monthly tech costs and fewer points of failure</div>
+                    </div>
+                    <div class="control-row">
+                        <div class="control-label"><span class="status-dot" aria-hidden="true"></span>Typical Deliverables</div>
+                        <div class="control-value">Website migration, DNS cleanup, forms, documentation</div>
+                    </div>
+                    <div class="control-row">
+                        <div class="control-label"><span class="status-dot" aria-hidden="true"></span>Engagement Style</div>
+                        <div class="control-value">Fixed scope builds and cleanups, not retainers by default</div>
+                    </div>
                 </div>
             </div>
             <div class="hero-visual">
@@ -802,6 +1025,17 @@
                     <h3>Handoff</h3>
                     <p>You get a clear handoff so you are not dependent on ongoing support.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proof">
+        <div class="container">
+            <h2>Proof</h2>
+            <div class="proof-card">
+                <h3>Migration and Cleanup</h3>
+                <p>Example outcome: moved a small program off expensive hosting, simplified tools, and delivered a stable site foundation with documentation.</p>
+                <p>Case studies will be published as projects complete.</p>
             </div>
         </div>
     </section>
@@ -858,11 +1092,19 @@
     <section id="contact-cma">
         <div class="container">
             <div class="contact-box">
-                <h2>Request Support</h2>
-                <p>Email CMA with a short description of your program, your current hosting setup, and what you want to improve. We will reply with a simple plan and next steps.</p>
+                <h2>Request a Build or Cleanup</h2>
+                <p>Email CMA with a short description of your program, your current hosting setup, and what you want to improve. You will receive a simple plan with recommended fixed scope deliverables.</p>
                 <p>Most work is fixed scope builds and cleanups, not ongoing retainers.</p>
+                <div class="contact-next-steps">
+                    <h3>What happens next</h3>
+                    <ol class="contact-step-list">
+                        <li class="contact-step">You email a short overview of your program and current setup</li>
+                        <li class="contact-step">CMA replies with a simple plan and fixed scope deliverables</li>
+                        <li class="contact-step">We schedule a start window and complete the build or cleanup</li>
+                    </ol>
+                </div>
                 <div class="contact-cta">
-                    <p>To request support or ask a question, email us directly. Include a brief description of what you need help with and any relevant links.</p>
+                    <p>To request a build or cleanup or ask a question, email us directly. Include a brief description of what you need help with and any relevant links.</p>
                     <a class="contact-email" href="mailto:support@chaosmanagement.agency">support@chaosmanagement.agency</a>
                     <div>
                         <a class="contact-email-button" href="mailto:support@chaosmanagement.agency">Email CMA</a>
