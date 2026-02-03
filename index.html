@@ -618,6 +618,244 @@
             outline-offset: 4px;
         }
 
+        /* CTA Variants */
+        .cta-solid {
+            background: rgba(0, 232, 255, 0.85);
+            color: #000;
+            border-color: rgba(0, 232, 255, 0.95);
+            font-weight: 700;
+        }
+        .cta-solid:hover,
+        .cta-solid:focus-visible {
+            background: rgba(0, 232, 255, 0.95);
+            color: #000;
+            box-shadow: 0 0 25px rgba(0, 232, 255, 0.5), 0 16px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-outline {
+            background: transparent;
+            border: 1px solid rgba(0, 232, 255, 0.4);
+            color: var(--color-text);
+        }
+        .cta-outline:hover,
+        .cta-outline:focus-visible {
+            background: rgba(0, 232, 255, 0.08);
+            border-color: rgba(0, 232, 255, 0.65);
+            box-shadow: 0 0 18px rgba(0, 232, 255, 0.25);
+        }
+
+        .cta-text {
+            background: none;
+            border: none;
+            padding: 0.5rem 0;
+            font-size: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: none;
+            color: rgba(0, 232, 255, 0.85);
+            box-shadow: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            min-height: auto;
+        }
+        .cta-text:hover,
+        .cta-text:focus-visible {
+            color: rgba(0, 232, 255, 1);
+            transform: translateX(4px);
+            box-shadow: none;
+        }
+        .cta-text:focus-visible {
+            outline: 1px solid rgba(0, 232, 255, 0.5);
+            outline-offset: 3px;
+        }
+
+        .cta-chip {
+            padding: 0.5rem 1.25rem;
+            font-size: clamp(0.8rem, 0.75rem + 0.15vw, 0.9rem);
+            letter-spacing: 0.12em;
+            border-radius: 24px;
+            min-height: auto;
+        }
+
+        /* --- MODE UTILITY CLASSES --- */
+        .mode-entry {
+            background: linear-gradient(180deg, rgba(5, 5, 5, 0.98), rgba(12, 12, 12, 0.95));
+            border: none;
+        }
+        .mode-entry .container {
+            max-width: min(48rem, 90%);
+            margin: 0 auto;
+            align-items: center;
+            text-align: center;
+        }
+
+        .mode-fracture .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gap-lg);
+            align-items: start;
+        }
+        @media (min-width: 768px) {
+            .mode-fracture .container {
+                grid-template-columns: 0.85fr 1.15fr;
+                padding-right: 8%;
+            }
+        }
+
+        .fracture-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gap-lg);
+            align-items: start;
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .fracture-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+            .fracture-grid .fracture-right {
+                margin-top: 2.5rem;
+            }
+        }
+        .fracture-left h2 {
+            margin-bottom: var(--gap-sm);
+        }
+        .fracture-left p,
+        .fracture-right p {
+            line-height: 1.75;
+            color: #D7E0E6;
+        }
+
+        .mode-stabilize {
+            background-color: rgba(8, 8, 8, 0.96);
+        }
+        .mode-stabilize .container {
+            max-width: var(--max-width-wide);
+        }
+        .mode-stabilize .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+            gap: var(--gap-md);
+        }
+
+        .mode-artifact {
+            background: radial-gradient(ellipse at top, rgba(15, 15, 15, 0.97), rgba(8, 8, 8, 0.98));
+        }
+        .mode-artifact .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gap-lg);
+        }
+        @media (min-width: 900px) {
+            .mode-artifact .container {
+                grid-template-columns: repeat(12, 1fr);
+            }
+            .mode-artifact h2 { grid-column: 1 / -1; }
+            .mode-artifact > .container > p { grid-column: 1 / -1; }
+            .mode-artifact .proof-card:nth-of-type(1) { grid-column: 1 / 8; }
+            .mode-artifact .proof-card:nth-of-type(2) { grid-column: 8 / -1; }
+        }
+
+        .artifact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gap-lg);
+            width: 100%;
+        }
+        @media (min-width: 900px) {
+            .artifact-grid {
+                grid-template-columns: repeat(12, 1fr);
+            }
+        }
+
+        .artifact {
+            background: linear-gradient(155deg, rgba(12, 12, 12, 0.95) 0%, rgba(7, 7, 7, 0.92) 100%);
+            border: 1px solid rgba(0, 232, 255, 0.15);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap-sm);
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5);
+        }
+        .artifact h3 {
+            font-size: clamp(1.15rem, 1.05rem + 0.5vw, 1.45rem);
+            margin-bottom: 0.25rem;
+            color: rgba(0, 232, 255, 0.9);
+        }
+        .artifact .artifact-subhead {
+            font-size: var(--font-size-small);
+            color: var(--color-subtext);
+            text-transform: none;
+            letter-spacing: normal;
+            margin-bottom: var(--gap-sm);
+        }
+        .artifact ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin: var(--gap-sm) 0;
+            color: #D7E0E6;
+            font-size: clamp(0.92rem, 0.88rem + 0.2vw, 1.02rem);
+        }
+        .artifact .artifact-meta {
+            font-weight: 600;
+            font-size: var(--font-size-small);
+            margin-top: var(--gap-sm);
+            color: rgba(183, 240, 255, 0.8);
+        }
+        .artifact .cta-button {
+            margin-top: var(--gap-sm);
+            align-self: flex-start;
+        }
+
+        @media (min-width: 900px) {
+            .artifact.primary {
+                grid-column: 1 / 8;
+            }
+            .artifact.secondary {
+                grid-column: 8 / -1;
+            }
+        }
+
+        @media (max-width: 899px) {
+            .artifact.primary {
+                border-left: 3px solid rgba(0, 232, 255, 0.35);
+            }
+            .artifact.secondary {
+                border-left: 2px solid rgba(0, 232, 255, 0.25);
+            }
+        }
+
+        .mode-doctrine {
+            background-color: rgba(4, 4, 4, 0.98);
+            border-left: 3px solid rgba(0, 232, 255, 0.25);
+        }
+        .mode-doctrine .container {
+            max-width: min(42rem, 88%);
+            margin: 0 auto;
+        }
+        .mode-doctrine ul {
+            background: none;
+            border: none;
+            box-shadow: none;
+            padding-left: 1.5rem;
+        }
+
+        .mode-fork {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.96), rgba(6, 6, 6, 0.98));
+        }
+        .mode-fork ul {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gap-sm);
+        }
+        @media (min-width: 768px) {
+            .mode-fork ul {
+                grid-template-columns: 1.2fr 1fr 0.9fr;
+            }
+        }
+
         /* --- SECTION BASE STYLES --- */
         section {
             padding: var(--section-pad-y) 0;
@@ -1006,7 +1244,6 @@
             }
         }
 
-        @media (max-width: 600px) {
         @media (max-width: 768px) {
             nav {
                 padding-left: var(--container-pad-x);
@@ -1115,15 +1352,15 @@
         </div>
     </nav>
 
-    <header id="hero">
+    <header id="hero" class="mode-entry">
         <div class="container">
             <div class="hero-content">
                 <h1>Chaos Management Agency</h1>
                 <h2>Digital infrastructure and operations support for small organizations and nonprofit programs.</h2>
                 <p class="tagline" id="tagline-text"></p>
                 <div class="cta-group">
-                    <a href="#contact-cma" class="cta-button">Request a Build or Cleanup</a>
-                    <a href="#services-digital-infrastructure" class="cta-button">See Services</a>
+                    <a href="#contact-cma" class="cta-button cta-solid">Request a Build or Cleanup</a>
+                    <a href="#services-digital-infrastructure" class="cta-button cta-outline">See Services</a>
                 </div>
                 <div class="proof-strip">
                     <span class="proof-chip">Low maintenance builds</span>
@@ -1153,16 +1390,22 @@
     </header>
 
     <main>
-    <section id="about-cma">
+    <section id="about-cma" class="mode-fracture">
         <div class="container">
-            <h2>WHO WE ARE</h2>
-            <p>
-                Chaos Management Agency (CMA) is a solo digital infrastructure and operations support company that helps small organizations simplify their technology, reduce recurring costs, and run on stable, low maintenance systems. CMA focuses on clean setups, clear documentation, and reliable foundations so organizations are not locked into expensive hosting, bloated tool stacks, or ongoing dependency.
-            </p>
+            <div class="fracture-grid">
+                <div class="fracture-left">
+                    <h2>WHO WE ARE</h2>
+                    <p>Chaos Management Agency (CMA) is a solo digital infrastructure and operations support company that helps small organizations simplify their technology, reduce recurring costs, and run on stable, low maintenance systems.</p>
+                </div>
+                <div class="fracture-right">
+                    <p>CMA focuses on clean setups, clear documentation, and reliable foundations so organizations are not locked into expensive hosting, bloated tool stacks, or ongoing dependency.</p>
+                    <a href="#services-digital-infrastructure" class="cta-text">See what CMA stabilizes →</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="how-it-works">
+    <section id="how-it-works" class="mode-stabilize">
         <div class="container">
             <h2>How It Works</h2>
             <div class="service-grid">
@@ -1182,41 +1425,43 @@
         </div>
     </section>
 
-    <section id="case-studies">
+    <section id="case-studies" class="mode-artifact">
         <div class="container">
             <h2>Case Studies</h2>
-            <p style="max-width: min(var(--max-width), 46rem); margin: 0 auto var(--gap-md); color: var(--color-subtext); text-align: center;">Live projects built and maintained through Chaos Management Agency. These examples demonstrate real infrastructure work delivered in phases.</p>
+            <p style="max-width: min(var(--max-width), 46rem); margin: 0 auto var(--gap-md); color: var(--color-subtext); text-align: center; grid-column: 1 / -1;">Live projects built and maintained through Chaos Management Agency. These examples demonstrate real infrastructure work delivered in phases.</p>
             
-            <div class="proof-card" style="margin-bottom: var(--gap-lg);">
-                <h3>The Father's Alliance</h3>
-                <p style="font-size: var(--font-size-small); color: var(--color-subtext); text-transform: none; letter-spacing: normal; margin-bottom: var(--gap-sm);">Humanitarian platform and resource navigation infrastructure</p>
-                <p>The Father's Alliance is a live public platform focused on family stability and crisis navigation. It is designed to make fragmented support systems easier to access by organizing resources, building trust signals, and creating structured pathways to help families move from crisis to stability.</p>
-                <ul style="list-style: disc; padding-left: 1.5rem; margin: var(--gap-sm) 0; color: #D7E0E6;">
-                    <li>Public resource directory with searchable listings and outcome feedback</li>
-                    <li>Verification model with staleness checks and last verified dates</li>
-                    <li>Governance and transparency patterns to build public trust</li>
-                    <li>Modular structure designed for future programs and portals</li>
-                    <li>Security first planning for sensitive provider and family workflows</li>
-                </ul>
-                <p style="font-weight: 600; margin-top: var(--gap-sm);"><strong>Role:</strong> Founder, Systems Architect, Full Stack Builder</p>
-                <p style="font-weight: 600;"><strong>Status:</strong> Live platform with ongoing phased development</p>
-                <a href="https://thefathersalliance.org" target="_blank" rel="noopener" class="cta-button" style="margin-top: var(--gap-sm); display: inline-block;">View The Father's Alliance</a>
-            </div>
-            
-            <div class="proof-card">
-                <h3>Chaos Management Agency</h3>
-                <p style="font-size: var(--font-size-small); color: var(--color-subtext); text-transform: none; letter-spacing: normal; margin-bottom: var(--gap-sm);">Solo operated digital operations and delivery systems</p>
-                <p>Chaos Management Agency is my personal business website and operating base. It represents how I deliver structured digital systems as a solo operator: clear scope, low overhead, and maintainable builds that can evolve without breaking.</p>
-                <ul style="list-style: disc; padding-left: 1.5rem; margin: var(--gap-sm) 0; color: #D7E0E6;">
-                    <li>Production ready site structure with clear information hierarchy</li>
-                    <li>Fast, portable static build with minimal dependencies</li>
-                    <li>Service framing built around clear scope, outcomes, and handoff</li>
-                    <li>Repeatable patterns for documentation, updates, and iteration</li>
-                    <li>Built to scale into multi project case studies and portfolio growth</li>
-                </ul>
-                <p style="font-weight: 600; margin-top: var(--gap-sm);"><strong>Role:</strong> Owner, Designer, Engineer</p>
-                <p style="font-weight: 600;"><strong>Status:</strong> Live business site and active service platform</p>
-                <a href="#hero" class="cta-button" style="margin-top: var(--gap-sm); display: inline-block;">You are viewing it now</a>
+            <div class="artifact-grid" style="grid-column: 1 / -1;">
+                <div class="artifact primary">
+                    <h3>The Father's Alliance</h3>
+                    <p class="artifact-subhead">Humanitarian platform and resource navigation infrastructure</p>
+                    <p>The Father's Alliance is a live public platform focused on family stability and crisis navigation. It is designed to make fragmented support systems easier to access by organizing resources, building trust signals, and creating structured pathways to help families move from crisis to stability.</p>
+                    <ul>
+                        <li>Public resource directory with searchable listings and outcome feedback</li>
+                        <li>Verification model with staleness checks and last verified dates</li>
+                        <li>Governance and transparency patterns to build public trust</li>
+                        <li>Modular structure designed for future programs and portals</li>
+                        <li>Security first planning for sensitive provider and family workflows</li>
+                    </ul>
+                    <p class="artifact-meta"><strong>Role:</strong> Founder, Systems Architect, Full Stack Builder</p>
+                    <p class="artifact-meta"><strong>Status:</strong> Live platform with ongoing phased development</p>
+                    <a href="https://thefathersalliance.org" target="_blank" rel="noopener" class="cta-button cta-outline">View The Father's Alliance</a>
+                </div>
+                
+                <div class="artifact secondary">
+                    <h3>Chaos Management Agency</h3>
+                    <p class="artifact-subhead">Solo operated digital operations and delivery systems</p>
+                    <p>Chaos Management Agency is my personal business website and operating base. It represents how I deliver structured digital systems as a solo operator: clear scope, low overhead, and maintainable builds that can evolve without breaking.</p>
+                    <ul>
+                        <li>Production ready site structure with clear information hierarchy</li>
+                        <li>Fast, portable static build with minimal dependencies</li>
+                        <li>Service framing built around clear scope, outcomes, and handoff</li>
+                        <li>Repeatable patterns for documentation, updates, and iteration</li>
+                        <li>Built to scale into multi project case studies and portfolio growth</li>
+                    </ul>
+                    <p class="artifact-meta"><strong>Role:</strong> Owner, Designer, Engineer</p>
+                    <p class="artifact-meta"><strong>Status:</strong> Live business site and active service platform</p>
+                    <a href="#hero" class="cta-button cta-outline">You are viewing it now</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1245,7 +1490,7 @@
         </div>
     </section>
 
-    <section id="what-we-do-not-do">
+    <section id="what-we-do-not-do" class="mode-doctrine">
         <div class="container">
             <h2>What We Do Not Do</h2>
             <ul>
@@ -1258,7 +1503,7 @@
         </div>
     </section>
 
-    <section id="who-we-help">
+    <section id="who-we-help" class="mode-fork">
         <div class="container">
             <h2>Who We Help</h2>
             <ul>
