@@ -365,7 +365,7 @@
 
         /* --- HERO SECTION --- */
         header {
-            min-height: 70vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -374,31 +374,32 @@
             padding-bottom: clamp(3.5rem, 8vw, 5.5rem);
             position: relative;
             z-index: 10;
-            background: #030303;
             overflow: hidden;
         }
 
         header .hero-bg {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, #030303 0%, #0A0A0A 100%);
-            background-attachment: fixed;
+            background-image: url('/assets/og-image.png');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             z-index: 0;
         }
 
-        header .hero-bg::after {
+        header .hero-bg::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(3, 3, 3, 0.7);
+            background: rgba(3, 3, 3, 0.6);
             z-index: 1;
+            pointer-events: none;
         }
 
         @media (max-width: 768px) {
             header {
-                min-height: 60vh;
+                min-height: 85vh;
             }
             header .hero-bg {
                 background-attachment: scroll;
