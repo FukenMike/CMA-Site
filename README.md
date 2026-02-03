@@ -43,7 +43,9 @@ Most engagements are structured as fixed-scope builds or cleanups with clearly d
 
 ## Technology Approach (High-Level)
 
-CMA applies a static-first, platform-agnostic approach centered on performance, resilience, and durability. Specific tools are selected collaboratively during scoping to match organizational needs without locking clients into proprietary ecosystems.
+CMA applies a complexity-appropriate, platform-agnostic approach centered on performance, resilience, and long-term maintainability.
+
+Static-first solutions are used where they provide the greatest reliability and cost efficiency. More dynamic architectures are employed when organizational needs require them. Specific tools are selected collaboratively during scoping to match requirements without locking clients into unnecessary complexity or proprietary ecosystems.
 
 ---
 
