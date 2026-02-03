@@ -279,13 +279,20 @@
 
         nav .logo {
             color: var(--color-accent);
-            font-size: clamp(1.3rem, 0.95rem + 1.4vw, 1.75rem);
-            font-weight: 800;
-            text-shadow: 0 0 6px rgba(0, 232, 255, 0.4);
+            font-size: clamp(1.05rem, 0.85rem + 1vw, 1.4rem);
+            font-weight: 700;
+            text-shadow: 0 0 4px rgba(0, 232, 255, 0.3);
             text-decoration: none;
-            letter-spacing: 0.18em;
-            line-height: 1;
+            letter-spacing: 0.12em;
+            line-height: 1.2;
             opacity: 0.95;
+            white-space: nowrap;
+        }
+        @media (max-width: 768px) {
+            nav .logo {
+                font-size: clamp(0.85rem, 0.75rem + 0.8vw, 1.05rem);
+                letter-spacing: 0.08em;
+            }
         }
 
         nav ul {
@@ -358,17 +365,44 @@
 
         /* --- HERO SECTION --- */
         header {
-            min-height: auto;
+            min-height: 70vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
-            padding-top: calc(var(--nav-height) + var(--gap-md));
+            padding-top: calc(var(--nav-height) + var(--gap-lg));
             padding-bottom: clamp(3.5rem, 8vw, 5.5rem);
             position: relative;
             z-index: 10;
+            background: #030303;
+            overflow: hidden;
+        }
+
+        header .hero-bg {
+            position: absolute;
+            inset: 0;
             background: linear-gradient(180deg, #030303 0%, #0A0A0A 100%);
-            overflow: visible;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        header .hero-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(3, 3, 3, 0.7);
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                min-height: 60vh;
+            }
+            header .hero-bg {
+                background-attachment: scroll;
+            }
         }
 
         header::before {
@@ -377,7 +411,7 @@
 
         header .container {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -452,22 +486,23 @@
         }
 
         header h1 {
-            font-size: var(--font-size-h1);
-            font-weight: 700;
+            font-size: clamp(1.4rem, 1.1rem + 1.5vw, 2.2rem);
+            font-weight: 600;
             letter-spacing: -0.01em;
             color: var(--color-text);
-            text-transform: uppercase;
-            text-shadow: 0 0 12px rgba(0, 232, 255, 0.24);
-            line-height: 1.05;
+            text-shadow: 0 0 8px rgba(0, 232, 255, 0.18);
+            line-height: 1.4;
+            margin-bottom: var(--gap-sm);
         }
 
         header h2 {
-            font-size: clamp(1.1rem, 0.95rem + 1vw, 1.6rem);
-            color: #C5D2D9;
+            font-size: clamp(1rem, 0.9rem + 0.6vw, 1.3rem);
+            color: #B8C5CE;
             text-shadow: none;
             font-weight: 400;
-            line-height: 1.6;
-            max-width: 48ch;
+            line-height: 1.65;
+            max-width: 52ch;
+            margin-bottom: var(--gap-md);
         }
         
         header p.tagline {
@@ -1343,7 +1378,7 @@
 
     <nav>
         <div class="container nav-content">
-            <a href="#hero" class="logo">CMA</a>
+            <a href="#hero" class="logo">Chaos Management Agency</a>
             <ul>
                 <li><a href="#about-cma" class="glitch-link" data-text="About">About</a></li>
                 <li><a href="#services-digital-infrastructure" class="glitch-link" data-text="Services">Services</a></li>
@@ -1355,11 +1390,11 @@
     </nav>
 
     <header id="hero" class="mode-entry">
+        <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Chaos Management Agency</h1>
-                <h2>Digital infrastructure and operations support for small organizations and nonprofit programs.</h2>
-                <p class="tagline" id="tagline-text"></p>
+                <h1>Digital infrastructure and operations support for small organizations and nonprofit programs.</h1>
+                <h2>Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.</h2>
                 <div class="cta-group">
                     <a href="#contact-cma" class="cta-button cta-solid">Request a Build or Cleanup</a>
                     <a href="#services-digital-infrastructure" class="cta-button cta-outline">See Services</a>
