@@ -1,46 +1,38 @@
-# Chaos Management Agency
+# Chaos Management Agency (CMA)
 
-Digital infrastructure and operations support for nonprofits and small organizations.
+Chaos Management Agency is a solo digital infrastructure and operations support company that helps small organizations and nonprofit programs simplify technology, reduce recurring costs, and operate on stable, low-maintenance systems.
 
-## About
+## What CMA Does
 
-Chaos Management Agency (CMA) provides digital infrastructure and operations support to help small nonprofits and community programs reduce technology costs, simplify tools, and build stable, low maintenance websites.
+- Website rebuilds and migrations to modern, low-maintenance infrastructure
+- Technology cost reduction and tool consolidation
+- Digital infrastructure setup for domains, DNS, forms, intake, and documentation
+- Nonprofit website foundations with trust-oriented structure
 
-## Services
+## What CMA Does Not Do
 
-- **Website Rebuild and Hosting Migration** — Rebuild simple, fast, secure sites and move off expensive hosts. Deploy on Cloudflare Pages or Netlify with clean domain setup.
-- **Technology Cost Reduction and Cleanup** — Audit your current tools and subscriptions, remove what you do not need, and simplify the stack so fewer things break.
-- **Digital Infrastructure Setup** — Domains, DNS, email basics, forms, intake routing, and handoff documentation so your foundation is stable.
-- **Nonprofit Website Foundations** — Template based nonprofit sites with the pages that build trust: programs, contact, transparency, and policy basics.
+- Marketing campaigns or campaign management
+- Public channel management or audience engagement programs
+- Open-ended IT retainers by default
+- Legal, financial, or clinical services
+
+## Engagement Model
+
+Most work is delivered as fixed-scope builds and cleanups with defined deliverables, transparent timelines, and clear documentation for handoff.
+
+## Technology Approach (High-Level)
+
+CMA recommends platform-agnostic, static-first solutions that limit moving parts, prioritize resilience, and minimize ongoing maintenance without locking clients into specific vendors.
 
 ## Local Preview
 
-Open `index.html` in a browser, or use a simple local server:
+Open index.html in a browser, or launch a simple local server such as `python -m http.server 8000` or `npx http-server` and visit http://localhost:8000.
 
-```bash
-# Python 3
-python -m http.server 8000
+## Deployment
 
-# Node.js (with http-server)
-npx http-server
-```
+- Netlify: Drag-and-drop deployment or connect the repository with default static site settings.
+- Cloudflare Pages: Connect the repository and deploy without a build command; configure custom domains as needed.
 
-Then visit `http://localhost:8000`
+## Status
 
-## Deploy
-
-This is a static site with no build process.
-
-**Netlify:**
-- Connect your GitHub repo and deploy
-- Or drag and drop the folder into Netlify's dashboard
-
-**Cloudflare Pages:**
-- Connect your GitHub repo
-- Build settings: None required (static site)
-
-## Tech Stack
-
-- Static HTML, CSS, and JavaScript
-- No build tools or dependencies
-- SEO-optimized with JSON-LD schema and social metadata
+CMA is an active, evolving project; case studies will be published as projects conclude.
