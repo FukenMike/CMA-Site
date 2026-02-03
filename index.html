@@ -386,8 +386,8 @@
       nav ul li a {
         color: var(--color-text);
         text-decoration: none;
-        padding: 0.5rem 0.75rem;
-        font-size: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+        padding: 0.6rem 0.85rem;
+        font-size: clamp(0.8rem, 0.75rem + 0.3vw, 0.95rem);
         font-weight: 600;
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
         text-transform: uppercase;
@@ -397,7 +397,16 @@
         position: relative;
         display: inline-flex;
         align-items: center;
-        min-height: 44px;
+        min-height: 48px;
+        letter-spacing: 0.08em;
+      }
+      
+      @media (max-width: 600px) {
+        nav ul li a {
+          padding: 0.5rem 0.65rem;
+          font-size: 0.75rem;
+          min-height: 44px;
+        }
       }
 
       nav ul li a:focus-visible {
@@ -492,7 +501,35 @@
         }
         .hero-inner {
           padding-top: calc(var(--nav-height) + 1.5rem);
-          gap: 18px;
+          gap: 16px;
+          padding: clamp(16px, 3vw, 24px);
+          padding-top: calc(var(--nav-height) + 1rem);
+        }
+      }
+      
+      @media (max-width: 600px) {
+        header {
+          min-height: 100vh;
+          max-height: none;
+          height: auto;
+          padding-top: 0;
+          padding-bottom: 2rem;
+        }
+        .hero-inner {
+          padding-top: calc(var(--nav-height) + 0.75rem);
+          gap: 14px;
+          padding: 1rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        header {
+          padding-bottom: 1.5rem;
+        }
+        .hero-inner {
+          gap: 12px;
+          padding: 0.75rem;
+          padding-top: calc(var(--nav-height) + 0.5rem);
         }
       }
 
@@ -626,6 +663,22 @@
         max-width: 46ch;
         margin-bottom: var(--gap-sm);
       }
+      
+      @media (max-width: 600px) {
+        header h2 {
+          font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.1rem);
+          max-width: 44ch;
+          line-height: 1.6;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        header h2 {
+          font-size: 0.9rem;
+          max-width: 42ch;
+          line-height: 1.55;
+        }
+      }
 
       header p.tagline {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -644,6 +697,20 @@
         align-items: center;
         flex-wrap: wrap;
         gap: var(--gap-sm);
+      }
+      
+      @media (max-width: 600px) {
+        header .cta-group {
+          flex-direction: column;
+          gap: 0.75rem;
+          width: 100%;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        header .cta-group {
+          gap: 0.65rem;
+        }
       }
 
       .proof-strip {
@@ -794,6 +861,27 @@
         transition: all 0.25s ease;
         border-radius: var(--radius-sm);
         box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+      }
+      
+      @media (max-width: 600px) {
+        .cta-button {
+          padding: 0.75rem 1.75rem;
+          min-height: 44px;
+          font-size: 0.9rem;
+          letter-spacing: 0.15em;
+          flex: 1;
+          min-width: 140px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .cta-button {
+          padding: 0.7rem 1.5rem;
+          min-height: 42px;
+          font-size: 0.85rem;
+          letter-spacing: 0.12em;
+          min-width: 120px;
+        }
       }
 
       .cta-button:hover,
@@ -1087,6 +1175,20 @@
         position: relative;
         z-index: 10;
       }
+      
+      @media (max-width: 600px) {
+        section {
+          padding: clamp(2.5rem, 6vw, 4rem) 0;
+          margin: clamp(1.5rem, 4vw, 2.5rem) 0;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        section {
+          padding: 2rem 0;
+          margin: 1.25rem 0;
+        }
+      }
 
       section .container {
         display: flex;
@@ -1130,6 +1232,19 @@
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: var(--gap-md);
       }
+      
+      @media (max-width: 600px) {
+        #services-digital-infrastructure .service-grid {
+          grid-template-columns: 1fr;
+          gap: var(--gap-sm);
+        }
+      }
+      
+      @media (max-width: 480px) {
+        #services-digital-infrastructure .service-grid {
+          gap: clamp(0.75rem, 2vw, 1rem);
+        }
+      }
 
       .service-item {
         background-color: #111;
@@ -1144,6 +1259,18 @@
         overflow: hidden;
         border-radius: var(--radius-sm);
         box-shadow: 0 0 8px rgba(0, 232, 255, 0.25);
+      }
+      
+      @media (max-width: 600px) {
+        .service-item {
+          padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .service-item {
+          padding: 1.25rem;
+        }
       }
 
       .service-item:hover {
@@ -1181,6 +1308,19 @@
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: var(--gap-sm);
       }
+      
+      @media (max-width: 600px) {
+        #who-we-help ul {
+          grid-template-columns: 1fr;
+          gap: clamp(0.75rem, 2vw, 1rem);
+        }
+      }
+      
+      @media (max-width: 480px) {
+        #who-we-help ul {
+          gap: 0.75rem;
+        }
+      }
 
       #who-we-help ul li {
         font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
@@ -1194,6 +1334,20 @@
           box-shadow 0.3s ease,
           border 0.3s ease;
         border-radius: var(--radius-sm);
+      }
+      
+      @media (max-width: 600px) {
+        #who-we-help ul li {
+          padding: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+          font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
+        }
+      }
+      
+      @media (max-width: 480px) {
+        #who-we-help ul li {
+          padding: 1rem;
+          font-size: 0.95rem;
+        }
       }
 
       #who-we-help ul li:hover {
@@ -1619,10 +1773,6 @@
               Digital infrastructure and operations support for small
               organizations and nonprofit programs.
             </h1>
-            <div class="proof-strip proof-strip--hero">
-              <span class="proof-chip">LOW MAINTENANCE BUILDS</span>
-              <span class="proof-chip">COST REDUCTION FOCUSED</span>
-            </div>
             <h2>
               <span
                 id="tagline-text"
