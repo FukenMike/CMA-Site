@@ -1,38 +1,73 @@
 # Chaos Management Agency (CMA)
 
-Chaos Management Agency is a solo digital infrastructure and operations support company that helps small organizations and nonprofit programs simplify technology, reduce recurring costs, and operate on stable, low-maintenance systems.
+Digital infrastructure and operations support for nonprofits and small organizations.
+
+---
+
+## Overview
+
+Chaos Management Agency (CMA) is a solo digital infrastructure and operations support practice. CMA helps small nonprofits and community programs reduce technology costs, simplify fragmented tools, and operate on stable, low-maintenance web foundations. The focus is on clarity, durability, and clean handoff — not ongoing dependency.
+
+---
 
 ## What CMA Does
 
+CMA provides fixed-scope infrastructure builds and cleanups focused on tangible outcomes:
+
 - Website rebuilds and migrations to modern, low-maintenance infrastructure
-- Technology cost reduction and tool consolidation
-- Digital infrastructure setup for domains, DNS, forms, intake, and documentation
-- Nonprofit website foundations with trust-oriented structure
+- Technology cost reduction through tool and subscription audits
+- Digital infrastructure setup covering domains, DNS, forms, intake routing, and documentation
+- Nonprofit website foundations designed around trust, transparency, and clarity
+
+All work emphasizes simplicity, portability, and reduced long-term maintenance.
+
+---
 
 ## What CMA Does Not Do
 
-- Marketing campaigns or campaign management
-- Public channel management or audience engagement programs
+To maintain quality and scope control, CMA does not provide:
+
+- Marketing campaigns or growth programs
+- Public channel management or audience engagement services
 - Open-ended IT retainers by default
+- Custom application development
 - Legal, financial, or clinical services
+
+---
 
 ## Engagement Model
 
-Most work is delivered as fixed-scope builds and cleanups with defined deliverables, transparent timelines, and clear documentation for handoff.
+Most engagements are structured as fixed-scope builds or cleanups with clearly defined deliverables. Documentation and handoff are included so organizations can operate independently without ongoing retainer commitments.
+
+---
 
 ## Technology Approach (High-Level)
 
-CMA recommends platform-agnostic, static-first solutions that limit moving parts, prioritize resilience, and minimize ongoing maintenance without locking clients into specific vendors.
+CMA applies a static-first, platform-agnostic approach centered on performance, resilience, and long-term maintainability. Specific tools are selected collaboratively during scoping to match organizational needs without locking clients into proprietary ecosystems.
+
+---
 
 ## Local Preview
 
-Open index.html in a browser, or launch a simple local server such as `python -m http.server 8000` or `npx http-server` and visit http://localhost:8000.
+This site is a static project and can be viewed locally. Open index.html directly in a browser, or start a simple local server and visit http://localhost:8000.
+
+```bash
+# Python
+python -m http.server 8000
+
+# Node.js (requires http-server)
+npx http-server
+```
+
+---
 
 ## Deployment
 
-- Netlify: Drag-and-drop deployment or connect the repository with default static site settings.
-- Cloudflare Pages: Connect the repository and deploy without a build command; configure custom domains as needed.
+- Netlify: Upload the directory or connect the repository and deploy with default static site settings.
+- Cloudflare Pages: Connect the repository, disable build commands, and publish; configure domains as required.
+
+---
 
 ## Status
 
-CMA is an active, evolving project; case studies will be published as projects conclude.
+CMA is an active, evolving project. Case studies will be published as current projects conclude.
