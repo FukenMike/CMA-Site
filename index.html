@@ -257,14 +257,15 @@
             position: sticky;
             top: 0;
             min-height: var(--nav-height);
-            background-color: rgba(0, 0, 0, 0.95); 
-            border-bottom: 2px solid var(--color-accent);
-            box-shadow: 0 5px 25px rgba(0, 232, 255, 0.3);
+            background-color: rgba(0, 0, 0, 0.88); 
+            border-bottom: 1px solid rgba(0, 232, 255, 0.25);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
             z-index: 100; 
             display: flex;
             align-items: center;
             padding-left: var(--container-pad-x);
             padding-right: var(--container-pad-x);
+            backdrop-filter: blur(8px);
         }
         
         nav .nav-content {
@@ -278,12 +279,13 @@
 
         nav .logo {
             color: var(--color-accent);
-            font-size: clamp(1.4rem, 1rem + 1.6vw, 1.9rem);
-            font-weight: 900;
-            text-shadow: 0 0 8px var(--color-accent);
+            font-size: clamp(1.3rem, 0.95rem + 1.4vw, 1.75rem);
+            font-weight: 800;
+            text-shadow: 0 0 6px rgba(0, 232, 255, 0.4);
             text-decoration: none;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.18em;
             line-height: 1;
+            opacity: 0.95;
         }
 
         nav ul {
