@@ -6,7 +6,7 @@ Digital infrastructure and operations support for nonprofits and small organizat
 
 ## Overview
 
-Chaos Management Agency (CMA) is a solo digital infrastructure and operations support practice. CMA helps small nonprofits and community programs reduce technology costs, simplify fragmented tools, and operate on stable, low-maintenance web foundations. The focus is on clarity, durability, and clean handoff — not ongoing dependency.
+Chaos Management Agency (CMA) is a solo digital infrastructure and operations support practice. CMA helps small nonprofits and community programs reduce technology costs, simplify fragmented tools, and operate on stable web foundations. The focus is on clarity, durability, and clean handoff — not ongoing dependency.
 
 ---
 
@@ -14,18 +14,18 @@ Chaos Management Agency (CMA) is a solo digital infrastructure and operations su
 
 CMA provides fixed-scope infrastructure builds and cleanups focused on tangible outcomes:
 
-- Website rebuilds and migrations to modern, low-maintenance infrastructure
+- Website rebuilds and migrations to stable, low-maintenance infrastructure
 - Technology cost reduction through tool and subscription audits
 - Digital infrastructure setup covering domains, DNS, forms, intake routing, and documentation
 - Nonprofit website foundations designed around trust, transparency, and clarity
 
-All work emphasizes simplicity, portability, and reduced long-term maintenance.
+All work emphasizes simplicity, portability, and minimal ongoing maintenance.
 
 ---
 
 ## What CMA Does Not Do
 
-To maintain quality and scope control, CMA does not provide:
+To maintain clear scope, CMA does not provide:
 
 - Marketing campaigns or growth programs
 - Public channel management or audience engagement services
@@ -43,7 +43,7 @@ Most engagements are structured as fixed-scope builds or cleanups with clearly d
 
 ## Technology Approach (High-Level)
 
-CMA applies a static-first, platform-agnostic approach centered on performance, resilience, and long-term maintainability. Specific tools are selected collaboratively during scoping to match organizational needs without locking clients into proprietary ecosystems.
+CMA applies a static-first, platform-agnostic approach centered on performance, resilience, and durability. Specific tools are selected collaboratively during scoping to match organizational needs without locking clients into proprietary ecosystems.
 
 ---
 
@@ -63,8 +63,8 @@ npx http-server
 
 ## Deployment
 
-- Netlify: Upload the directory or connect the repository and deploy with default static site settings.
-- Cloudflare Pages: Connect the repository, disable build commands, and publish; configure domains as required.
+- Netlify: Deploy by uploading the directory or connecting the repository with default static site settings.
+- Cloudflare Pages: Deploy by connecting the repository without a build command and configuring domains as needed.
 
 ---
 
