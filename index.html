@@ -379,12 +379,14 @@
         /* --- HERO SECTION --- */
         header {
             min-height: 100vh;
+            max-height: 100vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
             padding-top: calc(var(--nav-height) + var(--gap-lg));
-            padding-bottom: clamp(4.5rem, 9vw, 7rem);
+            padding-bottom: 0;
             position: relative;
             z-index: 10;
             overflow: hidden;
@@ -413,7 +415,9 @@
         @media (max-width: 768px) {
             header {
                 min-height: 85vh;
-                padding-bottom: clamp(2.5rem, 6vw, 4rem);
+                max-height: 85vh;
+                height: 85vh;
+                padding-bottom: 0;
             }
             header .hero-bg {
                 background-attachment: scroll;
@@ -519,7 +523,7 @@
             font-weight: 400;
             line-height: 1.65;
             max-width: 46ch;
-            margin-bottom: var(--gap-md);
+            margin-bottom: var(--gap-sm);
         }
         
         header p.tagline {
@@ -533,13 +537,27 @@
             max-width: 50ch;
         }
         
+        .hero-cta-fixed {
+            position: sticky;
+            bottom: clamp(3rem, 5vw, 4rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        .hero-cta-fixed > * {
+            pointer-events: auto;
+        }
+
         header .cta-group {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
             gap: var(--gap-sm);
-            margin-top: var(--gap-sm);
         }
 
         header .proof-strip {
@@ -1412,9 +1430,11 @@
             <div class="hero-content">
                 <h1 class="sr-only">Digital infrastructure and operations support for small organizations and nonprofit programs.</h1>
                 <h2><span id="tagline-text" class="hero-typed" data-text="Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.">Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.</span></h2>
-                <div class="cta-group">
-                    <a href="#contact-cma" class="cta-button cta-solid">Request a Build or Cleanup</a>
-                    <a href="#services-digital-infrastructure" class="cta-button cta-outline">See Services</a>
+                <div class="hero-cta-fixed">
+                    <div class="cta-group">
+                        <a href="#case-studies" class="cta-button cta-solid">View Case Studies</a>
+                        <a href="#services-digital-infrastructure" class="cta-button cta-outline">See Services</a>
+                    </div>
                 </div>
                 <div class="proof-strip">
                     <span class="proof-chip">Low maintenance builds</span>
