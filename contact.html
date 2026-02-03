@@ -135,6 +135,12 @@
             opacity: 0.95;
             white-space: nowrap;
         }
+        @media (max-width: 768px) {
+            nav .logo {
+                font-size: clamp(0.85rem, 0.75rem + 0.8vw, 1.05rem);
+                letter-spacing: 0.08em;
+            }
+        }
 
         nav ul {
             list-style: none;
@@ -371,7 +377,22 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            nav .nav-content {
+                flex-wrap: wrap;
+                align-items: flex-start;
+                gap: var(--gap-sm);
+            }
+            nav ul {
+                justify-content: flex-start;
+            }
+        }
+
         @media (max-width: 768px) {
+            nav {
+                padding-left: var(--container-pad-x);
+                padding-right: var(--container-pad-x);
+            }
             nav .nav-content {
                 flex-direction: column;
                 align-items: stretch;
@@ -389,7 +410,7 @@
                 width: 100%;
                 padding: 0.65rem 0;
             }
-
+        }
             .contact-step-list {
                 grid-template-columns: 1fr;
             }

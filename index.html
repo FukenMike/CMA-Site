@@ -385,7 +385,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding-top: calc(var(--nav-height) + var(--gap-lg));
+            padding-top: 0;
             padding-bottom: 0;
             position: relative;
             z-index: 10;
@@ -790,6 +790,10 @@
                 grid-template-columns: 0.85fr 1.15fr;
                 padding-right: 8%;
             }
+        }
+
+        .mode-fracture .hero-control-surface {
+            grid-column: 1 / -1;
         }
 
         .fracture-grid {
