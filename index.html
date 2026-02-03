@@ -473,9 +473,14 @@
         inset: 0;
         background-image: url('/assets/og-image.png');
         background-size: cover;
-        background-position: center;
+        /* 42% positions the horizon line (glowing focal point) slightly below the vertical center,
+           creating a cinematic frame that preserves atmospheric space at the top while emphasizing
+           the key visual element. This is intentional framing, not a crop. */
+        background-position: center 42%;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        width: 100%;
+        height: 100%;
         z-index: 0;
         overflow: hidden;
       }
