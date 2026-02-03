@@ -1,497 +1,580 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Approach | Chaos Management Agency</title>
-    <meta name="description" content="Learn how Chaos Management Agency approaches digital infrastructure projects: Audit, Build, Handoff methodology for stable, low maintenance systems.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://chaosmgnt.com/approach.html">
+    <meta
+      name="description"
+      content="Learn how Chaos Management Agency approaches digital infrastructure projects: Audit, Build, Handoff methodology for stable, low maintenance systems."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://chaosmgnt.com/approach.html" />
     <style>
-        /* CSS Reset and Core Variables */
-        :root {
-            --color-bg: #030303;
-            --color-accent: #00E8FF;
-            --color-secondary-accent: #FF00FF;
-            --color-text: #FFFFFF;
-            --color-subtext: #BBBBBB;
-            --font-primary: 'Inter', sans-serif;
-            --nav-height: 60px;
-            --max-width: 70rem;
-            --max-width-wide: 76rem;
-            --section-pad-y: clamp(4rem, 8vw, 6.5rem);
-            --section-gap: clamp(2.5rem, 6vw, 4.5rem);
-            --container-pad-x: clamp(1.1rem, 4vw, 3rem);
-            --radius-sm: 6px;
-            --radius-md: 12px;
-            --radius-lg: 18px;
-            --gap-lg: clamp(2rem, 5vw, 3.5rem);
-            --gap-md: clamp(1.25rem, 3vw, 2.25rem);
-            --gap-sm: clamp(0.75rem, 2vw, 1.25rem);
-            --font-size-body: clamp(1rem, 0.97rem + 0.3vw, 1.125rem);
-            --font-size-small: clamp(0.85rem, 0.82rem + 0.2vw, 0.95rem);
-            --font-size-h1: clamp(2.4rem, 4vw + 1rem, 3.75rem);
-            --font-size-h2: clamp(1.6rem, 2.3vw + 0.8rem, 2.3rem);
-            --font-size-h3: clamp(1.2rem, 1.5vw + 0.6rem, 1.6rem);
-        }
+      /* CSS Reset and Core Variables */
+      :root {
+        --color-bg: #030303;
+        --color-accent: #00e8ff;
+        --color-secondary-accent: #ff00ff;
+        --color-text: #ffffff;
+        --color-subtext: #bbbbbb;
+        --font-primary: 'Inter', sans-serif;
+        --nav-height: 60px;
+        --max-width: 70rem;
+        --max-width-wide: 76rem;
+        --section-pad-y: clamp(4rem, 8vw, 6.5rem);
+        --section-gap: clamp(2.5rem, 6vw, 4.5rem);
+        --container-pad-x: clamp(1.1rem, 4vw, 3rem);
+        --radius-sm: 6px;
+        --radius-md: 12px;
+        --radius-lg: 18px;
+        --gap-lg: clamp(2rem, 5vw, 3.5rem);
+        --gap-md: clamp(1.25rem, 3vw, 2.25rem);
+        --gap-sm: clamp(0.75rem, 2vw, 1.25rem);
+        --font-size-body: clamp(1rem, 0.97rem + 0.3vw, 1.125rem);
+        --font-size-small: clamp(0.85rem, 0.82rem + 0.2vw, 0.95rem);
+        --font-size-h1: clamp(2.4rem, 4vw + 1rem, 3.75rem);
+        --font-size-h2: clamp(1.6rem, 2.3vw + 0.8rem, 2.3rem);
+        --font-size-h3: clamp(1.2rem, 1.5vw + 0.6rem, 1.6rem);
+      }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        body {
-            font-family: var(--font-primary);
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            font-size: var(--font-size-body);
-            line-height: 1.65;
-            scroll-behavior: smooth;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
-            background-size: 40px 40px;
-        }
+      body {
+        font-family: var(--font-primary);
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-size: var(--font-size-body);
+        line-height: 1.65;
+        scroll-behavior: smooth;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.03) 1px,
+          transparent 0
+        );
+        background-size: 40px 40px;
+      }
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background-image:
-                linear-gradient(0deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.015)),
-                repeating-linear-gradient(90deg, rgba(0, 232, 255, 0.025) 0 1px, transparent 1px 120px);
-            opacity: 0.25;
-            mix-blend-mode: screen;
-            z-index: 0;
-        }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.015),
+            rgba(255, 255, 255, 0.015)
+          ),
+          repeating-linear-gradient(
+            90deg,
+            rgba(0, 232, 255, 0.025) 0 1px,
+            transparent 1px 120px
+          );
+        opacity: 0.25;
+        mix-blend-mode: screen;
+        z-index: 0;
+      }
 
-        .container {
-            width: min(var(--max-width), 100%);
-            margin: 0 auto;
-            padding-left: var(--container-pad-x);
-            padding-right: var(--container-pad-x);
-        }
+      .container {
+        width: min(var(--max-width), 100%);
+        margin: 0 auto;
+        padding-left: var(--container-pad-x);
+        padding-right: var(--container-pad-x);
+      }
 
-        h1 {
-            font-size: var(--font-size-h1);
-            line-height: 1.05;
-            font-weight: 700;
-            letter-spacing: -0.015em;
-        }
+      h1 {
+        font-size: var(--font-size-h1);
+        line-height: 1.05;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+      }
 
-        h2 {
-            font-size: var(--font-size-h2);
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            margin-bottom: var(--gap-md);
-            color: var(--color-text);
-        }
+      h2 {
+        font-size: var(--font-size-h2);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: var(--gap-md);
+        color: var(--color-text);
+      }
 
-        h3 {
-            font-size: var(--font-size-h3);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--color-text);
-        }
+      h3 {
+        font-size: var(--font-size-h3);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-text);
+      }
 
-        p {
-            margin-bottom: var(--gap-sm);
-            line-height: 1.7;
-        }
+      p {
+        margin-bottom: var(--gap-sm);
+        line-height: 1.7;
+      }
 
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            min-height: var(--nav-height);
-            background-color: rgba(0, 0, 0, 0.88);
-            border-bottom: 1px solid rgba(0, 232, 255, 0.25);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            padding-left: var(--container-pad-x);
-            padding-right: var(--container-pad-x);
-            backdrop-filter: blur(8px);
-        }
+      /* Navigation */
+      nav {
+        position: sticky;
+        top: 0;
+        min-height: var(--nav-height);
+        background-color: rgba(0, 0, 0, 0.88);
+        border-bottom: 1px solid rgba(0, 232, 255, 0.25);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        padding-left: var(--container-pad-x);
+        padding-right: var(--container-pad-x);
+        backdrop-filter: blur(8px);
+      }
 
-        nav .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: var(--gap-sm);
-            width: min(var(--max-width-wide), 100%);
-            margin: 0 auto;
-        }
+      nav .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--gap-sm);
+        width: min(var(--max-width-wide), 100%);
+        margin: 0 auto;
+      }
 
+      nav .logo {
+        color: var(--color-accent);
+        font-size: clamp(1.05rem, 0.85rem + 1vw, 1.4rem);
+        font-weight: 700;
+        text-shadow: 0 0 4px rgba(0, 232, 255, 0.3);
+        text-decoration: none;
+        letter-spacing: 0.12em;
+        line-height: 1.2;
+        opacity: 0.95;
+        white-space: nowrap;
+      }
+      @media (max-width: 768px) {
         nav .logo {
-            color: var(--color-accent);
-            font-size: clamp(1.05rem, 0.85rem + 1vw, 1.4rem);
-            font-weight: 700;
-            text-shadow: 0 0 4px rgba(0, 232, 255, 0.3);
-            text-decoration: none;
-            letter-spacing: 0.12em;
-            line-height: 1.2;
-            opacity: 0.95;
-            white-space: nowrap;
+          font-size: clamp(0.85rem, 0.75rem + 0.8vw, 1.05rem);
+          letter-spacing: 0.08em;
         }
-        @media (max-width: 768px) {
-            nav .logo {
-                font-size: clamp(0.85rem, 0.75rem + 0.8vw, 1.05rem);
-                letter-spacing: 0.08em;
-            }
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap-sm);
+        justify-content: flex-end;
+      }
+
+      nav ul li a {
+        color: var(--color-text);
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        font-size: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+        font-weight: 600;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+        text-transform: uppercase;
+        transition:
+          color 0.3s,
+          text-shadow 0.3s;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+      }
+
+      nav ul li a:hover {
+        color: var(--color-accent);
+      }
+
+      /* Page Header */
+      .page-header {
+        padding: calc(var(--nav-height) + var(--gap-lg)) 0 var(--gap-lg);
+        text-align: center;
+        background: linear-gradient(
+          180deg,
+          rgba(5, 5, 5, 0.98),
+          rgba(12, 12, 12, 0.95)
+        );
+        border-bottom: 2px solid rgba(0, 232, 255, 0.25);
+        position: relative;
+        z-index: 10;
+      }
+
+      .page-header h1 {
+        font-size: clamp(2rem, 3vw + 1rem, 3rem);
+        color: var(--color-accent);
+        text-shadow: 0 0 15px rgba(0, 232, 255, 0.3);
+        margin-bottom: var(--gap-sm);
+      }
+
+      .page-header p {
+        font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+        color: var(--color-subtext);
+        max-width: 60ch;
+        margin: 0 auto;
+      }
+
+      /* Main Content */
+      main {
+        position: relative;
+        z-index: 1;
+      }
+
+      section {
+        padding: var(--section-pad-y) 0;
+        background-color: rgba(10, 10, 10, 0.97);
+        margin: var(--section-gap) 0;
+        border-top: 2px solid #1a1a1a;
+        border-bottom: 2px solid #1a1a1a;
+        position: relative;
+      }
+
+      section::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: min(72%, 54rem);
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 232, 255, 0.18),
+          transparent
+        );
+        transform: translateX(-50%);
+        opacity: 0.35;
+      }
+
+      section .container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+      }
+
+      /* Service Grid for Approach Steps */
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: var(--gap-md);
+      }
+
+      .service-item {
+        background-color: #111;
+        padding: clamp(1.75rem, 1.2rem + 1vw, 2.25rem);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-left: 5px solid var(--color-accent);
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease,
+          border-color 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius-sm);
+        box-shadow: 0 0 8px rgba(0, 232, 255, 0.25);
+      }
+
+      .service-item:hover {
+        border-color: var(--color-accent);
+        box-shadow:
+          0 0 30px var(--color-accent),
+          inset 0 0 10px var(--color-accent);
+        transform: translateY(-5px) scale(1.01);
+        z-index: 10;
+      }
+
+      .service-item h3 {
+        color: var(--color-accent);
+        font-size: clamp(1.05rem, 0.95rem + 0.45vw, 1.35rem);
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      .service-item h3::before {
+        content: '[//] ';
+        color: var(--color-secondary-accent);
+        font-weight: bold;
+        font-size: 0.8em;
+      }
+
+      .service-item p {
+        color: #d7e0e6;
+        line-height: 1.75;
+      }
+
+      .service-item ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+        margin: var(--gap-sm) 0;
+        color: #d7e0e6;
+      }
+
+      .service-item ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* Content Block */
+      .content-block {
+        max-width: 65ch;
+        margin: 0 auto;
+        padding: clamp(1.75rem, 1.25rem + 1.5vw, 2.75rem);
+        background-color: #121212;
+        border-left: 6px solid var(--color-accent);
+        border-radius: var(--radius-md);
+        box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.45);
+      }
+
+      .content-block p {
+        font-size: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
+        line-height: 1.75;
+        color: #d7e0e6;
+      }
+
+      /* CTA Button */
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 232, 255, 0.12);
+        color: var(--color-text);
+        border: 1px solid rgba(0, 232, 255, 0.6);
+        padding: 0.85rem 2.25rem;
+        min-height: 48px;
+        font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        border-radius: var(--radius-sm);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+      }
+
+      .cta-button:hover {
+        background: rgba(0, 232, 255, 0.18);
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+        transform: translateY(-2px);
+      }
+
+      .cta-solid {
+        background: rgba(0, 232, 255, 0.85);
+        color: #000;
+        border-color: rgba(0, 232, 255, 0.95);
+        font-weight: 700;
+      }
+
+      .cta-solid:hover {
+        background: rgba(0, 232, 255, 0.95);
+        color: #000;
+        box-shadow:
+          0 0 25px rgba(0, 232, 255, 0.5),
+          0 16px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: var(--gap-md) 0;
+        border-top: 1px solid var(--color-accent);
+        font-size: var(--font-size-small);
+        color: var(--color-subtext);
+        background-color: #000000;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        nav .nav-content {
+          flex-wrap: wrap;
+          align-items: flex-start;
+          gap: var(--gap-sm);
+        }
+        nav ul {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding-left: var(--container-pad-x);
+          padding-right: var(--container-pad-x);
+        }
+        nav .nav-content {
+          flex-direction: column;
+          align-items: stretch;
+          gap: var(--gap-sm);
         }
 
         nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--gap-sm);
-            justify-content: flex-end;
+          width: 100%;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.35rem;
         }
 
         nav ul li a {
-            color: var(--color-text);
-            text-decoration: none;
-            padding: 0.5rem 0.75rem;
-            font-size: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
-            font-weight: 600;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-            text-transform: uppercase;
-            transition: color 0.3s, text-shadow 0.3s;
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            min-height: 44px;
+          width: 100%;
+          padding: 0.65rem 0;
         }
-
-        nav ul li a:hover {
-            color: var(--color-accent);
-        }
-
-        /* Page Header */
-        .page-header {
-            padding: calc(var(--nav-height) + var(--gap-lg)) 0 var(--gap-lg);
-            text-align: center;
-            background: linear-gradient(180deg, rgba(5, 5, 5, 0.98), rgba(12, 12, 12, 0.95));
-            border-bottom: 2px solid rgba(0, 232, 255, 0.25);
-            position: relative;
-            z-index: 10;
-        }
-
-        .page-header h1 {
-            font-size: clamp(2rem, 3vw + 1rem, 3rem);
-            color: var(--color-accent);
-            text-shadow: 0 0 15px rgba(0, 232, 255, 0.3);
-            margin-bottom: var(--gap-sm);
-        }
-
-        .page-header p {
-            font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
-            color: var(--color-subtext);
-            max-width: 60ch;
-            margin: 0 auto;
-        }
-
-        /* Main Content */
-        main {
-            position: relative;
-            z-index: 1;
-        }
-
-        section {
-            padding: var(--section-pad-y) 0;
-            background-color: rgba(10, 10, 10, 0.97);
-            margin: var(--section-gap) 0;
-            border-top: 2px solid #1a1a1a;
-            border-bottom: 2px solid #1a1a1a;
-            position: relative;
-        }
-
-        section::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            width: min(72%, 54rem);
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 232, 255, 0.18), transparent);
-            transform: translateX(-50%);
-            opacity: 0.35;
-        }
-
-        section .container {
-            display: flex;
-            flex-direction: column;
-            gap: var(--gap-md);
-        }
-
-        /* Service Grid for Approach Steps */
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: var(--gap-md);
-        }
-
-        .service-item {
-            background-color: #111;
-            padding: clamp(1.75rem, 1.2rem + 1vw, 2.25rem);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-left: 5px solid var(--color-accent);
-            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--radius-sm);
-            box-shadow: 0 0 8px rgba(0, 232, 255, 0.25);
-        }
-
-        .service-item:hover {
-            border-color: var(--color-accent);
-            box-shadow: 0 0 30px var(--color-accent), inset 0 0 10px var(--color-accent);
-            transform: translateY(-5px) scale(1.01);
-            z-index: 10;
-        }
-
-        .service-item h3 {
-            color: var(--color-accent);
-            font-size: clamp(1.05rem, 0.95rem + 0.45vw, 1.35rem);
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-        }
-
-        .service-item h3::before {
-            content: '[//] ';
-            color: var(--color-secondary-accent);
-            font-weight: bold;
-            font-size: 0.8em;
-        }
-
-        .service-item p {
-            color: #D7E0E6;
-            line-height: 1.75;
-        }
-
-        .service-item ul {
-            list-style: disc;
-            padding-left: 1.5rem;
-            margin: var(--gap-sm) 0;
-            color: #D7E0E6;
-        }
-
-        .service-item ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Content Block */
-        .content-block {
-            max-width: 65ch;
-            margin: 0 auto;
-            padding: clamp(1.75rem, 1.25rem + 1.5vw, 2.75rem);
-            background-color: #121212;
-            border-left: 6px solid var(--color-accent);
-            border-radius: var(--radius-md);
-            box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.45);
-        }
-
-        .content-block p {
-            font-size: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
-            line-height: 1.75;
-            color: #D7E0E6;
-        }
-
-        /* CTA Button */
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 232, 255, 0.12);
-            color: var(--color-text);
-            border: 1px solid rgba(0, 232, 255, 0.6);
-            padding: 0.85rem 2.25rem;
-            min-height: 48px;
-            font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            border-radius: var(--radius-sm);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-        }
-
-        .cta-button:hover {
-            background: rgba(0, 232, 255, 0.18);
-            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
-            transform: translateY(-2px);
-        }
-
-        .cta-solid {
-            background: rgba(0, 232, 255, 0.85);
-            color: #000;
-            border-color: rgba(0, 232, 255, 0.95);
-            font-weight: 700;
-        }
-
-        .cta-solid:hover {
-            background: rgba(0, 232, 255, 0.95);
-            color: #000;
-            box-shadow: 0 0 25px rgba(0, 232, 255, 0.5), 0 16px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: var(--gap-md) 0;
-            border-top: 1px solid var(--color-accent);
-            font-size: var(--font-size-small);
-            color: var(--color-subtext);
-            background-color: #000000;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            nav .nav-content {
-                flex-wrap: wrap;
-                align-items: flex-start;
-                gap: var(--gap-sm);
-            }
-            nav ul {
-                justify-content: flex-start;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding-left: var(--container-pad-x);
-                padding-right: var(--container-pad-x);
-            }
-            nav .nav-content {
-                flex-direction: column;
-                align-items: stretch;
-                gap: var(--gap-sm);
-            }
-
-            nav ul {
-                width: 100%;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.35rem;
-            }
-
-            nav ul li a {
-                width: 100%;
-                padding: 0.65rem 0;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <nav>
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Chaos Management Agency</a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="case-studies.html">Case Studies</a></li>
-                <li><a href="who-we-help.html">Who We Help</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+      <div class="container nav-content">
+        <a href="index.html" class="logo">Chaos Management Agency</a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="who-we-help.html">Who We Help</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="page-header">
-        <div class="container">
-            <h1>Our Approach</h1>
-            <p>A clear, three-phase methodology designed to build stable, documented, low maintenance digital infrastructure.</p>
-        </div>
+      <div class="container">
+        <h1>Our Approach</h1>
+        <p>
+          A clear, three-phase methodology designed to build stable, documented,
+          low maintenance digital infrastructure.
+        </p>
+      </div>
     </div>
 
     <main>
-        <section id="methodology">
-            <div class="container">
-                <h2>The CMA Methodology</h2>
-                <p style="text-align: center; max-width: 60ch; margin: 0 auto var(--gap-md);">Every project follows a structured process: Audit your current state, Build the new foundation, and Handoff with complete documentation.</p>
-                <div class="service-grid">
-                    <div class="service-item">
-                        <h3>1. Audit</h3>
-                        <p>We start by reviewing your current digital infrastructure to identify costs, risks, and inefficiencies.</p>
-                        <ul>
-                            <li>Review all active subscriptions and monthly costs</li>
-                            <li>Document current hosting, domains, and DNS setup</li>
-                            <li>Identify security vulnerabilities and compliance gaps</li>
-                            <li>Map tool dependencies and integration complexity</li>
-                            <li>Assess website performance and accessibility</li>
-                            <li>Provide detailed audit report with recommendations</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-item">
-                        <h3>2. Build</h3>
-                        <p>We execute the plan: rebuild sites, migrate systems, simplify tools, and establish stable foundations.</p>
-                        <ul>
-                            <li>Rebuild websites on low cost, high performance platforms</li>
-                            <li>Migrate domains, DNS, and email to consolidated providers</li>
-                            <li>Set up security, SSL, and monitoring systems</li>
-                            <li>Configure forms, analytics, and essential integrations</li>
-                            <li>Test all systems and verify functionality</li>
-                            <li>Optimize for speed, SEO, and accessibility</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-item">
-                        <h3>3. Handoff</h3>
-                        <p>We deliver complete documentation and training so you can maintain the system without ongoing dependency.</p>
-                        <ul>
-                            <li>Comprehensive documentation of all systems</li>
-                            <li>Login credentials and access instructions</li>
-                            <li>Step-by-step guides for common tasks</li>
-                            <li>Training session for staff or volunteers</li>
-                            <li>Troubleshooting guide and support contacts</li>
-                            <li>Optional follow-up support after handoff</li>
-                        </ul>
-                    </div>
-                </div>
+      <section id="methodology">
+        <div class="container">
+          <h2>The CMA Methodology</h2>
+          <p
+            style="
+              text-align: center;
+              max-width: 60ch;
+              margin: 0 auto var(--gap-md);
+            "
+          >
+            Every project follows a structured process: Audit your current
+            state, Build the new foundation, and Handoff with complete
+            documentation.
+          </p>
+          <div class="service-grid">
+            <div class="service-item">
+              <h3>1. Audit</h3>
+              <p>
+                We start by reviewing your current digital infrastructure to
+                identify costs, risks, and inefficiencies.
+              </p>
+              <ul>
+                <li>Review all active subscriptions and monthly costs</li>
+                <li>Document current hosting, domains, and DNS setup</li>
+                <li>Identify security vulnerabilities and compliance gaps</li>
+                <li>Map tool dependencies and integration complexity</li>
+                <li>Assess website performance and accessibility</li>
+                <li>Provide detailed audit report with recommendations</li>
+              </ul>
             </div>
-        </section>
 
-        <section id="philosophy">
-            <div class="container">
-                <h2>Our Philosophy</h2>
-                <div class="content-block">
-                    <p>CMA believes digital infrastructure should be simple, documented, and maintainable by the people who use it.</p>
-                    <p>We do not build systems that require ongoing agency management. We build systems that your team can run independently.</p>
-                    <p>This means choosing proven, stable technologies over cutting-edge complexity. It means comprehensive documentation over institutional knowledge. It means empowering organizations to own their digital presence.</p>
-                </div>
+            <div class="service-item">
+              <h3>2. Build</h3>
+              <p>
+                We execute the plan: rebuild sites, migrate systems, simplify
+                tools, and establish stable foundations.
+              </p>
+              <ul>
+                <li>
+                  Rebuild websites on low cost, high performance platforms
+                </li>
+                <li>
+                  Migrate domains, DNS, and email to consolidated providers
+                </li>
+                <li>Set up security, SSL, and monitoring systems</li>
+                <li>Configure forms, analytics, and essential integrations</li>
+                <li>Test all systems and verify functionality</li>
+                <li>Optimize for speed, SEO, and accessibility</li>
+              </ul>
             </div>
-        </section>
 
-        <section id="what-to-expect">
-            <div class="container">
-                <h2>What to Expect</h2>
-                <div class="content-block">
-                    <p><strong>Timeline:</strong> Most projects take 2-6 weeks depending on scope. Website rebuilds are typically 2-3 weeks. Full infrastructure migrations can take 4-6 weeks.</p>
-                    <p><strong>Communication:</strong> We provide regular updates via email and schedule check-ins at key milestones. You'll have visibility into progress throughout the project.</p>
-                    <p><strong>Post-Launch:</strong> After handoff, we're available for questions and minor adjustments. We can discuss optional ongoing support if needed.</p>
-                </div>
+            <div class="service-item">
+              <h3>3. Handoff</h3>
+              <p>
+                We deliver complete documentation and training so you can
+                maintain the system without ongoing dependency.
+              </p>
+              <ul>
+                <li>Comprehensive documentation of all systems</li>
+                <li>Login credentials and access instructions</li>
+                <li>Step-by-step guides for common tasks</li>
+                <li>Training session for staff or volunteers</li>
+                <li>Troubleshooting guide and support contacts</li>
+                <li>Optional follow-up support after handoff</li>
+              </ul>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="approach-cta" style="text-align: center;">
-            <div class="container">
-                <h2>Ready to Get Started?</h2>
-                <p style="max-width: 50ch; margin: 0 auto var(--gap-md);">Let us know what you want to improve. We'll respond with a proposal and timeline.</p>
-                <a href="contact.html" class="cta-button cta-solid">Contact CMA</a>
-            </div>
-        </section>
+      <section id="philosophy">
+        <div class="container">
+          <h2>Our Philosophy</h2>
+          <div class="content-block">
+            <p>
+              CMA believes digital infrastructure should be simple, documented,
+              and maintainable by the people who use it.
+            </p>
+            <p>
+              We do not build systems that require ongoing agency management. We
+              build systems that your team can run independently.
+            </p>
+            <p>
+              This means choosing proven, stable technologies over cutting-edge
+              complexity. It means comprehensive documentation over
+              institutional knowledge. It means empowering organizations to own
+              their digital presence.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="what-to-expect">
+        <div class="container">
+          <h2>What to Expect</h2>
+          <div class="content-block">
+            <p>
+              <strong>Timeline:</strong> Most projects take 2-6 weeks depending
+              on scope. Website rebuilds are typically 2-3 weeks. Full
+              infrastructure migrations can take 4-6 weeks.
+            </p>
+            <p>
+              <strong>Communication:</strong> We provide regular updates via
+              email and schedule check-ins at key milestones. You'll have
+              visibility into progress throughout the project.
+            </p>
+            <p>
+              <strong>Post-Launch:</strong> After handoff, we're available for
+              questions and minor adjustments. We can discuss optional ongoing
+              support if needed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="approach-cta" style="text-align: center">
+        <div class="container">
+          <h2>Ready to Get Started?</h2>
+          <p style="max-width: 50ch; margin: 0 auto var(--gap-md)">
+            Let us know what you want to improve. We'll respond with a proposal
+            and timeline.
+          </p>
+          <a href="contact.html" class="cta-button cta-solid">Contact CMA</a>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="container">
-            CMA. Chaos Management Agency. Digital infrastructure and operations support. Built for stability.
-        </div>
+      <div class="container">
+        CMA. Chaos Management Agency. Digital infrastructure and operations
+        support. Built for stability.
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>

@@ -1,501 +1,586 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services | Chaos Management Agency</title>
-    <meta name="description" content="Digital infrastructure services for nonprofits: website rebuild, cost reduction, infrastructure setup, and foundation support.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://chaosmgnt.com/services.html">
+    <meta
+      name="description"
+      content="Digital infrastructure services for nonprofits: website rebuild, cost reduction, infrastructure setup, and foundation support."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://chaosmgnt.com/services.html" />
     <style>
-        /* CSS Reset and Core Variables */
-        :root {
-            --color-bg: #030303;
-            --color-accent: #00E8FF;
-            --color-secondary-accent: #FF00FF;
-            --color-text: #FFFFFF;
-            --color-subtext: #BBBBBB;
-            --font-primary: 'Inter', sans-serif;
-            --nav-height: 60px;
-            --max-width: 70rem;
-            --max-width-wide: 76rem;
-            --section-pad-y: clamp(4rem, 8vw, 6.5rem);
-            --section-gap: clamp(2.5rem, 6vw, 4.5rem);
-            --container-pad-x: clamp(1.1rem, 4vw, 3rem);
-            --radius-sm: 6px;
-            --radius-md: 12px;
-            --radius-lg: 18px;
-            --gap-lg: clamp(2rem, 5vw, 3.5rem);
-            --gap-md: clamp(1.25rem, 3vw, 2.25rem);
-            --gap-sm: clamp(0.75rem, 2vw, 1.25rem);
-            --font-size-body: clamp(1rem, 0.97rem + 0.3vw, 1.125rem);
-            --font-size-small: clamp(0.85rem, 0.82rem + 0.2vw, 0.95rem);
-            --font-size-h1: clamp(2.4rem, 4vw + 1rem, 3.75rem);
-            --font-size-h2: clamp(1.6rem, 2.3vw + 0.8rem, 2.3rem);
-            --font-size-h3: clamp(1.2rem, 1.5vw + 0.6rem, 1.6rem);
-        }
+      /* CSS Reset and Core Variables */
+      :root {
+        --color-bg: #030303;
+        --color-accent: #00e8ff;
+        --color-secondary-accent: #ff00ff;
+        --color-text: #ffffff;
+        --color-subtext: #bbbbbb;
+        --font-primary: 'Inter', sans-serif;
+        --nav-height: 60px;
+        --max-width: 70rem;
+        --max-width-wide: 76rem;
+        --section-pad-y: clamp(4rem, 8vw, 6.5rem);
+        --section-gap: clamp(2.5rem, 6vw, 4.5rem);
+        --container-pad-x: clamp(1.1rem, 4vw, 3rem);
+        --radius-sm: 6px;
+        --radius-md: 12px;
+        --radius-lg: 18px;
+        --gap-lg: clamp(2rem, 5vw, 3.5rem);
+        --gap-md: clamp(1.25rem, 3vw, 2.25rem);
+        --gap-sm: clamp(0.75rem, 2vw, 1.25rem);
+        --font-size-body: clamp(1rem, 0.97rem + 0.3vw, 1.125rem);
+        --font-size-small: clamp(0.85rem, 0.82rem + 0.2vw, 0.95rem);
+        --font-size-h1: clamp(2.4rem, 4vw + 1rem, 3.75rem);
+        --font-size-h2: clamp(1.6rem, 2.3vw + 0.8rem, 2.3rem);
+        --font-size-h3: clamp(1.2rem, 1.5vw + 0.6rem, 1.6rem);
+      }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        body {
-            font-family: var(--font-primary);
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            font-size: var(--font-size-body);
-            line-height: 1.65;
-            scroll-behavior: smooth;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
-            background-size: 40px 40px;
-        }
+      body {
+        font-family: var(--font-primary);
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-size: var(--font-size-body);
+        line-height: 1.65;
+        scroll-behavior: smooth;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.03) 1px,
+          transparent 0
+        );
+        background-size: 40px 40px;
+      }
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background-image:
-                linear-gradient(0deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.015)),
-                repeating-linear-gradient(90deg, rgba(0, 232, 255, 0.025) 0 1px, transparent 1px 120px);
-            opacity: 0.25;
-            mix-blend-mode: screen;
-            z-index: 0;
-        }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.015),
+            rgba(255, 255, 255, 0.015)
+          ),
+          repeating-linear-gradient(
+            90deg,
+            rgba(0, 232, 255, 0.025) 0 1px,
+            transparent 1px 120px
+          );
+        opacity: 0.25;
+        mix-blend-mode: screen;
+        z-index: 0;
+      }
 
-        .container {
-            width: min(var(--max-width), 100%);
-            margin: 0 auto;
-            padding-left: var(--container-pad-x);
-            padding-right: var(--container-pad-x);
-        }
+      .container {
+        width: min(var(--max-width), 100%);
+        margin: 0 auto;
+        padding-left: var(--container-pad-x);
+        padding-right: var(--container-pad-x);
+      }
 
-        h1 {
-            font-size: var(--font-size-h1);
-            line-height: 1.05;
-            font-weight: 700;
-            letter-spacing: -0.015em;
-        }
+      h1 {
+        font-size: var(--font-size-h1);
+        line-height: 1.05;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+      }
 
-        h2 {
-            font-size: var(--font-size-h2);
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            margin-bottom: var(--gap-md);
-            color: var(--color-text);
-        }
+      h2 {
+        font-size: var(--font-size-h2);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: var(--gap-md);
+        color: var(--color-text);
+      }
 
-        h3 {
-            font-size: var(--font-size-h3);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--color-text);
-        }
+      h3 {
+        font-size: var(--font-size-h3);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-text);
+      }
 
-        p {
-            margin-bottom: var(--gap-sm);
-            line-height: 1.7;
-        }
+      p {
+        margin-bottom: var(--gap-sm);
+        line-height: 1.7;
+      }
 
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            min-height: var(--nav-height);
-            background-color: rgba(0, 0, 0, 0.88);
-            border-bottom: 1px solid rgba(0, 232, 255, 0.25);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            padding-left: var(--container-pad-x);
-            padding-right: var(--container-pad-x);
-            backdrop-filter: blur(8px);
-        }
+      /* Navigation */
+      nav {
+        position: sticky;
+        top: 0;
+        min-height: var(--nav-height);
+        background-color: rgba(0, 0, 0, 0.88);
+        border-bottom: 1px solid rgba(0, 232, 255, 0.25);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        padding-left: var(--container-pad-x);
+        padding-right: var(--container-pad-x);
+        backdrop-filter: blur(8px);
+      }
 
-        nav .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: var(--gap-sm);
-            width: min(var(--max-width-wide), 100%);
-            margin: 0 auto;
-        }
+      nav .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--gap-sm);
+        width: min(var(--max-width-wide), 100%);
+        margin: 0 auto;
+      }
 
+      nav .logo {
+        color: var(--color-accent);
+        font-size: clamp(1.05rem, 0.85rem + 1vw, 1.4rem);
+        font-weight: 700;
+        text-shadow: 0 0 4px rgba(0, 232, 255, 0.3);
+        text-decoration: none;
+        letter-spacing: 0.12em;
+        line-height: 1.2;
+        opacity: 0.95;
+        white-space: nowrap;
+      }
+      @media (max-width: 768px) {
         nav .logo {
-            color: var(--color-accent);
-            font-size: clamp(1.05rem, 0.85rem + 1vw, 1.4rem);
-            font-weight: 700;
-            text-shadow: 0 0 4px rgba(0, 232, 255, 0.3);
-            text-decoration: none;
-            letter-spacing: 0.12em;
-            line-height: 1.2;
-            opacity: 0.95;
-            white-space: nowrap;
+          font-size: clamp(0.85rem, 0.75rem + 0.8vw, 1.05rem);
+          letter-spacing: 0.08em;
         }
-        @media (max-width: 768px) {
-            nav .logo {
-                font-size: clamp(0.85rem, 0.75rem + 0.8vw, 1.05rem);
-                letter-spacing: 0.08em;
-            }
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap-sm);
+        justify-content: flex-end;
+      }
+
+      nav ul li a {
+        color: var(--color-text);
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        font-size: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+        font-weight: 600;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+        text-transform: uppercase;
+        transition:
+          color 0.3s,
+          text-shadow 0.3s;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+      }
+
+      nav ul li a:hover {
+        color: var(--color-accent);
+      }
+
+      /* Page Header */
+      .page-header {
+        padding: calc(var(--nav-height) + var(--gap-lg)) 0 var(--gap-lg);
+        text-align: center;
+        background: linear-gradient(
+          180deg,
+          rgba(5, 5, 5, 0.98),
+          rgba(12, 12, 12, 0.95)
+        );
+        border-bottom: 2px solid rgba(0, 232, 255, 0.25);
+        position: relative;
+        z-index: 10;
+      }
+
+      .page-header h1 {
+        font-size: clamp(2rem, 3vw + 1rem, 3rem);
+        color: var(--color-accent);
+        text-shadow: 0 0 15px rgba(0, 232, 255, 0.3);
+        margin-bottom: var(--gap-sm);
+      }
+
+      .page-header p {
+        font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+        color: var(--color-subtext);
+        max-width: 60ch;
+        margin: 0 auto;
+      }
+
+      /* Main Content */
+      main {
+        position: relative;
+        z-index: 1;
+      }
+
+      section {
+        padding: var(--section-pad-y) 0;
+        background-color: rgba(10, 10, 10, 0.97);
+        margin: var(--section-gap) 0;
+        border-top: 2px solid #1a1a1a;
+        border-bottom: 2px solid #1a1a1a;
+        position: relative;
+      }
+
+      section::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: min(72%, 54rem);
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 232, 255, 0.18),
+          transparent
+        );
+        transform: translateX(-50%);
+        opacity: 0.35;
+      }
+
+      section .container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+      }
+
+      /* Service Items */
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: var(--gap-md);
+      }
+
+      .service-item {
+        background-color: #111;
+        padding: clamp(1.75rem, 1.2rem + 1vw, 2.25rem);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-left: 5px solid var(--color-accent);
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease,
+          border-color 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius-sm);
+        box-shadow: 0 0 8px rgba(0, 232, 255, 0.25);
+      }
+
+      .service-item:hover {
+        border-color: var(--color-accent);
+        box-shadow:
+          0 0 30px var(--color-accent),
+          inset 0 0 10px var(--color-accent);
+        transform: translateY(-5px) scale(1.01);
+        z-index: 10;
+      }
+
+      .service-item h3 {
+        color: var(--color-accent);
+        font-size: clamp(1.05rem, 0.95rem + 0.45vw, 1.35rem);
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      .service-item h3::before {
+        content: '[//] ';
+        color: var(--color-secondary-accent);
+        font-weight: bold;
+        font-size: 0.8em;
+      }
+
+      .service-item p {
+        color: #d7e0e6;
+        line-height: 1.75;
+      }
+
+      .service-item ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+        margin: var(--gap-sm) 0;
+        color: #d7e0e6;
+      }
+
+      .service-item ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* Not Do Section */
+      .not-do-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: var(--gap-sm);
+      }
+
+      .not-do-item {
+        font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+        padding: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-left: 4px solid var(--color-secondary-accent);
+        background-color: #121212;
+        color: var(--color-text);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border 0.3s ease;
+        border-radius: var(--radius-sm);
+      }
+
+      .not-do-item:hover {
+        background-color: #1e1e1e;
+        border-left-color: var(--color-accent);
+        box-shadow: 0 0 16px rgba(0, 232, 255, 0.22);
+        transform: translateY(-2px);
+      }
+
+      /* CTA Button */
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 232, 255, 0.12);
+        color: var(--color-text);
+        border: 1px solid rgba(0, 232, 255, 0.6);
+        padding: 0.85rem 2.25rem;
+        min-height: 48px;
+        font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        border-radius: var(--radius-sm);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+      }
+
+      .cta-button:hover {
+        background: rgba(0, 232, 255, 0.18);
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+        transform: translateY(-2px);
+      }
+
+      .cta-solid {
+        background: rgba(0, 232, 255, 0.85);
+        color: #000;
+        border-color: rgba(0, 232, 255, 0.95);
+        font-weight: 700;
+      }
+
+      .cta-solid:hover {
+        background: rgba(0, 232, 255, 0.95);
+        color: #000;
+        box-shadow:
+          0 0 25px rgba(0, 232, 255, 0.5),
+          0 16px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: var(--gap-md) 0;
+        border-top: 1px solid var(--color-accent);
+        font-size: var(--font-size-small);
+        color: var(--color-subtext);
+        background-color: #000000;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        nav .nav-content {
+          flex-wrap: wrap;
+          align-items: flex-start;
+          gap: var(--gap-sm);
+        }
+        nav ul {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding-left: var(--container-pad-x);
+          padding-right: var(--container-pad-x);
+        }
+        nav .nav-content {
+          flex-direction: column;
+          align-items: stretch;
+          gap: var(--gap-sm);
         }
 
         nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--gap-sm);
-            justify-content: flex-end;
+          width: 100%;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.35rem;
         }
 
         nav ul li a {
-            color: var(--color-text);
-            text-decoration: none;
-            padding: 0.5rem 0.75rem;
-            font-size: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
-            font-weight: 600;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-            text-transform: uppercase;
-            transition: color 0.3s, text-shadow 0.3s;
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            min-height: 44px;
+          width: 100%;
+          padding: 0.65rem 0;
         }
-
-        nav ul li a:hover {
-            color: var(--color-accent);
-        }
-
-        /* Page Header */
-        .page-header {
-            padding: calc(var(--nav-height) + var(--gap-lg)) 0 var(--gap-lg);
-            text-align: center;
-            background: linear-gradient(180deg, rgba(5, 5, 5, 0.98), rgba(12, 12, 12, 0.95));
-            border-bottom: 2px solid rgba(0, 232, 255, 0.25);
-            position: relative;
-            z-index: 10;
-        }
-
-        .page-header h1 {
-            font-size: clamp(2rem, 3vw + 1rem, 3rem);
-            color: var(--color-accent);
-            text-shadow: 0 0 15px rgba(0, 232, 255, 0.3);
-            margin-bottom: var(--gap-sm);
-        }
-
-        .page-header p {
-            font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
-            color: var(--color-subtext);
-            max-width: 60ch;
-            margin: 0 auto;
-        }
-
-        /* Main Content */
-        main {
-            position: relative;
-            z-index: 1;
-        }
-
-        section {
-            padding: var(--section-pad-y) 0;
-            background-color: rgba(10, 10, 10, 0.97);
-            margin: var(--section-gap) 0;
-            border-top: 2px solid #1a1a1a;
-            border-bottom: 2px solid #1a1a1a;
-            position: relative;
-        }
-
-        section::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            width: min(72%, 54rem);
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 232, 255, 0.18), transparent);
-            transform: translateX(-50%);
-            opacity: 0.35;
-        }
-
-        section .container {
-            display: flex;
-            flex-direction: column;
-            gap: var(--gap-md);
-        }
-
-        /* Service Items */
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: var(--gap-md);
-        }
-
-        .service-item {
-            background-color: #111;
-            padding: clamp(1.75rem, 1.2rem + 1vw, 2.25rem);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-left: 5px solid var(--color-accent);
-            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--radius-sm);
-            box-shadow: 0 0 8px rgba(0, 232, 255, 0.25);
-        }
-
-        .service-item:hover {
-            border-color: var(--color-accent);
-            box-shadow: 0 0 30px var(--color-accent), inset 0 0 10px var(--color-accent);
-            transform: translateY(-5px) scale(1.01);
-            z-index: 10;
-        }
-
-        .service-item h3 {
-            color: var(--color-accent);
-            font-size: clamp(1.05rem, 0.95rem + 0.45vw, 1.35rem);
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-        }
-
-        .service-item h3::before {
-            content: '[//] ';
-            color: var(--color-secondary-accent);
-            font-weight: bold;
-            font-size: 0.8em;
-        }
-
-        .service-item p {
-            color: #D7E0E6;
-            line-height: 1.75;
-        }
-
-        .service-item ul {
-            list-style: disc;
-            padding-left: 1.5rem;
-            margin: var(--gap-sm) 0;
-            color: #D7E0E6;
-        }
-
-        .service-item ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Not Do Section */
-        .not-do-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: var(--gap-sm);
-        }
-
-        .not-do-item {
-            font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
-            padding: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-left: 4px solid var(--color-secondary-accent);
-            background-color: #121212;
-            color: var(--color-text);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-            border-radius: var(--radius-sm);
-        }
-
-        .not-do-item:hover {
-            background-color: #1e1e1e;
-            border-left-color: var(--color-accent);
-            box-shadow: 0 0 16px rgba(0, 232, 255, 0.22);
-            transform: translateY(-2px);
-        }
-
-        /* CTA Button */
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 232, 255, 0.12);
-            color: var(--color-text);
-            border: 1px solid rgba(0, 232, 255, 0.6);
-            padding: 0.85rem 2.25rem;
-            min-height: 48px;
-            font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            border-radius: var(--radius-sm);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-        }
-
-        .cta-button:hover {
-            background: rgba(0, 232, 255, 0.18);
-            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
-            transform: translateY(-2px);
-        }
-
-        .cta-solid {
-            background: rgba(0, 232, 255, 0.85);
-            color: #000;
-            border-color: rgba(0, 232, 255, 0.95);
-            font-weight: 700;
-        }
-
-        .cta-solid:hover {
-            background: rgba(0, 232, 255, 0.95);
-            color: #000;
-            box-shadow: 0 0 25px rgba(0, 232, 255, 0.5), 0 16px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: var(--gap-md) 0;
-            border-top: 1px solid var(--color-accent);
-            font-size: var(--font-size-small);
-            color: var(--color-subtext);
-            background-color: #000000;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            nav .nav-content {
-                flex-wrap: wrap;
-                align-items: flex-start;
-                gap: var(--gap-sm);
-            }
-            nav ul {
-                justify-content: flex-start;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding-left: var(--container-pad-x);
-                padding-right: var(--container-pad-x);
-            }
-            nav .nav-content {
-                flex-direction: column;
-                align-items: stretch;
-                gap: var(--gap-sm);
-            }
-
-            nav ul {
-                width: 100%;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.35rem;
-            }
-
-            nav ul li a {
-                width: 100%;
-                padding: 0.65rem 0;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <nav>
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Chaos Management Agency</a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="case-studies.html">Case Studies</a></li>
-                <li><a href="who-we-help.html">Who We Help</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+      <div class="container nav-content">
+        <a href="index.html" class="logo">Chaos Management Agency</a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="who-we-help.html">Who We Help</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="page-header">
-        <div class="container">
-            <h1>Services</h1>
-            <p>Digital infrastructure and operations support focused on cost reduction, simplification, and stability.</p>
-        </div>
+      <div class="container">
+        <h1>Services</h1>
+        <p>
+          Digital infrastructure and operations support focused on cost
+          reduction, simplification, and stability.
+        </p>
+      </div>
     </div>
 
     <main>
-        <section>
-            <div class="container">
-                <div class="service-grid">
-                    <div class="service-item">
-                        <h3>Website Rebuild and Hosting Migration</h3>
-                        <p>Rebuild simple, fast, secure sites and move off expensive hosts. Deliver low maintenance infrastructure with clean domain setup so the site stays portable and vendor neutral.</p>
-                        <ul>
-                            <li>Static site rebuilds with modern hosting</li>
-                            <li>Migration from WordPress, Wix, Squarespace to lower cost platforms</li>
-                            <li>DNS and domain cleanup</li>
-                            <li>SSL, security headers, and basic SEO setup</li>
-                            <li>Documentation for future updates</li>
-                        </ul>
-                    </div>
-                    <div class="service-item">
-                        <h3>Technology Cost Reduction and Cleanup</h3>
-                        <p>Audit your current tools and subscriptions, remove what you do not need, and simplify the stack so fewer things break while cutting recurring costs.</p>
-                        <ul>
-                            <li>Tool stack audit and cost analysis</li>
-                            <li>Identify redundant or unused subscriptions</li>
-                            <li>Consolidate overlapping services</li>
-                            <li>Migrate to lower cost alternatives</li>
-                            <li>Document simplified workflow</li>
-                        </ul>
-                    </div>
-                    <div class="service-item">
-                        <h3>Digital Infrastructure Setup</h3>
-                        <p>Domains, DNS, email basics, forms, intake routing, and handoff documentation so your foundation stays reliable, portable, and low maintenance.</p>
-                        <ul>
-                            <li>Domain registration and DNS configuration</li>
-                            <li>Professional email setup (Google Workspace, Microsoft 365, or alternatives)</li>
-                            <li>Contact forms and intake routing</li>
-                            <li>Basic analytics and monitoring</li>
-                            <li>Infrastructure documentation</li>
-                        </ul>
-                    </div>
-                    <div class="service-item">
-                        <h3>Nonprofit Website Foundations</h3>
-                        <p>Template based nonprofit sites with the pages that build trust: programs, contact, transparency, and policy basics, optimized for reliable upkeep.</p>
-                        <ul>
-                            <li>Mission, programs, and impact pages</li>
-                            <li>Contact and intake forms</li>
-                            <li>Transparency and governance information</li>
-                            <li>Privacy policy and terms</li>
-                            <li>Donation integration if needed</li>
-                        </ul>
-                    </div>
-                </div>
+      <section>
+        <div class="container">
+          <div class="service-grid">
+            <div class="service-item">
+              <h3>Website Rebuild and Hosting Migration</h3>
+              <p>
+                Rebuild simple, fast, secure sites and move off expensive hosts.
+                Deliver low maintenance infrastructure with clean domain setup
+                so the site stays portable and vendor neutral.
+              </p>
+              <ul>
+                <li>Static site rebuilds with modern hosting</li>
+                <li>
+                  Migration from WordPress, Wix, Squarespace to lower cost
+                  platforms
+                </li>
+                <li>DNS and domain cleanup</li>
+                <li>SSL, security headers, and basic SEO setup</li>
+                <li>Documentation for future updates</li>
+              </ul>
             </div>
-        </section>
+            <div class="service-item">
+              <h3>Technology Cost Reduction and Cleanup</h3>
+              <p>
+                Audit your current tools and subscriptions, remove what you do
+                not need, and simplify the stack so fewer things break while
+                cutting recurring costs.
+              </p>
+              <ul>
+                <li>Tool stack audit and cost analysis</li>
+                <li>Identify redundant or unused subscriptions</li>
+                <li>Consolidate overlapping services</li>
+                <li>Migrate to lower cost alternatives</li>
+                <li>Document simplified workflow</li>
+              </ul>
+            </div>
+            <div class="service-item">
+              <h3>Digital Infrastructure Setup</h3>
+              <p>
+                Domains, DNS, email basics, forms, intake routing, and handoff
+                documentation so your foundation stays reliable, portable, and
+                low maintenance.
+              </p>
+              <ul>
+                <li>Domain registration and DNS configuration</li>
+                <li>
+                  Professional email setup (Google Workspace, Microsoft 365, or
+                  alternatives)
+                </li>
+                <li>Contact forms and intake routing</li>
+                <li>Basic analytics and monitoring</li>
+                <li>Infrastructure documentation</li>
+              </ul>
+            </div>
+            <div class="service-item">
+              <h3>Nonprofit Website Foundations</h3>
+              <p>
+                Template based nonprofit sites with the pages that build trust:
+                programs, contact, transparency, and policy basics, optimized
+                for reliable upkeep.
+              </p>
+              <ul>
+                <li>Mission, programs, and impact pages</li>
+                <li>Contact and intake forms</li>
+                <li>Transparency and governance information</li>
+                <li>Privacy policy and terms</li>
+                <li>Donation integration if needed</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section id="what-we-do-not-do">
-            <div class="container">
-                <h2>What We Do Not Do</h2>
-                <p style="text-align: center; max-width: 60ch; margin: 0 auto var(--gap-md);">CMA focuses on stable, documented, low maintenance builds. We do not offer ongoing management, custom development, or marketing services.</p>
-                <div class="not-do-grid">
-                    <div class="not-do-item">We do not offer ongoing retainers or monthly management by default</div>
-                    <div class="not-do-item">We do not build custom web applications or complex interactive features</div>
-                    <div class="not-do-item">We do not provide social media management or content marketing</div>
-                    <div class="not-do-item">We do not offer graphic design, branding, or logo creation</div>
-                    <div class="not-do-item">We do not manage PPC campaigns, SEO agencies, or advertising</div>
-                    <div class="not-do-item">We do not provide 24/7 support or emergency response</div>
-                </div>
+      <section id="what-we-do-not-do">
+        <div class="container">
+          <h2>What We Do Not Do</h2>
+          <p
+            style="
+              text-align: center;
+              max-width: 60ch;
+              margin: 0 auto var(--gap-md);
+            "
+          >
+            CMA focuses on stable, documented, low maintenance builds. We do not
+            offer ongoing management, custom development, or marketing services.
+          </p>
+          <div class="not-do-grid">
+            <div class="not-do-item">
+              We do not offer ongoing retainers or monthly management by default
             </div>
-        </section>
+            <div class="not-do-item">
+              We do not build custom web applications or complex interactive
+              features
+            </div>
+            <div class="not-do-item">
+              We do not provide social media management or content marketing
+            </div>
+            <div class="not-do-item">
+              We do not offer graphic design, branding, or logo creation
+            </div>
+            <div class="not-do-item">
+              We do not manage PPC campaigns, SEO agencies, or advertising
+            </div>
+            <div class="not-do-item">
+              We do not provide 24/7 support or emergency response
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section id="service-cta" style="text-align: center;">
-            <div class="container">
-                <h2>Ready to Start?</h2>
-                <p style="max-width: 50ch; margin: 0 auto var(--gap-md);">Email CMA with your current setup and what you want to improve. We'll respond with next steps and timeline.</p>
-                <a href="contact.html" class="cta-button cta-solid">Get Started</a>
-            </div>
-        </section>
+      <section id="service-cta" style="text-align: center">
+        <div class="container">
+          <h2>Ready to Start?</h2>
+          <p style="max-width: 50ch; margin: 0 auto var(--gap-md)">
+            Email CMA with your current setup and what you want to improve.
+            We'll respond with next steps and timeline.
+          </p>
+          <a href="contact.html" class="cta-button cta-solid">Get Started</a>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="container">
-            CMA. Chaos Management Agency. Digital infrastructure and operations support. Built for stability.
-        </div>
+      <div class="container">
+        CMA. Chaos Management Agency. Digital infrastructure and operations
+        support. Built for stability.
+      </div>
     </footer>
-</body>
+  </body>
 </html>
