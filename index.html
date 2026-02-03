@@ -368,10 +368,10 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             padding-top: calc(var(--nav-height) + var(--gap-lg));
-            padding-bottom: clamp(3.5rem, 8vw, 5.5rem);
+            padding-bottom: clamp(4.5rem, 9vw, 7rem);
             position: relative;
             z-index: 10;
             overflow: hidden;
@@ -392,7 +392,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(3, 3, 3, 0.6);
+            background: rgba(3, 3, 3, 0.62);
             z-index: 1;
             pointer-events: none;
         }
@@ -400,6 +400,7 @@
         @media (max-width: 768px) {
             header {
                 min-height: 85vh;
+                padding-bottom: clamp(2.5rem, 6vw, 4rem);
             }
             header .hero-bg {
                 background-attachment: scroll;
@@ -416,8 +417,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: flex-end;
             gap: var(--gap-md);
             width: min(var(--max-width-wide), 100%);
+            min-height: 100%;
             margin: 0 auto;
             padding-top: clamp(2rem, 5vw, 3rem);
             padding-bottom: 0;
@@ -428,7 +431,7 @@
             z-index: 1;
             text-align: center;
             width: 100%;
-            max-width: var(--max-width);
+            max-width: min(44rem, 100%);
             margin: 0 auto;
             padding: 0 clamp(0rem, 2vw, 0.75rem);
             background: none;
@@ -487,7 +490,7 @@
         }
 
         header h1 {
-            font-size: clamp(1.4rem, 1.1rem + 1.5vw, 2.2rem);
+            font-size: clamp(1.3rem, 1.05rem + 1.2vw, 2rem);
             font-weight: 600;
             letter-spacing: -0.01em;
             color: var(--color-text);
@@ -502,7 +505,7 @@
             text-shadow: none;
             font-weight: 400;
             line-height: 1.65;
-            max-width: 52ch;
+            max-width: 46ch;
             margin-bottom: var(--gap-md);
         }
         
@@ -1395,7 +1398,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Digital infrastructure and operations support for small organizations and nonprofit programs.</h1>
-                <h2>Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.</h2>
+                <h2><span id="tagline-text" class="hero-typed" data-text="Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.">Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.</span></h2>
                 <div class="cta-group">
                     <a href="#contact-cma" class="cta-button cta-solid">Request a Build or Cleanup</a>
                     <a href="#services-digital-infrastructure" class="cta-button cta-outline">See Services</a>
@@ -1603,25 +1606,34 @@
 
         // --- 2. Typing Effect for Tagline ---
         const taglineElement = document.getElementById('tagline-text');
-        const taglineText = 'Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.';
-        let i = 0;
+        if (taglineElement) {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const taglineText = taglineElement.dataset.text || taglineElement.textContent || '';
+            let i = 0;
 
-        function typeWriter() {
-            if (i < taglineText.length) {
-                // Check for hyphen to speed up typing slightly for a glitch skip effect
-                let delay = taglineText.charAt(i) === '—' ? 10 : 50; 
-                taglineElement.innerHTML += taglineText.charAt(i);
-                i++;
-                setTimeout(typeWriter, delay); 
+            if (prefersReducedMotion) {
+                taglineElement.textContent = taglineText;
             } else {
-                // Settle the tagline into a subtle highlight once typing completes
-                taglineElement.style.color = '#B7F0FF';
-                taglineElement.style.textShadow = '0 0 18px rgba(0, 232, 255, 0.25)';
+                taglineElement.textContent = '';
+
+                function typeWriter() {
+                    if (i < taglineText.length) {
+                        // Check for hyphen to speed up typing slightly for a glitch skip effect
+                        let delay = taglineText.charAt(i) === '—' ? 10 : 50;
+                        taglineElement.textContent += taglineText.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, delay);
+                    } else {
+                        // Settle the tagline into a subtle highlight once typing completes
+                        taglineElement.style.color = '#B7F0FF';
+                        taglineElement.style.textShadow = '0 0 18px rgba(0, 232, 255, 0.25)';
+                    }
+                }
+
+                // Delay the start of the typing effect slightly
+                setTimeout(typeWriter, 1000);
             }
         }
-
-        // Delay the start of the typing effect slightly
-        setTimeout(typeWriter, 1000); 
 
         // --- 3. Intersection Observer for Glitch In (Optional visual flourish) ---
         // This makes sections 'glitch in' as they enter the viewport
