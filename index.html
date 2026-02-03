@@ -491,7 +491,6 @@
           background-attachment: scroll;
         }
         .hero-inner {
-          padding-right: clamp(24px, 4vw, 40px);
           padding-top: calc(var(--nav-height) + 1.5rem);
           gap: 18px;
         }
@@ -519,7 +518,6 @@
         margin: 0 auto;
         padding: clamp(24px, 4vw, 56px);
         padding-top: calc(var(--nav-height) + clamp(1.5rem, 3vw, 2.5rem));
-        padding-right: clamp(180px, 18vw, 240px);
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -532,7 +530,7 @@
         z-index: 1;
         text-align: center;
         width: 100%;
-        max-width: min(36rem, 100%);
+        max-width: 100%;
         margin: 0 auto;
         padding: 0 clamp(0rem, 2vw, 0.75rem);
         background: none;
@@ -543,6 +541,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+      }
+
+      .hero-stack {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+      }
+
+      @media (min-width: 900px) {
+        .hero-stack {
+          padding-right: 220px;
+        }
       }
 
       header .hero-visual {
@@ -1436,7 +1449,10 @@
 
       @media (max-width: 768px) {
         .hero-right-cta {
-          display: none;
+          position: static;
+          transform: none;
+          margin-top: 0.75rem;
+          align-self: center;
         }
       }
 
@@ -1598,14 +1614,14 @@
       <div class="hero-bg"></div>
       <div class="container">
         <div class="hero-inner">
-          <div class="hero-content">
+          <div class="hero-content hero-stack">
             <h1 class="sr-only">
               Digital infrastructure and operations support for small
               organizations and nonprofit programs.
             </h1>
             <div class="proof-strip proof-strip--hero">
-              <span class="proof-chip">Low maintenance builds</span>
-              <span class="proof-chip">Cost reduction focused</span>
+              <span class="proof-chip">LOW MAINTENANCE BUILDS</span>
+              <span class="proof-chip">COST REDUCTION FOCUSED</span>
             </div>
             <h2>
               <span
@@ -1618,23 +1634,23 @@
             </h2>
             <div class="cta-group">
               <a href="contact.html" class="cta-button cta-solid"
-                >Request a Build or Cleanup</a
+                >REQUEST A BUILD OR CLEANUP</a
               >
               <a href="services.html" class="cta-button cta-outline"
-                >See Services</a
+                >SEE SERVICES</a
               >
             </div>
           </div>
         </div>
       </div>
-      <a href="case-studies.html" class="hero-right-cta">Case Studies</a>
+      <a href="case-studies.html" class="hero-right-cta">CASE STUDIES</a>
     </header>
 
     <main>
       <section id="about-cma" class="mode-fracture">
         <div class="container">
           <div class="hero-control-surface">
-            <div class="at-a-glance-label">At a glance</div>
+            <div class="at-a-glance-label">AT A GLANCE</div>
             <div class="control-row">
               <div class="control-label">
                 <span class="status-dot" aria-hidden="true"></span>Primary
@@ -1663,8 +1679,8 @@
               </div>
             </div>
             <div class="proof-strip proof-strip--sub">
-              <span class="proof-chip">Documentation included</span>
-              <span class="proof-chip">Nonprofit friendly</span>
+              <span class="proof-chip">DOCUMENTATION INCLUDED</span>
+              <span class="proof-chip">NONPROFIT FRIENDLY</span>
             </div>
           </div>
           <div class="fracture-grid">
