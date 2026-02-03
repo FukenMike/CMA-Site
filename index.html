@@ -383,7 +383,7 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
             padding-top: calc(var(--nav-height) + var(--gap-lg));
             padding-bottom: 0;
@@ -423,6 +423,11 @@
             header .hero-bg {
                 background-attachment: scroll;
             }
+            .hero-inner {
+                padding-right: clamp(24px, 4vw, 40px);
+                padding-top: calc(var(--nav-height) + 1.5rem);
+                gap: 18px;
+            }
         }
 
         header::before {
@@ -433,15 +438,26 @@
             position: relative;
             z-index: 2;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: flex-end;
-            gap: var(--gap-md);
+            justify-content: center;
             width: min(var(--max-width-wide), 100%);
             min-height: 100%;
             margin: 0 auto;
-            padding-top: clamp(2rem, 5vw, 3rem);
-            padding-bottom: 0;
+            padding: 0;
+        }
+
+        .hero-inner {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: clamp(24px, 4vw, 56px);
+            padding-top: calc(var(--nav-height) + clamp(1.5rem, 3vw, 2.5rem));
+            padding-right: clamp(180px, 18vw, 240px);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 22px;
         }
 
         header .hero-content {
@@ -449,7 +465,7 @@
             z-index: 1;
             text-align: center;
             width: 100%;
-            max-width: min(44rem, 100%);
+            max-width: min(36rem, 100%);
             margin: 0 auto;
             padding: 0 clamp(0rem, 2vw, 0.75rem);
             background: none;
@@ -538,21 +554,6 @@
             max-width: 50ch;
         }
         
-        .hero-cta-fixed {
-            position: sticky;
-            bottom: clamp(3rem, 5vw, 4rem);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 3;
-            width: 100%;
-            pointer-events: none;
-        }
-
-        .hero-cta-fixed > * {
-            pointer-events: auto;
-        }
-
         header .cta-group {
             display: flex;
             justify-content: center;
@@ -561,17 +562,24 @@
             gap: var(--gap-sm);
         }
 
-        header .proof-strip {
+        .proof-strip {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
             gap: var(--gap-sm);
-            margin-top: var(--gap-sm);
             padding: 0 clamp(0.25rem, 2vw, 0.75rem);
         }
 
-        header .proof-chip {
+        .proof-strip--hero {
+            margin-top: var(--gap-sm);
+        }
+
+        .proof-strip--sub {
+            margin-top: var(--gap-md);
+        }
+
+        .proof-chip {
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -587,7 +595,7 @@
             white-space: nowrap;
         }
 
-        header .hero-control-surface {
+        .hero-control-surface {
             position: relative;
             width: 100%;
             max-width: 46rem;
@@ -603,7 +611,7 @@
             overflow: hidden;
         }
 
-        header .hero-control-surface::after {
+        .hero-control-surface::after {
             content: '';
             position: absolute;
             top: 0;
@@ -614,7 +622,7 @@
             opacity: 0.7;
         }
 
-        header .control-row {
+        .hero-control-surface .control-row {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
@@ -622,16 +630,16 @@
             padding-bottom: 1.1rem;
         }
 
-        header .control-row:last-child {
+        .hero-control-surface .control-row:last-child {
             padding-bottom: 0;
         }
 
-        header .control-row + .control-row {
+        .hero-control-surface .control-row + .control-row {
             border-top: 1px solid rgba(0, 232, 255, 0.12);
             padding-top: 1.1rem;
         }
 
-        header .control-label {
+        .hero-control-surface .control-label {
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -642,7 +650,7 @@
             white-space: nowrap;
         }
 
-        header .status-dot {
+        .hero-control-surface .status-dot {
             width: 12px;
             height: 12px;
             border-radius: 50%;
@@ -650,13 +658,21 @@
             box-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
         }
 
-        header .control-value {
+        .hero-control-surface .control-value {
             font-size: clamp(0.95rem, 0.9rem + 0.4vw, 1.15rem);
             color: #DCE7EC;
             letter-spacing: 0.02em;
             line-height: 1.55;
             text-align: right;
             flex: 1;
+        }
+
+        .at-a-glance-label {
+            font-size: clamp(0.75rem, 0.72rem + 0.2vw, 0.85rem);
+            text-transform: uppercase;
+            letter-spacing: 0.32em;
+            color: rgba(183, 240, 255, 0.7);
+            margin-bottom: 0.5rem;
         }
 
         .cta-button {
@@ -1337,11 +1353,11 @@
                 padding-left: clamp(1.25rem, 5vw, 1.75rem);
                 padding-right: clamp(1.25rem, 5vw, 1.75rem);
             }
-            header .proof-strip {
+            .proof-strip {
                 justify-content: center;
                 gap: 0.5rem;
             }
-            header .proof-chip {
+            .proof-chip {
                 letter-spacing: 0.18em;
             }
             header .control-row {
@@ -1353,10 +1369,10 @@
             header .control-row + .control-row {
                 padding-top: 1rem;
             }
-            header .control-label {
+            .hero-control-surface .control-label {
                 white-space: normal;
             }
-            header .control-value {
+            .hero-control-surface .control-value {
                 text-align: left;
             }
             .cta-button {
@@ -1374,17 +1390,11 @@
         }
 
         @media (max-width: 480px) {
-            header .proof-strip {
+            .proof-strip {
                 gap: 0.4rem;
             }
-            header .hero-control-surface {
+            .hero-control-surface {
                 padding: clamp(1.1rem, 1rem + 1vw, 1.5rem);
-            }
-            #floating-cta {
-                bottom: 14px;
-                right: 14px;
-                padding: 0.75rem 1.2rem;
-                font-size: 0.85rem;
             }
             .contact-email {
                 font-size: clamp(1.1rem, 1.05rem + 0.3vw, 1.25rem);
@@ -1424,33 +1434,17 @@
     <header id="hero" class="mode-entry">
         <div class="hero-bg"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1 class="sr-only">Digital infrastructure and operations support for small organizations and nonprofit programs.</h1>
-                <h2><span id="tagline-text" class="hero-typed" data-text="Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.">Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.</span></h2>
-                <div class="hero-cta-fixed">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1 class="sr-only">Digital infrastructure and operations support for small organizations and nonprofit programs.</h1>
+                    <div class="proof-strip proof-strip--hero">
+                        <span class="proof-chip">Low maintenance builds</span>
+                        <span class="proof-chip">Cost reduction focused</span>
+                    </div>
+                    <h2><span id="tagline-text" class="hero-typed" data-text="Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.">Reduce monthly tech costs. Simplify your tools. Build a website foundation that stays stable.</span></h2>
                     <div class="cta-group">
-                        <a href="#case-studies" class="cta-button cta-solid">View Case Studies</a>
-                        <a href="#services-digital-infrastructure" class="cta-button cta-outline">See Services</a>
-                    </div>
-                </div>
-                <div class="proof-strip">
-                    <span class="proof-chip">Low maintenance builds</span>
-                    <span class="proof-chip">Cost reduction focused</span>
-                    <span class="proof-chip">Documentation included</span>
-                    <span class="proof-chip">Nonprofit friendly</span>
-                </div>
-                <div class="hero-control-surface">
-                    <div class="control-row">
-                        <div class="control-label"><span class="status-dot" aria-hidden="true"></span>Primary Outcome</div>
-                        <div class="control-value">Lower monthly tech costs and fewer points of failure</div>
-                    </div>
-                    <div class="control-row">
-                        <div class="control-label"><span class="status-dot" aria-hidden="true"></span>Typical Deliverables</div>
-                        <div class="control-value">Website migration, DNS cleanup, forms, documentation</div>
-                    </div>
-                    <div class="control-row">
-                        <div class="control-label"><span class="status-dot" aria-hidden="true"></span>Engagement Style</div>
-                        <div class="control-value">Fixed scope builds and cleanups, not retainers by default</div>
+                        <a href="contact.html" class="cta-button cta-solid">Request a Build or Cleanup</a>
+                        <a href="services.html" class="cta-button cta-outline">See Services</a>
                     </div>
                 </div>
             </div>
@@ -1461,6 +1455,25 @@
     <main>
     <section id="about-cma" class="mode-fracture">
         <div class="container">
+            <div class="hero-control-surface">
+                <div class="at-a-glance-label">At a glance</div>
+                <div class="control-row">
+                    <div class="control-label"><span class="status-dot" aria-hidden="true"></span>Primary Outcome</div>
+                    <div class="control-value">Lower monthly tech costs and fewer points of failure</div>
+                </div>
+                <div class="control-row">
+                    <div class="control-label"><span class="status-dot" aria-hidden="true"></span>Typical Deliverables</div>
+                    <div class="control-value">Website migration, DNS cleanup, forms, documentation</div>
+                </div>
+                <div class="control-row">
+                    <div class="control-label"><span class="status-dot" aria-hidden="true"></span>Engagement Style</div>
+                    <div class="control-value">Fixed scope builds and cleanups, not retainers by default</div>
+                </div>
+                <div class="proof-strip proof-strip--sub">
+                    <span class="proof-chip">Documentation included</span>
+                    <span class="proof-chip">Nonprofit friendly</span>
+                </div>
+            </div>
             <div class="fracture-grid">
                 <div class="fracture-left">
                     <h2>WHO WE ARE</h2>
@@ -1468,7 +1481,7 @@
                 </div>
                 <div class="fracture-right">
                     <p>CMA focuses on clean setups, clear documentation, and reliable foundations so organizations are not locked into expensive hosting, bloated tool stacks, or ongoing dependency.</p>
-                    <a href="#services-digital-infrastructure" class="cta-text">See what CMA stabilizes →</a>
+                    <a href="services.html" class="cta-text">See what CMA stabilizes →</a>
                 </div>
             </div>
         </div>
