@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chaosmgnt.netlify.app/sitemap.xml
+Sitemap: https://chaosmgnt.com/sitemap.xml
