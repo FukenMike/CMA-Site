@@ -25,7 +25,7 @@ All work emphasizes simplicity, portability, and minimal ongoing maintenance.
 
 ## What CMA Does Not Do
 
-To maintain clear scope, CMA does not provide:
+To maintain clear scope and delivery quality, CMA does not provide:
 
 - Marketing campaigns or growth programs
 - Public channel management or audience engagement services
@@ -49,25 +49,11 @@ CMA applies a static-first, platform-agnostic approach centered on performance, 
 
 ## Local Preview
 
-This site is a static project and can be viewed locally. Open index.html directly in a browser, or start a simple local server and visit http://localhost:8000.
+This site is a static project and can be viewed locally.
 
+Open `index.html` directly in a browser, or start a simple local server and visit `http://localhost:8000`.
+
+### Python
 ```bash
-# Python
 python -m http.server 8000
-
-# Node.js (requires http-server)
-npx http-server
 ```
-
----
-
-## Deployment
-
-- Netlify: Deploy by uploading the directory or connecting the repository with default static site settings.
-- Cloudflare Pages: Deploy by connecting the repository without a build command and configuring domains as needed.
-
----
-
-## Status
-
-CMA is an active, evolving project. Case studies will be published as current projects conclude.
