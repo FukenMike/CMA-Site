@@ -389,7 +389,7 @@
             padding-bottom: 0;
             position: relative;
             z-index: 10;
-            overflow: hidden;
+            overflow: visible;
         }
 
         header .hero-bg {
@@ -401,6 +401,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             z-index: 0;
+            overflow: hidden;
         }
 
         header .hero-bg::before {
@@ -1249,12 +1250,13 @@
             background-color: #000000;
         }
 
-        /* --- FLOATING CTA (PHASE 1) --- */
-        #floating-cta {
-            position: fixed;
-            bottom: clamp(1rem, 2vw + 0.5rem, 2rem);
-            right: clamp(1rem, 2vw + 0.5rem, 2rem);
-            z-index: 1000;
+        /* --- HERO RIGHT-SIDE STATIONARY CTA --- */
+        .hero-right-cta {
+            position: absolute;
+            right: clamp(18px, 3vw, 36px);
+            top: 55%;
+            transform: translateY(-50%);
+            z-index: 3;
             background-color: var(--color-accent);
             color: var(--color-bg);
             padding: 0.9rem 1.6rem;
@@ -1262,32 +1264,27 @@
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
+            font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+            letter-spacing: 0.15em;
             transition: all 0.3s ease;
             box-shadow: 0 0 20px var(--color-accent);
-            display: flex;
-            align-items: center;
-            gap: 10px;
             border: 2px solid var(--color-accent);
             animation: neonBreathe 2s infinite alternate;
+            white-space: nowrap;
         }
 
-        #floating-cta:hover,
-        #floating-cta:focus-visible {
+        .hero-right-cta:hover,
+        .hero-right-cta:focus-visible {
             background-color: var(--color-bg);
             color: var(--color-accent);
             box-shadow: 0 0 40px var(--color-accent);
-            transform: translateY(-4px) scale(1.03);
+            transform: translateY(-50%) translateX(-4px) scale(1.05);
         }
 
-        .cta-icon {
-            font-weight: 900;
-            transition: transform 0.3s;
-            font-family: monospace;
-        }
-
-        #floating-cta:hover .cta-icon,
-        #floating-cta:focus-visible .cta-icon {
-            transform: translateX(5px);
+        @media (max-width: 768px) {
+            .hero-right-cta {
+                display: none;
+            }
         }
 
         /* --- RESPONSIVENESS --- */
@@ -1413,13 +1410,13 @@
 
     <nav>
         <div class="container nav-content">
-            <a href="#hero" class="logo">Chaos Management Agency</a>
+            <a href="index.html" class="logo">Chaos Management Agency</a>
             <ul>
                 <li><a href="#about-cma" class="glitch-link" data-text="About">About</a></li>
-                <li><a href="#services-digital-infrastructure" class="glitch-link" data-text="Services">Services</a></li>
-                <li><a href="#case-studies" class="glitch-link" data-text="Case Studies">Case Studies</a></li>
-                <li><a href="#who-we-help" class="glitch-link" data-text="Who We Help">Who We Help</a></li>
-                <li><a href="#contact-cma" class="cta-nav-link glitch-link" data-text="Contact">Contact</a></li>
+                <li><a href="services.html" class="glitch-link" data-text="Services">Services</a></li>
+                <li><a href="case-studies.html" class="glitch-link" data-text="Case Studies">Case Studies</a></li>
+                <li><a href="who-we-help.html" class="glitch-link" data-text="Who We Help">Who We Help</a></li>
+                <li><a href="contact.html" class="cta-nav-link glitch-link" data-text="Contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -1458,6 +1455,7 @@
                 </div>
             </div>
         </div>
+        <a href="case-studies.html" class="hero-right-cta">Case Studies</a>
     </header>
 
     <main>
@@ -1478,7 +1476,7 @@
 
     <section id="how-it-works" class="mode-stabilize">
         <div class="container">
-            <h2>How It Works</h2>
+            <h2>Our Approach</h2>
             <div class="service-grid">
                 <div class="service-item">
                     <h3>Audit</h3>
@@ -1493,46 +1491,27 @@
                     <p>You get a clear handoff so you are not dependent on ongoing support.</p>
                 </div>
             </div>
+            <div style="text-align: center; margin-top: var(--gap-md);">
+                <a href="approach.html" class="cta-text">Read more about our approach →</a>
+            </div>
         </div>
     </section>
 
     <section id="case-studies" class="mode-artifact">
         <div class="container">
             <h2>Case Studies</h2>
-            <p style="max-width: min(var(--max-width), 46rem); margin: 0 auto var(--gap-md); color: var(--color-subtext); text-align: center; grid-column: 1 / -1;">Live projects built and maintained through Chaos Management Agency. These examples demonstrate real infrastructure work delivered in phases.</p>
+            <p style="max-width: min(var(--max-width), 46rem); margin: 0 auto var(--gap-md); color: var(--color-subtext); text-align: center;">Live projects built and maintained through Chaos Management Agency.</p>
             
-            <div class="artifact-grid" style="grid-column: 1 / -1;">
+            <div style="max-width: 600px; margin: 0 auto;">
                 <div class="artifact primary">
                     <h3>The Father's Alliance</h3>
                     <p class="artifact-subhead">Humanitarian platform and resource navigation infrastructure</p>
-                    <p>The Father's Alliance is a live public platform focused on family stability and crisis navigation. It is designed to make fragmented support systems easier to access by organizing resources, building trust signals, and creating structured pathways to help families move from crisis to stability.</p>
-                    <ul>
-                        <li>Public resource directory with searchable listings and outcome feedback</li>
-                        <li>Verification model with staleness checks and last verified dates</li>
-                        <li>Governance and transparency patterns to build public trust</li>
-                        <li>Modular structure designed for future programs and portals</li>
-                        <li>Security first planning for sensitive provider and family workflows</li>
-                    </ul>
-                    <p class="artifact-meta"><strong>Role:</strong> Founder, Systems Architect, Full Stack Builder</p>
-                    <p class="artifact-meta"><strong>Status:</strong> Live platform with ongoing phased development</p>
+                    <p>The Father's Alliance is a live public platform focused on family stability and crisis navigation, making fragmented support systems easier to access.</p>
                     <a href="https://thefathersalliance.org" target="_blank" rel="noopener" class="cta-button cta-outline">View The Father's Alliance</a>
                 </div>
-                
-                <div class="artifact secondary">
-                    <h3>Chaos Management Agency</h3>
-                    <p class="artifact-subhead">Solo operated digital operations and delivery systems</p>
-                    <p>Chaos Management Agency is my personal business website and operating base. It represents how I deliver structured digital systems as a solo operator: clear scope, low overhead, and maintainable builds that can evolve without breaking.</p>
-                    <ul>
-                        <li>Production ready site structure with clear information hierarchy</li>
-                        <li>Fast, portable static build with minimal dependencies</li>
-                        <li>Service framing built around clear scope, outcomes, and handoff</li>
-                        <li>Repeatable patterns for documentation, updates, and iteration</li>
-                        <li>Built to scale into multi project case studies and portfolio growth</li>
-                    </ul>
-                    <p class="artifact-meta"><strong>Role:</strong> Owner, Designer, Engineer</p>
-                    <p class="artifact-meta"><strong>Status:</strong> Live business site and active service platform</p>
-                    <a href="#hero" class="cta-button cta-outline">You are viewing it now</a>
-                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--gap-lg);">
+                <a href="case-studies.html" class="cta-text">View all case studies →</a>
             </div>
         </div>
     </section>
@@ -1543,34 +1522,20 @@
             <div class="service-grid">
                 <div class="service-item">
                     <h3>Website Rebuild and Hosting Migration</h3>
-                    <p>Rebuild simple, fast, secure sites and move off expensive hosts. Deliver low maintenance infrastructure with clean domain setup so the site stays portable and vendor neutral.</p>
+                    <p>Rebuild simple, fast, secure sites and move off expensive hosts.</p>
                 </div>
                 <div class="service-item">
-                    <h3>Technology Cost Reduction and Cleanup</h3>
-                    <p>Audit your current tools and subscriptions, remove what you do not need, and simplify the stack so fewer things break while cutting recurring costs.</p>
+                    <h3>Technology Cost Reduction</h3>
+                    <p>Audit tools and subscriptions, simplify the stack, cut recurring costs.</p>
                 </div>
                 <div class="service-item">
                     <h3>Digital Infrastructure Setup</h3>
-                    <p>Domains, DNS, email basics, forms, intake routing, and handoff documentation so your foundation stays reliable, portable, and low maintenance.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Nonprofit Website Foundations</h3>
-                    <p>Template based nonprofit sites with the pages that build trust: programs, contact, transparency, and policy basics, optimized for reliable upkeep.</p>
+                    <p>Domains, DNS, email basics, forms, and handoff documentation.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="what-we-do-not-do" class="mode-doctrine">
-        <div class="container">
-            <h2>What We Do Not Do</h2>
-            <ul>
-                <li>Legal advice or case guidance</li>
-                <li>Mental health services or clinical care</li>
-                <li>Marketing campaigns or social media management</li>
-                <li>Complex database apps or custom platforms</li>
-                <li>24/7 IT management or unlimited support</li>
-            </ul>
+            <div style="text-align: center; margin-top: var(--gap-md);">
+                <a href="services.html" class="cta-text">View all services →</a>
+            </div>
         </div>
     </section>
 
@@ -1583,29 +1548,22 @@
                 <li>Organizations paying too much for hosting, tools, or unused platforms</li>
                 <li>Teams that need a stable web presence without full time IT</li>
             </ul>
+            <div style="text-align: center; margin-top: var(--gap-md);">
+                <a href="who-we-help.html" class="cta-text">Learn more →</a>
+            </div>
         </div>
     </section>
 
     <section id="contact-cma">
         <div class="container">
-            <div class="contact-box">
+            <div class="contact-box" style="text-align: center; max-width: 600px; margin: 0 auto;">
                 <h2>Request a Build or Cleanup</h2>
-                <p>Email CMA with a short overview of your organization, your current setup, and what you want to improve. You will receive a simple plan with fixed scope deliverables.</p>
-                <p>Most work is fixed scope builds and cleanups, not ongoing retainers.</p>
-                <div class="contact-next-steps">
-                    <h3>What happens next</h3>
-                    <ol class="contact-step-list">
-                        <li class="contact-step">You send a short overview and any relevant links</li>
-                        <li class="contact-step">CMA replies with a simple plan and fixed scope deliverables</li>
-                        <li class="contact-step">We schedule a start window and complete the build or cleanup</li>
-                    </ol>
+                <p>Email CMA with a short overview of your organization, your current setup, and what you want to improve.</p>
+                <div class="contact-cta" style="margin-top: var(--gap-md);">
+                    <a class="contact-email-button" href="mailto:michael@chaosmgnt.com?subject=Build%20or%20Cleanup%20Request">Email CMA</a>
                 </div>
-                <div class="contact-cta">
-                    <div>
-                        <a class="contact-email-button" href="mailto:michael@chaosmgnt.com?subject=Build%20or%20Cleanup%20Request">Email CMA</a>
-                    </div>
-                    <p style="font-size: var(--font-size-small); color: var(--color-subtext); margin-top: var(--gap-sm);">Preferred contact</p>
-                    <a class="contact-email" href="mailto:michael@chaosmgnt.com" style="font-size: var(--font-size-small); opacity: 0.85;">michael@chaosmgnt.com</a>
+                <div style="margin-top: var(--gap-md);">
+                    <a href="contact.html" class="cta-text">View full contact details →</a>
                 </div>
             </div>
         </div>
@@ -1618,12 +1576,6 @@
             CMA. Chaos Management Agency. Digital infrastructure and operations support. Built for stability.
         </div>
     </footer>
-
-    <!-- FLOATING CTA BUTTON -->
-    <a href="#contact-cma" id="floating-cta">
-        <span class="cta-label">REQUEST HELP</span>
-        <span class="cta-icon">&gt;&gt;</span>
-    </a>
 
     <script>
         // --- 1. Parallax Scroll Effect for Background ---
