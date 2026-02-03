@@ -707,8 +707,8 @@
             transform: translateY(-2px);
         }
 
-        /* --- PROOF SECTION --- */
-        #proof .proof-card {
+        /* --- CASE STUDIES SECTION --- */
+        #case-studies .proof-card {
             max-width: min(var(--max-width), 46rem);
             margin: 0 auto;
             padding: clamp(2rem, 1.6rem + 1.5vw, 2.75rem);
@@ -721,21 +721,21 @@
             gap: var(--gap-sm);
         }
 
-        #proof .proof-card h3 {
+        #case-studies .proof-card h3 {
             font-size: clamp(1.05rem, 0.95rem + 0.45vw, 1.35rem);
             text-transform: uppercase;
             letter-spacing: 0.22em;
             color: rgba(0, 232, 255, 0.9);
         }
 
-        #proof .proof-card p {
+        #case-studies .proof-card p {
             font-size: clamp(0.98rem, 0.95rem + 0.25vw, 1.1rem);
             line-height: 1.7;
             color: #D7E0E6;
             margin-bottom: 0;
         }
 
-        #proof .proof-card p:last-child {
+        #case-studies .proof-card p:last-child {
             font-size: var(--font-size-small);
             color: rgba(183, 240, 255, 0.75);
             letter-spacing: 0.35em;
@@ -996,7 +996,7 @@
             .cta-button {
                 width: 100%;
             }
-            #proof .proof-card {
+            #case-studies .proof-card {
                 padding: clamp(1.6rem, 1.4rem + 1vw, 2rem);
             }
             .contact-step-list {
@@ -1048,6 +1048,7 @@
             <ul>
                 <li><a href="#about-cma" class="glitch-link" data-text="About">About</a></li>
                 <li><a href="#services-digital-infrastructure" class="glitch-link" data-text="Services">Services</a></li>
+                <li><a href="#case-studies" class="glitch-link" data-text="Case Studies">Case Studies</a></li>
                 <li><a href="#who-we-help" class="glitch-link" data-text="Who We Help">Who We Help</a></li>
                 <li><a href="#contact-cma" class="cta-nav-link glitch-link" data-text="Contact">Contact</a></li>
             </ul>
@@ -1121,13 +1122,41 @@
         </div>
     </section>
 
-    <section id="proof">
+    <section id="case-studies">
         <div class="container">
-            <h2>Proof</h2>
+            <h2>Case Studies</h2>
+            <p style="max-width: min(var(--max-width), 46rem); margin: 0 auto var(--gap-md); color: var(--color-subtext); text-align: center;">Live projects built and maintained through Chaos Management Agency. These examples demonstrate real infrastructure work delivered in phases.</p>
+            
+            <div class="proof-card" style="margin-bottom: var(--gap-lg);">
+                <h3>The Father's Alliance</h3>
+                <p style="font-size: var(--font-size-small); color: var(--color-subtext); text-transform: none; letter-spacing: normal; margin-bottom: var(--gap-sm);">Humanitarian platform and resource navigation infrastructure</p>
+                <p>The Father's Alliance is a live public platform focused on family stability and crisis navigation. It is designed to make fragmented support systems easier to access by organizing resources, building trust signals, and creating structured pathways to help families move from crisis to stability.</p>
+                <ul style="list-style: disc; padding-left: 1.5rem; margin: var(--gap-sm) 0; color: #D7E0E6;">
+                    <li>Public resource directory with searchable listings and outcome feedback</li>
+                    <li>Verification model with staleness checks and last verified dates</li>
+                    <li>Governance and transparency patterns to build public trust</li>
+                    <li>Modular structure designed for future programs and portals</li>
+                    <li>Security first planning for sensitive provider and family workflows</li>
+                </ul>
+                <p style="font-weight: 600; margin-top: var(--gap-sm);"><strong>Role:</strong> Founder, Systems Architect, Full Stack Builder</p>
+                <p style="font-weight: 600;"><strong>Status:</strong> Live platform with ongoing phased development</p>
+                <a href="https://thefathersalliance.org" target="_blank" rel="noopener" class="cta-button" style="margin-top: var(--gap-sm); display: inline-block;">View The Father's Alliance</a>
+            </div>
+            
             <div class="proof-card">
-                <h3>Migration and Cleanup</h3>
-                <p>Example outcome: moved a small program off expensive hosting, simplified tools, and delivered a stable site foundation with documentation.</p>
-                <p>Case studies will be published as projects complete.</p>
+                <h3>Chaos Management Agency</h3>
+                <p style="font-size: var(--font-size-small); color: var(--color-subtext); text-transform: none; letter-spacing: normal; margin-bottom: var(--gap-sm);">Solo operated digital operations and delivery systems</p>
+                <p>Chaos Management Agency is my personal business website and operating base. It represents how I deliver structured digital systems as a solo operator: clear scope, low overhead, and maintainable builds that can evolve without breaking.</p>
+                <ul style="list-style: disc; padding-left: 1.5rem; margin: var(--gap-sm) 0; color: #D7E0E6;">
+                    <li>Production ready site structure with clear information hierarchy</li>
+                    <li>Fast, portable static build with minimal dependencies</li>
+                    <li>Service framing designed for VR aligned self employment delivery</li>
+                    <li>Repeatable patterns for documentation, updates, and iteration</li>
+                    <li>Built to scale into multi project case studies and portfolio growth</li>
+                </ul>
+                <p style="font-weight: 600; margin-top: var(--gap-sm);"><strong>Role:</strong> Owner, Designer, Engineer</p>
+                <p style="font-weight: 600;"><strong>Status:</strong> Live business site and active service platform</p>
+                <a href="#hero" class="cta-button" style="margin-top: var(--gap-sm); display: inline-block;">You are viewing it now</a>
             </div>
         </div>
     </section>
